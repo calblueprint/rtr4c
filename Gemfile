@@ -35,6 +35,9 @@ gem 'pg', '0.17.1'
 # New Relic for monitoring
 gem 'newrelic_rpm'
 
+# For Heroku (https://github.com/heroku/rails_12factor)
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
