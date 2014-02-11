@@ -18,3 +18,5 @@
 # Ignore rvm config files
 .ruby-gemset
 .ruby-version
+
+config/database.yml
