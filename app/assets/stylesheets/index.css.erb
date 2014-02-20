@@ -1,0 +1,267 @@
+body {
+	margin: 0px;
+}
+
+#navbar {
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+	height: 225px;
+	background: #FFFFFF;
+	text-align: center;
+}
+
+#logo {
+	margin: auto;
+	display: block;
+	height: 175px;
+	width: 175px;
+	background-image: url(<%= image_path "logo.svg" %>);
+	background-size: cover;
+}
+
+#logo:hover {
+	background-size: 185px 185px;
+	background-position: center;
+}
+
+.tab {
+	font-family: Oswald, sans-serif;
+	text-decoration: none;
+	color: #CCCCCC;
+	font-size: 1.5em;
+	padding: 20px;
+	transition: 0.25s;
+	-webkit-transition: 0.25s;
+}
+
+.tab:hover {
+	color: #F5979C;
+}
+
+#banner {
+	box-sizing: border-box;
+	float: left;
+	text-align: center;
+	width: 100%;
+	padding-top: 40px;
+	height: 500px;
+	background-image: url(<%= image_path "beauty.jpg" %>);
+	background-size: cover;
+	animation: beautify 4s;
+	-webkit-animation: beautify 4s;
+}
+
+@keyframes beautify
+{
+	0%	{background-image: url(<%= image_path "bland.jpg" %>);}
+	100%{background-image: url(<%= image_path "beauty.jpg" %>);}
+}
+
+@-webkit-keyframes beautify
+{
+	0%	{background-image: url(<%= image_path "bland.jpg" %>);}
+	100%{background-image: url(<%= image_path "beauty.jpg" %>);}
+}
+
+#mission {
+	font-family: Lobster, cursive;
+	font-size: 4em;
+	color: white;
+	animation: fade 3.5s;
+	-webkit-animation: fade 3.5s;
+}
+
+.button {
+	display: block;
+	margin: auto;
+	font-family: Oswald, sans-serif;
+	text-decoration: none;
+	font-size: 1em;
+	height: 25px;
+	width: 110px;
+	padding: 22px;
+	border: 2px solid white;
+	color: #FFFFFF;
+	transition: 0.25s;
+	-webkit-transition: 0.25s;
+}
+
+#banner_button {
+	animation: fade 3.5s;
+	-webkit-animation: fade 3.5s;
+}
+
+.button:hover {
+	border-color: #F5979C;
+	color: #F5979C;
+}
+
+@keyframes fade
+{
+	0%	{opacity: 0;}
+	75%	{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+@-webkit-keyframes fade
+{
+	0%	{opacity: 0;}
+	75%	{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+.container {
+	float: left;
+	width: 100%;
+}
+
+.content {
+ 	margin: auto;
+ 	width: 1000px;
+}
+
+#process_title {
+	text-align: center;
+	margin-top: 75px;
+	font-family: Oswald, sans-serif;
+	font-size: 2em;
+	color: #CCCCCC;
+}
+
+.step {
+	box-sizing: border-box;
+	float: left;
+	text-align: center;
+	font-family: Merriweather, serif;
+	font-size: 1em;
+	line-height: 2em;
+	width: 333px;
+	padding: 30px;
+	padding-top: 50px;
+	height: 475px;
+	color: #333333;
+}
+
+.step_title {
+	font-family: Lobster, cursive;
+	font-size: 2em;
+	color: #F5979C;
+}
+
+#step1 {
+	margin: auto;
+	display: block;
+	height: 125px;
+	width: 125px;
+	background-image: url(<%= image_path "step1.svg" %>);
+	background-size: cover;
+}
+
+#step2 {
+	margin: auto;
+	display: block;
+	height: 125px;
+	width: 125px;
+	background-image: url(<%= image_path "step2.svg" %>);
+	background-size: cover;
+}
+
+#step3 {
+	margin: auto;
+	display: block;
+	height: 125px;
+	width: 125px;
+	background-image: url(<%= image_path "step3.svg" %>);
+	background-size: cover;
+}
+
+#process_button {
+	margin-top: 450px;
+	text-align: center;
+	margin-bottom: 75px;
+	color: #CCCCCC;
+	border-color: #CCCCCC;
+}
+
+#process_button:hover {
+	border-color: #F5979C;
+	color: #F5979C;
+}
+
+#footer {
+	background: #CCCCCC;
+}
+
+#footer_title {
+	text-align: center;
+	margin-top: 75px;
+	font-family: Oswald, sans-serif;
+	font-size: 2em;
+	color: #FFFFFF;
+}
+
+#footer_buttons {
+	box-sizing: border-box;
+	padding-left: 250px;
+	padding-right: 250px;
+	width: 100%;
+	height: 125px;
+	text-align: center;
+}
+
+#twitter {
+	float: left;
+	height: 125px;
+	width: 125px;
+	margin: 20px;
+	background-image: url(<%= image_path "twitter.png" %>);
+	background-size: cover;
+	transition: 0.25s;
+	-webkit-transition: 0.25s;
+}
+
+#twitter:hover {
+	background-image: url(<%= image_path "twitter_hover.png" %>);
+}
+
+#facebook {
+	float: left;
+	height: 125px;
+	width: 125px;
+	margin: 20px;
+	background-image: url(<%= image_path "facebook.png" %>);
+	background-size: cover;
+	transition: 0.25s;
+	-webkit-transition: 0.25s;
+}
+
+#facebook:hover {
+	background-image: url(<%= image_path "facebook_hover.png" %>);
+}
+
+#linkedin {
+	float: left;
+	height: 125px;
+	width: 125px;
+	margin: 20px;
+	background-image: url(<%= image_path "linkedin.png" %>);
+	background-size: cover;
+	transition: 0.25s;
+	-webkit-transition: 0.25s;
+}
+
+#linkedin:hover {
+	background-image: url(<%= image_path "linkedin_hover.png" %>);
+}
+
+#copyright {
+	float: left;
+	width: 100%;
+	margin-top: 25px;
+	margin-bottom: 75px;
+	text-align: center;
+	font-family: Merriweather, serif;
+	font-size: 1em;
+	color: white;
+}
