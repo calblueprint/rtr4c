@@ -1,0 +1,15 @@
+<h1>Listing Updates </h1>
+
+<table>
+	<tr>
+		<th>Header</th>
+		<th>Body</th>
+	</tr>
+
+	<% @updates.each do |u| %>
+		<tr>
+			<td><%= u.header %></td>
+			<td><%= u.body %></td>
+		<tr>
+	<%end%>
+</table>
