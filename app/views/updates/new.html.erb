@@ -1,0 +1,15 @@
+<h1> New Update </h1>
+
+<%= form_for :update, url: updates_path do |u| %>
+	<p>
+		<%= u.label :title %><br><%= u.text_field :header%>
+	</p>
+
+	<p>
+		<%= u.label :bodytext %><br><%= u.text_area :body%>
+	</p>
+
+	<p>
+		<%= u.submit %>
+	</p>
+<%end%>

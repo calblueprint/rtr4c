@@ -27,8 +27,10 @@ Rtr4c::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # Amazon S3 settings for Paperclip uploads
   config.paperclip_defaults = {
     :storage => :s3,
+    :s3_protocol => 'http',
     :s3_credentials => {
       :bucket => ENV['S3_BUCKET'],
       :access_key_id => ENV['S3_KEY'],
