@@ -3,6 +3,8 @@ Rtr4c::Application.routes.draw do
   resources :updates
   
   root 'welcome#index'
+
+  resources :products
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
