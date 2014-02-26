@@ -1,258 +1,257 @@
 body {
 	margin: 0px;
+	background: #928BC1;
+}
+
+p {
+	font-size: 13px;
+	margin: 0px;
 }
 
 #navbar {
 	box-sizing: border-box;
 	float: left;
 	width: 100%;
-	height: 225px;
-	background: #FFFFFF;
+	padding-top: 35px;
+	height: 100px;
+	background-image: url(<%= image_path "binding_dark.png"%>);;
 	text-align: center;
+	transition: 1s;
+	-webkit-transition: 1s;
+}
+
+#navbar:hover {
+	box-shadow: 0px 0px 15px 1px #333333;
+}
+
+.tab {
+	font-family: Lobster, cursive;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size: 20px;
+	padding: 20px;
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+}
+
+.tab:hover {
+	color: #928BC1;
+	transition: 0.1s;
+	-webkit-transition: 0.1s;
+}
+
+.box {
+	float: left;
+	width: 25%;
+	height: 100%;
+	transition: 0.1s;
+	-webkit-transition: 0.1s;
+}
+
+.box:hover {
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+#box_row1 {
+	position: absolute;
+	left: 0px;
+	bottom: calc(66% - 60px);;
+	width: 100%;
+	height: calc(33% - 30px);
+	z-index: -1;
+}
+
+#box_row2 {
+	position: absolute;
+	left: 0px;
+	bottom: calc(33% - 30px);
+	width: 100%;
+	height: calc(33% - 30px);
+	z-index: -1;
+}
+
+#box_row3 {
+	position: absolute;
+	left: 0px;
+	bottom: 0%;
+	width: 100%;
+	height: calc(33% - 30px);
+	z-index: -1;
+}
+
+#box1 {
+	background-image: url(<%= image_path "box1.jpg"%>);
+	background-size: cover;
+	background-position: center;
+}
+
+#box2 {
+	background-image: url(<%= image_path "box2.jpg"%>);
+	background-size: cover;
+	background-position: center;
+}
+
+#box3 {
+	background-image: url(<%= image_path "box3.jpg"%>);
+	background-size: cover;
+	background-position: center;
+}
+
+#box4 {
+	background-image: url(<%= image_path "box4.jpg"%>);
+	background-size: cover;
+	background-position: center;
+}
+
+#box5 {
+	background-image: url(<%= image_path "box5.jpg"%>);
+	background-size: cover;
+	background-position: center;
+}
+
+#box6 {
+	background-image: url(<%= image_path "box69.jpg"%>);
+	background-size: cover;
+	background-position: center;
+}
+
+#box7 {
+	background-image: url(<%= image_path "box7.jpg"%>);
+	background-size: cover;
+	background-position: center;
+}
+
+#box8 {
+	background-image: url(<%= image_path "box8.jpg"%>);
+	background-size: cover;
+	background-position: center;
+}
+
+#box9 {
+	background-image: url(<%= image_path "box9.jpg"%>);
+	background-size: cover;
+	background-position: center;
+}
+
+#box10 {
+	background-image: url(<%= image_path "box10.jpg"%>);
+	background-size: cover;
+	background-position: center;
+}
+
+#box11 {
+	background-image: url(<%= image_path "box11.jpg"%>);
+	background-size: cover;
+}
+
+#box12 {
+	background-image: url(<%= image_path "box12.jpg"%>);
+	background-size: cover;
+	background-position: center;
+}
+
+#banner_content {
+	box-sizing: border-box;
+	position: absolute;
+	bottom: calc(42% - 200px);
+	left: calc(50% - 250px);
+	padding-top: 50px;
+	margin: auto;
+	text-align: center;
+	height: 500px;
+	width: 500px;
+	border-radius: 250px;
+	background-color: #FFFFFF;
+	transition: 1s;
+	-webkit-transition: 1s;
+}
+
+#banner_content:hover {
+	box-shadow: 0px 0px 15px 1px #333333;
 }
 
 #logo {
 	margin: auto;
-	display: block;
-	height: 175px;
-	width: 175px;
-	background-image: url(<%= image_path "logo.svg" %>);
-	background-size: cover;
-}
-
-#logo:hover {
-	background-size: 185px 185px;
+	margin-top: -12px;
+	width: 200px;
+	height: 200px;
+	background-image: url(<%= image_path "logo.jpg"%>);
+	background-size: contain;
+	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.tab {
-	font-family: Oswald, sans-serif;
-	text-decoration: none;
-	color: #CCCCCC;
-	font-size: 1.5em;
-	padding: 20px;
-	transition: 0.25s;
-	-webkit-transition: 0.25s;
-}
-
-.tab:hover {
-	color: #F79663;
-}
-
-#banner {
-	box-sizing: border-box;
-	float: left;
+#banner_blurb {
 	text-align: center;
-	width: 100%;
-	padding-top: 60px;
-	height: 550px;
-	background-image: url(<%= image_path "beauty.jpg" %>);
-	background-size: cover;
-	animation: beautify 4s;
-	-webkit-animation: beautify 4s;
-}
-
-@keyframes beautify
-{
-	0%	{background-image: url(<%= image_path "bland.jpg" %>);}
-	100%{background-image: url(<%= image_path "beauty.jpg" %>);}
-}
-
-@-webkit-keyframes beautify
-{
-	0%	{background-image: url(<%= image_path "bland.jpg" %>);}
-	100%{background-image: url(<%= image_path "beauty.jpg" %>);}
-}
-
-#mission {
-	font-family: Lobster, cursive;
-	font-size: 4em;
-	color: white;
-	animation: fade 3.5s;
-	-webkit-animation: fade 3.5s;
+	font-family: Merriweather, serif;
+	padding: 75px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	line-height: 2em;
+	color: #000000;
 }
 
 .button {
-	display: block;
 	margin: auto;
-	font-family: Oswald, sans-serif;
+	font-family: Lobster, cursive;
+	font-size: 32px;
 	text-decoration: none;
-	font-size: 1em;
-	height: 25px;
-	width: 110px;
-	padding: 22px;
-	border: 2px solid white;
-	color: #FFFFFF;
-	transition: 0.25s;
-	-webkit-transition: 0.25s;
-}
-
-#banner_button {
-	animation: fade 3.5s;
-	-webkit-animation: fade 3.5s;
+	color: #CCCCCC;
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
 }
 
 .button:hover {
-	border-color: #F79663;
-	color: #F79663;
+	color: #928BC1;
+	transition: 0.1s;
+	-webkit-transition: 0.1s;
 }
 
-@keyframes fade
-{
-	0%	{opacity: 0;}
-	75%	{opacity: 0;}
-	100%{opacity: 1;}
+
+@media (max-width: 1601px){
+    #banner_content {
+        bottom: calc(43% - 200px);
+		left: calc(50% - 200px);
+		height: 400px;
+		width: 400px;
+    }
+
+    #logo {
+    	margin-top: -25px;
+    	width: 150px;
+    	height: 150px;
+    }
+
+    #banner_blurb {
+    	padding-top: 12px;
+    	padding-bottom: 12px;
+    }
+
+    .button {
+		font-size:  24px;
+	}
 }
 
-@-webkit-keyframes fade
-{
-	0%	{opacity: 0;}
-	75%	{opacity: 0;}
-	100%{opacity: 1;}
-}
+@media (max-width: 1367px){
+    #banner_content {
+        bottom: calc(44% - 175px);
+		left: calc(50% - 175px);
+		height: 350px;
+		width: 350px;
+    }
 
-.container {
-	float: left;
-	width: 100%;
-}
+    #logo {
+    	margin-top: 5px;
+    	width: 200px;
+    	height: 200px;
+    }
 
-.content {
- 	margin: auto;
- 	width: 1000px;
-}
+    #banner_blurb {
+    	display: none;
+    }
 
-#process_title {
-	text-align: center;
-	margin-top: 75px;
-	font-family: Oswald, sans-serif;
-	font-size: 2em;
-	color: #CCCCCC;
-}
-
-.step {
-	box-sizing: border-box;
-	float: left;
-	text-align: center;
-	font-family: Merriweather, serif;
-	font-size: 1em;
-	line-height: 2em;
-	width: 333px;
-	padding: 30px;
-	padding-top: 50px;
-	height: 475px;
-	color: #333333;
-}
-
-.step_title {
-	font-family: Lobster, cursive;
-	font-size: 2em;
-	color: #F79663;
-}
-
-#step1 {
-	margin: auto;
-	display: block;
-	height: 125px;
-	width: 125px;
-	background-image: url(<%= image_path "step1.svg" %>);
-	background-size: cover;
-}
-
-#step2 {
-	margin: auto;
-	display: block;
-	height: 125px;
-	width: 125px;
-	background-image: url(<%= image_path "step2.svg" %>);
-	background-size: cover;
-}
-
-#step3 {
-	margin: auto;
-	display: block;
-	height: 125px;
-	width: 125px;
-	background-image: url(<%= image_path "step3.svg" %>);
-	background-size: cover;
-}
-
-#process_button {
-	margin-top: 450px;
-	text-align: center;
-	margin-bottom: 75px;
-	color: #CCCCCC;
-	border-color: #CCCCCC;
-}
-
-#process_button:hover {
-	border-color: #F79663;
-	color: #F79663;
-}
-
-#footer {
-	background: #F79663;
-}
-
-#footer_title {
-	text-align: center;
-	margin-top: 75px;
-	font-family: Oswald, sans-serif;
-	font-size: 2em;
-	color: #FFFFFF;
-}
-
-#footer_buttons {
-	box-sizing: border-box;
-	padding-left: 250px;
-	padding-right: 250px;
-	width: 100%;
-	height: 125px;
-	text-align: center;
-}
-
-#twitter {
-	float: left;
-	height: 125px;
-	width: 125px;
-	margin: 20px;
-	background-image: url(<%= image_path "twitter.png" %>);
-	background-size: cover;
-	transition: 0.25s;
-	-webkit-transition: 0.25s;
-	opacity: 1;
-}
-
-#facebook {
-	float: left;
-	height: 125px;
-	width: 125px;
-	margin: 20px;
-	background-image: url(<%= image_path "facebook.png" %>);
-	background-size: cover;
-	transition: 0.25s;
-	-webkit-transition: 0.25s;
-	opacity: 1;
-}
-
-#linkedin {
-	float: left;
-	height: 125px;
-	width: 125px;
-	margin: 20px;
-	background-image: url(<%= image_path "linkedin.png" %>);
-	background-size: cover;
-	transition: 0.25s;
-	-webkit-transition: 0.25s;
-	opacity: 1;
-}
-
-#copyright {
-	float: left;
-	width: 100%;
-	margin-top: 25px;
-	margin-bottom: 75px;
-	text-align: center;
-	font-family: Merriweather, serif;
-	font-size: 1em;
-	color: white;
+    .button {
+		font-size:  24px;
+	}
 }
