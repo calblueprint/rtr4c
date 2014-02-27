@@ -1,3 +1,3 @@
 class Product < ActiveRecord::Base
-	has_one :image, :as => :imageable
+  has_one :image, :as => :imageable
 end
