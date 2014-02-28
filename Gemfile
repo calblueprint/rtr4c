@@ -38,6 +38,10 @@ gem 'newrelic_rpm'
 gem 'paperclip'
 gem 'aws-sdk'
 
+# To use ActiveModel has_secure_password
+gem 'bcrypt-ruby'
+gem 'protected_attributes'
+
 # For Heroku (https://github.com/heroku/rails_12factor)
 gem 'rails_12factor', group: :production
 

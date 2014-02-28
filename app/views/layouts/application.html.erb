@@ -11,6 +11,11 @@
 </head>
 <body>
 
+<div id="user_header">
+	<!-- make sure to change this since we only want a few users-->	
+	<%= link_to "Sign Up", new_user_path %>
+	<%= link_to "Log In", new_session_path %>
+</div>
 <%= yield %>
 
 </body>
