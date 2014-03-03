@@ -1,0 +1,22 @@
+<h1> RTR4C Press Updates </h1>
+<%= link_to 'New Press Update', 'press_updates/new' %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Link</th>
+    <th>Video Link</th>
+    <th></th>
+  </tr>
+
+<% @press.each do |press| %>
+  <tr>
+    <td><%= press.title %></td>
+    <td><%=h auto_link(press.link) %></td>
+    <td><%= press.videolink %></td>
+    <td><%= link_to 'Show', press %></td>
+    <td><%= link_to 'Edit', edit_press_update_path(press) %></td>
+    <td><%= link_to 'Destroy', press, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

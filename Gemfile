@@ -4,6 +4,8 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -31,6 +33,9 @@ group :doc do
 end
 
 gem 'pg', '0.17.1'
+
+#Convert text URLS to hyperlinks
+gem 'rails_autolink'
 
 # New Relic for monitoring
 gem 'newrelic_rpm'

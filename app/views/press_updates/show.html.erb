@@ -1,0 +1,18 @@
+<h1> Press Update was successfully updated </h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @press.title %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%=h auto_link(@press.link) %>
+</p>
+
+<p>
+  <strong>VideoLink:</strong>
+  <%= @press.videolink %>
+</p>
+
+<%= link_to 'All Press Updates', press_updates_path %>
