@@ -1,6 +1,5 @@
 Rtr4c::Application.routes.draw do
 
-  get "press_updates/new"
   resources :updates
   resources :press_updates
   root 'welcome#index'
