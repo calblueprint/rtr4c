@@ -1,13 +1,13 @@
 Rtr4c::Application.routes.draw do
 
   resources :sessions
-  resources :users
+  resources :users, except: [:new, :create]
   resources :updates
-  resources :products
-
-  
+  resources :press_updates
   root 'welcome#index'
 
+  resources :products
+  resources :charges
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
