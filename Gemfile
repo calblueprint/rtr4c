@@ -32,6 +32,9 @@ end
 
 gem 'pg', '0.17.1'
 
+#Convert text URLS to hyperlinks
+gem 'rails_autolink'
+
 # New Relic for monitoring
 gem 'newrelic_rpm'
 

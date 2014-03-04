@@ -1,7 +1,7 @@
 Rtr4c::Application.routes.draw do
 
   resources :updates
-  
+  resources :press_updates
   root 'welcome#index'
 
   resources :products
