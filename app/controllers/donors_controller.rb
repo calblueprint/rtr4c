@@ -15,7 +15,7 @@ class DonorsController < ApplicationController
           :card => token,
           :description => "Donation from " + @donor.email
         )
-        format.html { redirect_to @donor, notice: 'donor was successfully created.' }
+        format.html { redirect_to @donor, notice: 'Donor was successfully created.' }
         format.json { render action: 'show', status: :created, location: @donor }
       else
         format.html { render action: 'new' }
@@ -30,6 +30,19 @@ class DonorsController < ApplicationController
 
   def show
     @donor = Donor.find(params[:id])
+  end
+
+  def update
+    @donor = Donor.find(params[:id])
+    respond_to do |format|
+      if @product.update(params[:product].permit(:name, :description, :price, :photo))
+        format.html { redirect_to @donor, notice: 'Donor was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @donor.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
