@@ -16,6 +16,17 @@ ActiveRecord::Schema.define(version: 20140302225523) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "donors", force: true do |t|
+    t.string   "amount"
+    t.string   "email"
+    t.string   "name"
+    t.string   "title"
+    t.text     "message"
+    t.string   "profile"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "press_updates", force: true do |t|
     t.string   "title"
     t.string   "link"
