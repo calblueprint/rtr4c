@@ -35,7 +35,7 @@ class DonorsController < ApplicationController
   def update
     @donor = Donor.find(params[:id])
     respond_to do |format|
-      if @product.update(params[:product].permit(:name, :description, :price, :photo))
+      if @donor.update(params[:donor].permit(:amount, :email, :name, :title, :message, :profile))
         format.html { redirect_to @donor, notice: 'Donor was successfully updated.' }
         format.json { head :no_content }
       else
