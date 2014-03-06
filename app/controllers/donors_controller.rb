@@ -4,17 +4,9 @@ class DonorsController < ApplicationController
   end
 
   def create
-    @donor = Donor.new(params[:donor].permit(:amount, :email, :name, :title, :message, :profile))
-    token = params[:stripeToken]
-    charge = @donor[:amount].to_i * 100
+    @donor = Donor.new(params[:donor].permit(:amount, :email, :name, :title, :profile))
     respond_to do |format|
       if @donor.save
-        charge = Stripe::Charge.create(
-          :amount => charge,
-          :currency => "usd",
-          :card => token,
-          :description => "Donation from " + @donor.email
-        )
         format.html { redirect_to @donor, notice: 'Donor was successfully created.' }
         format.json { render action: 'show', status: :created, location: @donor }
       else
