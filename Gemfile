@@ -38,6 +38,9 @@ gem 'rails_autolink'
 # New Relic for monitoring
 gem 'newrelic_rpm'
 
+#CarrierWave for photo uploads
+gem 'carrierwave'
+
 gem 'aws-sdk'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
