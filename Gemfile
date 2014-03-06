@@ -38,7 +38,6 @@ gem 'rails_autolink'
 # New Relic for monitoring
 gem 'newrelic_rpm'
 
-gem 'paperclip'
 gem 'aws-sdk'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
