@@ -1,2 +1,3 @@
 class GalleriesController < ApplicationController
+  
 end
