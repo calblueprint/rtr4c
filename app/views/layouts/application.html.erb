@@ -11,15 +11,6 @@
 </head>
 <body>
 
-<div id="user_header">
-  <% if current_user %>
-    Logged in as <%= current_user.email %>
-    <%= link_to "Log Out", session_path("current"), method: "delete" %>
-  <% else %>
-    <%= link_to "Log In", new_session_path %>
-  <% end %>
-</div>
-
 <%= yield %>
 
 </body>

@@ -40,6 +40,7 @@ gem 'newrelic_rpm'
 
 #CarrierWave for photo uploads
 gem 'carrierwave'
+gem 'fog'
 
 gem 'aws-sdk'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
