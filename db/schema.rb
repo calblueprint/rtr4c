@@ -22,17 +22,6 @@ ActiveRecord::Schema.define(version: 20140306040730) do
     t.datetime "updated_at"
   end
 
-  create_table "images", force: true do |t|
-    t.integer  "imageable_id"
-    t.string   "imageable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
-  end
-
   create_table "photos", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -59,15 +48,6 @@ ActiveRecord::Schema.define(version: 20140306040730) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-  end
-
-  create_table "projects", force: true do |t|
-    t.string   "name"
-    t.date     "date"
-    t.text     "location"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "updates", force: true do |t|
