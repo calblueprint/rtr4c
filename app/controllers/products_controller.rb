@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(params[:product].permit(:name, :description, :price, :photo))
+    @product = Product.new(product_params)
 
     respond_to do |format|
       if @product.save
@@ -46,7 +46,7 @@ class ProductsController < ApplicationController
     @product = set_product
 
     respond_to do |format|
-      if @product.update(params[:product].permit(:name, :description, :price, :photo))
+      if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
