@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(params[:photo])
+    @photo = Photo.new(params[:photo].permit(:name, :image, :gallery_id, :remote_image_url))
     if @photo.save
       flash[:notice] = "Successfully created photo."
       redirect_to @photo.gallery
@@ -19,7 +19,7 @@ class PhotosController < ApplicationController
 
   def update
     @photo = Photo.find(params[:id])
-    if @photo.update_attributes(params[:photo])
+    if @photo.update_attributes(params[:photo].permit(:name, :image, :gallery_id, :remote_image_url))
       flash[:notice] = "Successfully updated photo."
       redirect_to @photo.gallery
     else

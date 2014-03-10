@@ -1,9 +1,7 @@
-<% title @gallery.name %>
-
 <div id="photos">
   <% for photo in @gallery.photos %>
     <div class="photo">
-      <%= image_tag photo.image_url(:thumb) if photo.image? %>
+      <%= image_tag photo.image_url if photo.image? %>
       <div class="name"><%= photo.name %></div>
       <div class="actions">
         <%= link_to "edit", edit_photo_path(photo) %> |

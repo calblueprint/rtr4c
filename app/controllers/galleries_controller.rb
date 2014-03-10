@@ -12,7 +12,7 @@ class GalleriesController < ApplicationController
   end
 
   def create
-    @gallery = Gallery.new(params[:gallery])
+    @gallery = Gallery.new(params[:gallery].permit(:name))
     if @gallery.save
       flash[:notice] = "Successfully created gallery."
       redirect_to @gallery
