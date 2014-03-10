@@ -88,6 +88,7 @@ GEM
     mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.8.4)
+    nested_form (0.3.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.8.0)
@@ -171,6 +172,7 @@ DEPENDENCIES
   fog
   jbuilder (~> 1.2)
   jquery-rails
+  nested_form
   newrelic_rpm
   pg (= 0.17.1)
   rails (= 4.0.2)

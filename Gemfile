@@ -42,6 +42,8 @@ gem 'newrelic_rpm'
 gem 'carrierwave'
 gem 'fog'
 
+gem 'nested_form'
+
 gem 'aws-sdk'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
