@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
   # attr_accessible :gallery_id, :name, :image <-- used as reference for now
-	belongs_to :gallery
+	belongs_to :imageable
   mount_uploader :image, ImageUploader
 end
