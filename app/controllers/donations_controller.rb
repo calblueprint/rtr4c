@@ -21,12 +21,14 @@ class DonationsController < ApplicationController
         )
         @donor = Donor.find_by(email: params[:email])
         if @donor.nil?
-          Donor.create(params[:amount], params[:email], params[:name], params[:title], params[:profile])
-          Donor.donations << @donation
+          @donor = Donor.new(params[:donation].permit(:amount, :email, :name, :title, :profile))
+          @donor.donations << @donation
+          @donor.save
         else
           new_amt = @donor.amount.to_i + params[:amount].to_i
           @donor.update_attributes(:amount => new_amt)
           @donor.donations << @donation
+          @donor.save
         end
 
         format.html { redirect_to @donation, notice: 'Donation was successfully created.' }
@@ -45,13 +47,14 @@ class DonationsController < ApplicationController
 
   def show
     @donation = Donation.find(params[:id])
+    # @donor = Donor.find_by(email: params[:email])
   end
 
   def update
     @donation = Donation.find(params[:id])
     respond_to do |format|
       if @donation.update(params[:donation].permit(:amount, :email, :name, :title, :message, :profile))
-        format.html { redirect_to @donation, notice: 'Donor was successfully updated.' }
+        format.html { redirect_to @donation, notice: 'Donation was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

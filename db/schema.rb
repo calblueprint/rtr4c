@@ -25,11 +25,10 @@ ActiveRecord::Schema.define(version: 20140306032405) do
   end
 
   create_table "donors", force: true do |t|
-    t.string   "amount"
+    t.decimal  "amount"
     t.string   "email"
     t.string   "name"
     t.string   "title"
-    t.text     "message"
     t.string   "profile"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -58,6 +57,13 @@ ActiveRecord::Schema.define(version: 20140306032405) do
   create_table "updates", force: true do |t|
     t.string   "header"
     t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
