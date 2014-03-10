@@ -1,6 +1,6 @@
 jQuery(function($){
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
-  $('#new_donor').submit(function(event) {
+  $('#new_donation').submit(function(event) {
     var $form = $(this);
     $('input[type=submit]').attr('disabled', true);
     Stripe.card.createToken($form, stripeResponseHandler);
@@ -8,7 +8,7 @@ jQuery(function($){
   });
 
   var stripeResponseHandler = function(status, response) {
-    var $form = $('#new_donor');
+    var $form = $('#new_donation');
     if (status == 200) {
       var token = response.id;
       $form.append($('<input type="hidden" name="stripeToken" />').val(token));

@@ -20,6 +20,10 @@ class DonorsController < ApplicationController
     @donors = Donor.all
   end
 
+  def edit
+    @donor = Donor.find(params[:id])
+  end 
+
   def show
     @donor = Donor.find(params[:id])
   end

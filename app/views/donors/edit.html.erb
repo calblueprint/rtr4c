@@ -1,4 +1,4 @@
-<h1> New Donor </h1>
+<h1> Edit Donor </h1>
 <%= form_for @donor do |f| %>  
   <% if @donor.errors.any? %>  
     <div class="error_messages">  
@@ -9,7 +9,8 @@
       <% end %>  
       </ul>
     </div>  
-  <% end %> 
+  <% end %>
+  <span class="payment-errors"></span>    
   <div class="field">  
     <%= f.label :name %>  
     <%= f.text_field :name, :value => "Hao Guan" %>  
@@ -30,5 +31,5 @@
     <%= f.label :amount %>  
     <%= f.number_field :amount, :value => "10" %>  
   </div>                  
-  <div class="actions"><%= f.submit "Create Donor" %></div>  
-<% end %>  
+  <div class="actions"><%= f.submit "Edit Donor" %></div>  
+<% end %> 

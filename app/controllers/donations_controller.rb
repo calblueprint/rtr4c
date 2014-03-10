@@ -8,7 +8,7 @@ class DonationsController < ApplicationController
   end
 
   def create
-    @donation = Donation.new(params[:donation].permit(:amount, :email, :name, :title, :message, :profile))
+    @donation = Donation.new(params[:donation].permit(:amount, :message))
     token = params[:stripeToken]
     charge = @donation[:amount].to_i * 100
     respond_to do |format|
@@ -17,14 +17,14 @@ class DonationsController < ApplicationController
           :amount => charge,
           :currency => "usd",
           :card => token,
-          :description => "Donation from " + @donation.email
+          :description => "Donation from " + params[:email]
         )
-        @donor = Donor.find(email: params[:email])
+        @donor = Donor.find_by(email: params[:email])
         if @donor.nil?
           Donor.create(params[:amount], params[:email], params[:name], params[:title], params[:profile])
           Donor.donations << @donation
         else
-          new_amt = @donor[:amount].to_i + params[:amount]
+          new_amt = @donor.amount.to_i + params[:amount].to_i
           @donor.update_attributes(:amount => new_amt)
           @donor.donations << @donation
         end
