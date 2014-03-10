@@ -9,7 +9,10 @@ Rtr4c::Application.routes.draw do
   resources :press_updates
   root 'welcome#index'
 
-  resources :products
+  resources :products do
+    resources :photos
+  end
+  
   resources :charges
   resources :photos
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,13 @@
+<h1>Photos</h1>
+
+<div id="photos">
+
+<% @photos.each do |photo| %>
+  <div class="photo">
+    <%= image_tag photo.url %>
+  </div>
+<% end %>
+
+</div>
+
+<p><%= link_to "Add new photo", [:new, @commentable, :comment] %></p>
