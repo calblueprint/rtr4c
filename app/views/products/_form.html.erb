@@ -20,8 +20,12 @@
       <%= image_form.text_field :name %>
       <%= image_form.label :photo %><br>
       <%= image_form.file_field :photo %><br>
+
       <%= image_form.check_box :_destroy %>
       <%= image_form.label :_destroy, "Remove image" %>
+
+      <%= image_form.link_to_remove "Remove image" %>
+
     </fieldset>
   <% end %>
   <%= f.link_to_add "Add photo", :images %>
