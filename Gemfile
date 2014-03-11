@@ -41,13 +41,17 @@ gem 'newrelic_rpm'
 
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'nested_form'
+
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+# gem 'protected_attributes'
 
 # For Heroku (https://github.com/heroku/rails_12factor)
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
