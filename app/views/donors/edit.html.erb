@@ -1,0 +1,35 @@
+<h1> Edit Donor </h1>
+<%= form_for @donor do |f| %>  
+  <% if @donor.errors.any? %>  
+    <div class="error_messages">  
+      <h2><%= pluralize(@donor.errors.count, "error") %> prohibited this donor from being saved:</h2>  
+      <ul>  
+      <% @donor.errors.full_messages.each do |msg| %>  
+        <li><%= msg %></li>  
+      <% end %>  
+      </ul>
+    </div>  
+  <% end %>
+  <span class="payment-errors"></span>    
+  <div class="field">  
+    <%= f.label :name %>  
+    <%= f.text_field :name %>  
+  </div>    
+  <div class="field">  
+    <%= f.label :email %>  
+    <%= f.text_field :email%>  
+  </div>    
+  <div class="field">  
+    <%= f.label :title %>  
+    <%= f.text_field :title %>  
+  </div>
+  <div class="field">  
+    <%= f.label :profile %>  
+    <%= f.text_field :profile %>  
+  </div>
+  <div class="field">  
+    <%= f.label :amount %>  
+    <%= f.number_field :amount %>  
+  </div>                  
+  <div class="actions"><%= f.submit "Edit Donor" %></div>  
+<% end %> 
