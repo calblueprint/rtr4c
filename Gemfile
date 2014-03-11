@@ -40,6 +40,8 @@ gem 'newrelic_rpm'
 
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'nested_form'
+
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # gem 'protected_attributes'

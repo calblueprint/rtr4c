@@ -15,7 +15,6 @@
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td>$<%= product.price %></td>
-        <td><%= image_tag product.photo.url %></td>
         <% if current_user %>
           <td><%= link_to 'Show', product %></td>
           <td><%= link_to 'Edit', edit_product_path(product) %></td>
