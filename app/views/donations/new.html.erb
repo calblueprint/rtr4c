@@ -1,0 +1,53 @@
+<h1> New Donation </h1>
+
+<%= form_for @donation do |f| %>  
+  <% if @donation.errors.any? %>  
+    <div class="error_messages">  
+      <h2><%= pluralize(@donation.errors.count, "error") %> prohibited this donation from being saved:</h2>  
+      <ul>  
+      <% @donation.errors.full_messages.each do |msg| %>  
+        <li><%= msg %></li>  
+      <% end %>  
+      </ul>
+    </div>  
+  <% end %>
+  <span class="payment-errors"></span>    
+  <div class="field">  
+    <%= label_tag :name %>  
+    <%= text_field_tag :name %>  
+  </div>    
+  <div class="field">  
+    <%= label_tag :email %>  
+    <%= text_field_tag :email %>  
+  </div>    
+  <div class="field">  
+    <%= label_tag :title %>  
+    <%= text_field_tag :title %>  
+  </div>
+  <div class="field">  
+    <%= label_tag :profile %>  
+    <%= text_field_tag :profile %>  
+  </div>
+  <div class="field">  
+    <%= f.label :amount %>  
+    <%= f.number_field :amount %>  
+  </div>
+  <div class="field">  
+    <%= f.label :message %>  
+    <%= f.text_area :message %>  
+  </div> 
+  <div class="field">  
+    <%= label_tag :card_number, "Credit Card Number " %>  
+    <%= text_field_tag :card_number, "4242 4242 4242 4242", name: nil, :data => {:stripe => 'number'} %>  
+  </div>  
+  <div class="field">  
+    <%= label_tag :card_code, "Security Code on Card (CVV)" %>  
+    <%= text_field_tag :card_code, "123", name: nil, :data => {:stripe => 'cvc'} %>  
+  </div>  
+  <div class="field">  
+    <%= label_tag :card_month, "Card Expiration" %>  
+    <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month", :data => {:stripe => 'exp-month'}} %>  
+    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :data => {:stripe => 'exp-year'}} %>  
+  </div>                 
+  <div class="actions"><%= f.submit "Donate" %></div>  
+<% end %>  
