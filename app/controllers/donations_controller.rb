@@ -47,15 +47,15 @@ class DonationsController < ApplicationController
   end
 
   def show
-    @donation = Donation.find(params[:id])
+    @donation = set_donation
   end
 
   def edit
-    @donation = Donation.find(params[:id])
+    @donation = set_donation
   end 
 
   def update
-    @donation = Donation.find(params[:id])
+    @donation = set_donation
     prev_amt = @donation.amount
     respond_to do |format|
       if @donation.update(:amount => params[:donation][:amount], :message => params[:donation][:message])
@@ -73,11 +73,19 @@ class DonationsController < ApplicationController
   end
 
   def destroy
-    @donation = Donation.find(params[:id])
+    @donation = set_donation
+    @donor = @donation.donor
+    new_amt = @donor.amount.to_i - @donation.amount.to_i
+    @donor.update_attributes(:amount => new_amt)
     @donation.destroy
     respond_to do |format|
       format.html { redirect_to donations_url }
       format.json { head :no_content }
     end
   end
+
+  private
+    def set_donation
+      @donation = Donation.find(params[:id])
+    end
 end

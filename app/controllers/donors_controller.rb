@@ -4,7 +4,7 @@ class DonorsController < ApplicationController
   end
 
   def create
-    @donor = Donor.new(params[:donor].permit(:amount, :email, :name, :title, :profile))
+    @donor = Donor.new(donor_params)
     respond_to do |format|
       if @donor.save
         format.html { redirect_to @donor, notice: 'Donor was successfully created.' }
@@ -31,7 +31,7 @@ class DonorsController < ApplicationController
   def update
     @donor = Donor.find(params[:id])
     respond_to do |format|
-      if @donor.update(params[:donor].permit(:amount, :email, :name, :title, :message, :profile))
+      if @donor.update(donor_params)
         format.html { redirect_to @donor, notice: 'Donor was successfully updated.' }
         format.json { head :no_content }
       else
@@ -49,5 +49,10 @@ class DonorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+    def donor_params
+      params[:donor].permit(:amount, :email, :name, :title, :profile)
+    end
 
 end
