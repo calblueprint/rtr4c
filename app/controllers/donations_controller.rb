@@ -8,7 +8,8 @@ class DonationsController < ApplicationController
   end
 
   def create
-    @donation = Donation.new(params[:donation].permit(:amount, :message))
+    #no need to use permits if you are not passing in all params!
+    @donation = Donation.new(:amount => params[:donation][:amount], :message => params[:donation][:message]) 
     token = params[:stripeToken]
     charge = @donation[:amount].to_i * 100
     respond_to do |format|
@@ -21,11 +22,11 @@ class DonationsController < ApplicationController
         )
         @donor = Donor.find_by(email: params[:email])
         if @donor.nil?
-          @donor = Donor.new(params[:donation].permit(:amount, :email, :name, :title, :profile))
+          @donor = Donor.new(:amount => params[:donation][:amount], :email => params[:email], :name => params[:name], :title => params[:title], :profile => params[:profile])
           @donor.donations << @donation
           @donor.save
         else
-          new_amt = @donor.amount.to_i + params[:amount].to_i
+          new_amt = @donor.amount.to_i + params[:donation][:amount].to_i
           @donor.update_attributes(:amount => new_amt)
           @donor.donations << @donation
           @donor.save
@@ -47,13 +48,21 @@ class DonationsController < ApplicationController
 
   def show
     @donation = Donation.find(params[:id])
-    # @donor = Donor.find_by(email: params[:email])
   end
+
+  def edit
+    @donation = Donation.find(params[:id])
+  end 
 
   def update
     @donation = Donation.find(params[:id])
+    prev_amt = @donation.amount
     respond_to do |format|
-      if @donation.update(params[:donation].permit(:amount, :email, :name, :title, :message, :profile))
+      if @donation.update(:amount => params[:donation][:amount], :message => params[:donation][:message])
+        @donor = @donation.donor
+        new_amt = @donor.amount.to_i - prev_amt.to_i + params[:donation][:amount].to_i
+        @donor.update_attributes(:amount => new_amt)
+
         format.html { redirect_to @donation, notice: 'Donation was successfully updated.' }
         format.json { head :no_content }
       else
