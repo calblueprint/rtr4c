@@ -1,257 +1,238 @@
+@font-face
+{
+  font-family: OneDirection;
+  src: url(<%= image_path "OneDirection.ttf"%>);
+}
+
 body {
   margin: 0px;
-  background: #928BC1;
+  background: url(<%= image_path "texture.png"%>);
 }
 
 p {
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  line-height: 2em;
   font-size: 13px;
   margin: 0px;
+  font-family: Merriweather, serif;
+  font-weight: normal;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-family: Love Ya Like A Sister, cursive;
+  font-size: 64px;
+  color: #333333;
+  font-weight: normal;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 32px;
+  color: #333333;
+  font-weight: normal;
+}
+
+#top {
+  position: fixed;
+  top: 0px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  background-image: url(<%= image_path "ribbon.png"%>);
+  background-size: cover;
+}
+
+#top:hover {
+  cursor: pointer;
+}
+
+.border {
+  margin: auto;
+  width: 150px;
+  border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 25px;
+}
+
+.container {
+  float: left;
+  width: 100%;
+}
+
+.content {
+  margin: auto;
+  width: 1000px;
+}
+
+.third {
+  width: 333px;
+  height: 425px;
+  float: left;
+}
+
+#navbar_container {
+  float: left;
+  width: 100%;
+  height: 150px;
 }
 
 #navbar {
-  box-sizing: border-box;
-  float: left;
-  width: 100%;
-  padding-top: 35px;
-  height: 100px;
-  background-image: url(<%= image_path "binding_dark.png"%>);;
-  text-align: center;
-  transition: 1s;
-  -webkit-transition: 1s;
-}
-
-#navbar:hover {
-  box-shadow: 0px 0px 15px 1px #333333;
-}
-
-.tab {
-  font-family: Lobster, cursive;
-  text-decoration: none;
-  color: #FFFFFF;
-  font-size: 20px;
-  padding: 20px;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-}
-
-.tab:hover {
-  color: #928BC1;
-  transition: 0.1s;
-  -webkit-transition: 0.1s;
-}
-
-.box {
-  float: left;
-  width: 25%;
-  height: 100%;
-  transition: 0.1s;
-  -webkit-transition: 0.1s;
-}
-
-.box:hover {
-  cursor: pointer;
-  opacity: 0.5;
-}
-
-#box_row1 {
-  position: absolute;
-  left: 0px;
-  bottom: calc(66% - 60px);;
-  width: 100%;
-  height: calc(33% - 30px);
-  z-index: -1;
-}
-
-#box_row2 {
-  position: absolute;
-  left: 0px;
-  bottom: calc(33% - 30px);
-  width: 100%;
-  height: calc(33% - 30px);
-  z-index: -1;
-}
-
-#box_row3 {
-  position: absolute;
-  left: 0px;
-  bottom: 0%;
-  width: 100%;
-  height: calc(33% - 30px);
-  z-index: -1;
-}
-
-#box1 {
-  background-image: url(<%= image_path "box1.jpg"%>);
-  background-size: cover;
-  background-position: center;
-}
-
-#box2 {
-  background-image: url(<%= image_path "box2.jpg"%>);
-  background-size: cover;
-  background-position: center;
-}
-
-#box3 {
-  background-image: url(<%= image_path "box3.jpg"%>);
-  background-size: cover;
-  background-position: center;
-}
-
-#box4 {
-  background-image: url(<%= image_path "box4.jpg"%>);
-  background-size: cover;
-  background-position: center;
-}
-
-#box5 {
-  background-image: url(<%= image_path "box5.jpg"%>);
-  background-size: cover;
-  background-position: center;
-}
-
-#box6 {
-  background-image: url(<%= image_path "box69.jpg"%>);
-  background-size: cover;
-  background-position: center;
-}
-
-#box7 {
-  background-image: url(<%= image_path "box7.jpg"%>);
-  background-size: cover;
-  background-position: center;
-}
-
-#box8 {
-  background-image: url(<%= image_path "box8.jpg"%>);
-  background-size: cover;
-  background-position: center;
-}
-
-#box9 {
-  background-image: url(<%= image_path "box9.jpg"%>);
-  background-size: cover;
-  background-position: center;
-}
-
-#box10 {
-  background-image: url(<%= image_path "box10.jpg"%>);
-  background-size: cover;
-  background-position: center;
-}
-
-#box11 {
-  background-image: url(<%= image_path "box11.jpg"%>);
-  background-size: cover;
-}
-
-#box12 {
-  background-image: url(<%= image_path "box12.jpg"%>);
-  background-size: cover;
-  background-position: center;
-}
-
-#banner_content {
-  box-sizing: border-box;
-  position: absolute;
-  bottom: calc(42% - 200px);
-  left: calc(50% - 250px);
-  padding-top: 50px;
   margin: auto;
+  width: 1000px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
   text-align: center;
-  height: 500px;
-  width: 500px;
-  border-radius: 250px;
-  background-color: #FFFFFF;
-  transition: 1s;
-  -webkit-transition: 1s;
-}
-
-#banner_content:hover {
-  box-shadow: 0px 0px 15px 1px #333333;
 }
 
 #logo {
-  margin: auto;
-  margin-top: -12px;
-  width: 200px;
-  height: 200px;
-  background-image: url(<%= image_path "logo.jpg"%>);
+  float: left;
+  margin-top: 25px;
+  width: 100px;
+  height: 100px;
+  background-image: url(<%= image_path "logo.png"%>);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#banner_blurb {
-  text-align: center;
-  font-family: Merriweather, serif;
-  padding: 75px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  line-height: 2em;
-  color: #000000;
+#logo:hover {
+  cursor: pointer;
 }
 
-.button {
-  margin: auto;
-  font-family: Lobster, cursive;
-  font-size: 32px;
+.tab {
+  float: right;
+  text-align: left;
+  font-family: 'Patrick Hand SC', cursive;
+  border-top: 1px solid #CCCCCC;
   text-decoration: none;
-  color: #CCCCCC;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
+  color: #333333;
+  font-size: 20px;
+  width: 90px;
+  margin: 25px;
+  padding-top: 15px;
+  margin-top: 65px;
 }
 
-.button:hover {
-  color: #928BC1;
-  transition: 0.1s;
-  -webkit-transition: 0.1s;
+.tab:hover {
+  border-top: 3px solid #b77ed2;
 }
 
-
-@media (max-width: 1601px){
-  #banner_content {
-    bottom: calc(43% - 200px);
-    left: calc(50% - 200px);
-    height: 400px;
-    width: 400px;
-  }
-
-  #logo {
-    margin-top: -25px;
-    width: 150px;
-    height: 150px;
-  }
-
-  #banner_blurb {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-
-  .button {
-    font-size: 24px;
-  }
+#banner {
+  float: left;
+  width: 100%;
+  height: 550px;
+  background-image: url(<%= image_path "banner.jpg"%>);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
-@media (max-width: 1367px){
-  #banner_content {
-    bottom: calc(44% - 175px);
-    left: calc(50% - 175px);
-    height: 350px;
-    width: 350px;
-  }
+#banner_title {
+  font-weight: bold;
+  margin-top: 160px;
+  color: #ffffff;
+  font-size: 100px;
+  line-height: 90px;
+}
 
-  #logo {
-    margin-top: 5px;
-    width: 200px;
-    height: 200px;
-  }
+#banner_blurb {
+  font-family: 'Patrick Hand SC', cursive;
+  margin-top: -65px;
+  width: 100%;
+  font-size: 32px;
+  text-align: center;
+  color: #ffffff;
+}
 
-  #banner_blurb {
-    display: none;
-  }
+#what {
+  margin-bottom: 50px;
+}
 
-  .button {
-    font-size: 24px;
-  }
+#featured_container {
+  background: url(<%= image_path "tweed.png"%>);
+}
+
+#featured {
+  color: #ffffff;
+}
+
+.project {
+  float: left;
+  margin: 50px;
+  margin-bottom: 100px;
+  width: 380px;
+  height: 380px;
+  border-radius: 200px;
+  border: 10px solid #333333;
+}
+
+.project:hover {
+  cursor: pointer;
+}
+
+#project1 {
+  background: url(<%= image_path "project1.jpg"%>);
+  background-size: cover;
+}
+
+#project2 {
+  background: url(<%= image_path "project2.jpeg"%>);
+  background-size: cover;
+}
+
+.media {
+  float: left;
+  width: 120px;
+  height: 120px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 65px;
+  border: 5px solid #333333;
+}
+
+.media:hover {
+  cursor: pointer;
+  border: 5px solid #b77ed2;
+}
+
+#facebook {
+  background: url(<%= image_path "facebook.png"%>);
+  background-size: cover;
+  margin-left: 250px;
+}
+
+#facebook:hover {
+  background: url(<%= image_path "facebook_alt.png"%>);
+  background-size: cover;
+}
+
+#linkedin {
+  background: url(<%= image_path "linkedin.png"%>);
+  background-size: cover;
+}
+
+#linkedin:hover {
+  background: url(<%= image_path "linkedin_alt.png"%>);
+  background-size: cover;
+}
+
+#twitter {
+  background: url(<%= image_path "twitter.png"%>);
+  background-size: cover;
+}
+
+#twitter:hover {
+  background: url(<%= image_path "twitter_alt.png"%>);
+  background-size: cover;
+}
+
+#copyright {
+  margin-top: 225px;
+  margin-bottom: 50px;
 }
