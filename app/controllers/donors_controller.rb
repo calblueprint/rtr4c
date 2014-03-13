@@ -1,4 +1,9 @@
 class DonorsController < ApplicationController
+  # tier amounts
+  @@gold_tier = 500
+  @@silver_tier = 250
+  @@bronze_tier = 50
+
   def new
     @donor = Donor.new
   end
@@ -17,7 +22,27 @@ class DonorsController < ApplicationController
   end
 
   def index
+    # need to do donation tiers
     @donors = Donor.all
+    @golds = []
+    @silvers = []
+    @bronzes = []
+    @nonmedals = []
+    @donors.each do |donor|
+      if donor.amount.to_i > @@gold_tier
+        @golds << donor
+      elsif donor.amount.to_i > @@silver_tier
+        @silvers << donor
+      elsif donor.amount.to_i > @@bronze_tier
+        @bronzes << donor
+      else
+        @nonmedals << donor
+      end
+    end
+    @golds.sort_by! {|d| -d[:amount]}
+    @silvers.sort_by! {|d| -d[:amount]}
+    @bronzes.sort_by! {|d| -d[:amount]}
+    @nonmedals.sort_by! {|d| -d[:amount]}
   end
 
   def edit

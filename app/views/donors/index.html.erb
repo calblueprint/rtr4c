@@ -1,24 +1,48 @@
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @donors.each do |donor| %>
-      <tr>
-        <td><%= donor.name %></td>
-        <td><%= donor.email %></td>
-        <td><%= donor.title %></td>
-        <td><%= donor.profile %></td>
-        <td><%= donor.amount %></td>
-        <td><%= link_to 'Show', donor %></td>
-        <td><%= link_to 'Edit', edit_donor_path(donor) %></td>
-        <td><%= link_to 'Destroy', donor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h1> Listing Donors </h1>
+<h2>Gold Tier</h2>
+<% @golds.each do |donor| %>
+<div>
+  <p><%= donor.name %></p>
+  <p><%= donor.email %></p>
+  <p><%= donor.title %></p>
+  <p><%= donor.profile %></p>
+  <p><%= donor.amount %></p>
+  <p><%= link_to 'Show', donor %>  <%= link_to 'Edit', edit_donor_path(donor) %>  <%= link_to 'Destroy', donor, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+</div>
+<% end %>
+<br/><br/>
+<h2>Silver Tier</h2>
+<% @silvers.each do |donor| %>
+<div>
+  <p><%= donor.name %></p>
+  <p><%= donor.email %></p>
+  <p><%= donor.title %></p>
+  <p><%= donor.profile %></p>
+  <p><%= donor.amount %></p>
+  <p><%= link_to 'Show', donor %>  <%= link_to 'Edit', edit_donor_path(donor) %>  <%= link_to 'Destroy', donor, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+</div>
+<% end %>
+<br/><br/>
+<h2>Bronze Tier</h2>
+<% @bronzes.each do |donor| %>
+<div>
+  <p><%= donor.name %></p>
+  <p><%= donor.email %></p>
+  <p><%= donor.title %></p>
+  <p><%= donor.profile %></p>
+  <p><%= donor.amount %></p>
+  <p><%= link_to 'Show', donor %>  <%= link_to 'Edit', edit_donor_path(donor) %>  <%= link_to 'Destroy', donor, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+</div>
+<% end %>
+<br/><br/>
+<h2>Nonmedals Tier</h2>
+<% @nonmedals.each do |donor| %>
+<div>
+  <p><%= donor.name %></p>
+  <p><%= donor.email %></p>
+  <p><%= donor.title %></p>
+  <p><%= donor.profile %></p>
+  <p><%= donor.amount %></p>
+  <p><%= link_to 'Show', donor %>  <%= link_to 'Edit', edit_donor_path(donor) %>  <%= link_to 'Destroy', donor, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+</div>
+<% end %>
