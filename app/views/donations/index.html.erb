@@ -10,6 +10,11 @@
   <tbody>
     <% @donations.each do |donation| %>
       <tr>
+        <%if not donation.donor.nil? %>
+          <td><%= donation.donor.name %></td>
+        <% else %>
+          <td></td>
+        <% end %>
         <td><%= donation.amount %></td>
         <td><%= donation.message %></td>
         <td><%= link_to 'Show', donation %></td>
