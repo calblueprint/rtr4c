@@ -25,7 +25,7 @@ class DonationsController < ApplicationController
         @donor.donations << @donation
         @donor.save
       else
-        new_amt = @donor.amount.to_i + params[:donation][:amount].to_i
+        new_amt = @donor.amount.to_f + params[:donation][:amount].to_f
         @donor.update_attributes(:amount => new_amt)
         @donor.donations << @donation
         @donor.save
@@ -53,7 +53,7 @@ class DonationsController < ApplicationController
     prev_amt = @donation.amount
     if @donation.update(:amount => params[:donation][:amount], :message => params[:donation][:message])
       @donor = @donation.donor
-      new_amt = @donor.amount.to_i - prev_amt.to_i + params[:donation][:amount].to_i
+      new_amt = @donor.amount.to_f - prev_amt.to_f + params[:donation][:amount].to_f
       @donor.update_attributes(:amount => new_amt)
 
       redirect_to @donation, notice: 'Donation was successfully updated.'
@@ -65,7 +65,7 @@ class DonationsController < ApplicationController
   def destroy
     @donation = set_donation
     @donor = @donation.donor
-    new_amt = @donor.amount.to_i - @donation.amount.to_i
+    new_amt = @donor.amount.to_f - @donation.amount.to_f
     @donor.update_attributes(:amount => new_amt)
     @donation.destroy
     redirect_to donations_url

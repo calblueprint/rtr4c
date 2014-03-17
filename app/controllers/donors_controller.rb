@@ -1,8 +1,8 @@
 class DonorsController < ApplicationController
   # tier amounts
-  @@gold_tier = 500
-  @@silver_tier = 250
-  @@bronze_tier = 50
+  @@gold_tier = 500.0
+  @@silver_tier = 250.0
+  @@bronze_tier = 50.0
 
   def new
     @donor = Donor.new
@@ -25,11 +25,11 @@ class DonorsController < ApplicationController
     @bronzes = []
     @nonmedals = []
     @donors.each do |donor|
-      if donor.amount.to_i > @@gold_tier
+      if donor.amount.to_f > @@gold_tier
         @golds << donor
-      elsif donor.amount.to_i > @@silver_tier
+      elsif donor.amount.to_f > @@silver_tier
         @silvers << donor
-      elsif donor.amount.to_i > @@bronze_tier
+      elsif donor.amount.to_f > @@bronze_tier
         @bronzes << donor
       else
         @nonmedals << donor
