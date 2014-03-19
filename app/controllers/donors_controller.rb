@@ -1,8 +1,8 @@
 class DonorsController < ApplicationController
   # tier amounts
-  @@gold_tier = 500
-  @@silver_tier = 250
-  @@bronze_tier = 50
+  @@gold_tier = 500.0
+  @@silver_tier = 250.0
+  @@bronze_tier = 50.0
 
   def new
     @donor = Donor.new
@@ -10,14 +10,10 @@ class DonorsController < ApplicationController
 
   def create
     @donor = Donor.new(donor_params)
-    respond_to do |format|
-      if @donor.save
-        format.html { redirect_to @donor, notice: 'Donor was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @donor }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @donor.errors, status: :unprocessable_entity }
-      end
+    if @donor.save
+      redirect_to @donor, notice: 'Donor was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
@@ -29,11 +25,11 @@ class DonorsController < ApplicationController
     @bronzes = []
     @nonmedals = []
     @donors.each do |donor|
-      if donor.amount.to_i > @@gold_tier
+      if donor.amount.to_f > @@gold_tier
         @golds << donor
-      elsif donor.amount.to_i > @@silver_tier
+      elsif donor.amount.to_f > @@silver_tier
         @silvers << donor
-      elsif donor.amount.to_i > @@bronze_tier
+      elsif donor.amount.to_f > @@bronze_tier
         @bronzes << donor
       else
         @nonmedals << donor
@@ -55,24 +51,17 @@ class DonorsController < ApplicationController
 
   def update
     @donor = Donor.find(params[:id])
-    respond_to do |format|
-      if @donor.update(donor_params)
-        format.html { redirect_to @donor, notice: 'Donor was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @donor.errors, status: :unprocessable_entity }
-      end
+    if @donor.update(donor_params)
+      redirect_to @donor, notice: 'Donor was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @donor = Donor.find(params[:id])
     @donor.destroy
-    respond_to do |format|
-      format.html { redirect_to donors_url }
-      format.json { head :no_content }
-    end
+    redirect_to donors_url
   end
 
   private

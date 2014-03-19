@@ -19,5 +19,9 @@
 .ruby-gemset
 .ruby-version
 
-config/database.yml
+# .DS_Store
+.DS_Store
+/config/.DS_Store
+
+/config/database.yml
 /config/environment_variables.rb
