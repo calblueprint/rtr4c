@@ -1,5 +1,5 @@
 ############################### Press Updates #################################
-update = PressUpdate.create( 
+update = Update.create( 
     header: "San Francisco Giants Home Game",
     body:   "RoomsThatRock4Chemo will be honored along with Dignity Health "\
             "at AT&T Park by the San Francisco Giants at their home game on "\
