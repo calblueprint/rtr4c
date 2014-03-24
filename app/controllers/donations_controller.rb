@@ -37,7 +37,11 @@ class DonationsController < ApplicationController
   end
 
   def index
-    @donations = Donation.all
+    @donations = Donation.includes(:donor).order("donors.name")
+    respond_to do |format|
+      format.html
+      format.xls
+    end
   end
 
   def show

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Donation Date</Data></Cell>
+        <Cell><Data ss:Type="String">Donor Name</Data></Cell>
+        <Cell><Data ss:Type="String">Donor Email</Data></Cell>
+        <Cell><Data ss:Type="String">Donor Title</Data></Cell>
+        <Cell><Data ss:Type="String">Amount</Data></Cell>
+        <Cell><Data ss:Type="String">Message</Data></Cell>
+      </Row>
+    <% @donations.each do |donation| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= donation.created_at %></Data></Cell>
+        <%if not donation.donor.nil? %>
+          <Cell><Data ss:Type="String"><%= donation.donor.name  %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= donation.donor.email %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= donation.donor.title %></Data></Cell>
+        <% else %>
+          <Cell><Data ss:Type="String">N/A</Data></Cell>
+          <Cell><Data ss:Type="String">N/A</Data></Cell>
+          <Cell><Data ss:Type="String">N/A</Data></Cell>
+        <% end %>
+        <Cell><Data ss:Type="Number"><%= donation.amount %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= donation.message %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
