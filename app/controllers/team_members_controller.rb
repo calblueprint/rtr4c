@@ -40,6 +40,7 @@ class TeamMembersController < ApplicationController
   # PATCH/PUT /team_members/1
   # PATCH/PUT /team_members/1.json
   def update
+    puts team_member_params
     respond_to do |format|
       if @team_member.update(team_member_params)
         format.html { redirect_to @team_member, notice: 'Team member was successfully updated.' }
@@ -71,4 +72,7 @@ class TeamMembersController < ApplicationController
     def team_member_params
       params.require(:team_member).permit(:name, :title, :blurb, :role, :portfolio_link, images_attributes: [:id, :name, :photo, :_destroy])
     end
+
+    #set params to nil where necessary
+    
 end

@@ -10,24 +10,12 @@
       </ul>
     </div>
   <% end %>
-<!-- 
-  <div class="field">
-    <%= f.label :role %><br>
-    <%= f.number_field :role %>
-  </div>
- -->
+  
   <div class="field">
     <%= f.label :role %>
-    <select id="team_member_select" name="team_member[role]">
-      <option>Select Role</option>
-      <option value="0">Head Honcho</option>
-      <option value="1">Advisory Board</option>
-      <option value="2">Young Ambassador</option>
-      <option value="3">Designer</option>
-      <option value="4">Volunteer</option>
-    </select>    
+    <%= f.select(:role, options_for_select([['Head Honcho', 0], ['Advisory Board', 1], ['Young Ambassador', 2], ['Designer', 3], ['Volunteer', 4]]), include_blank: true )%>
   </div>
-  
+
   <div class="field team_member_name">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
