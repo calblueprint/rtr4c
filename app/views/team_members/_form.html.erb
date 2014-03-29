@@ -1,4 +1,4 @@
-<%= form_for(@team_member) do |f| %>
+<%= nested_form_for(@team_member) do |f| %>
   <% if @team_member.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@team_member.errors.count, "error") %> prohibited this team_member from being saved:</h2>
@@ -10,27 +10,55 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :blurb %><br>
-    <%= f.text_area :blurb %>
-  </div>
+<!-- 
   <div class="field">
     <%= f.label :role %><br>
     <%= f.number_field :role %>
   </div>
+ -->
   <div class="field">
+    <%= f.label :role %>
+    <select id="team_member_select" name="team_member[role]">
+      <option>Select Role</option>
+      <option value="0">Head Honcho</option>
+      <option value="1">Advisory Board</option>
+      <option value="2">Young Ambassador</option>
+      <option value="3">Designer</option>
+      <option value="4">Volunteer</option>
+    </select>    
+  </div>
+  
+  <div class="field team_member_name">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field team_member_title">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field team_member_blurb">
+    <%= f.label :blurb %><br>
+    <%= f.text_area :blurb %>
+  </div>
+  <div class="field team_member_link">
     <%= f.label :portfolio_link %><br>
     <%= f.text_field :portfolio_link %>
   </div>
+
+  <div class="team_member_image">
+    <%= f.fields_for :images do |image_form| %>
+      <fieldset>
+        <%= image_form.label :name %>
+        <%= image_form.text_field :name %>
+        <%= image_form.label :photo %>
+        <%= image_form.file_field :photo %>
+        <%= image_form.link_to_remove "Remove image" %>
+      </fieldset>
+    <% end %>
+    <%= f.link_to_add "Add photo", :images %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
