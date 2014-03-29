@@ -1,9 +1,10 @@
 Rtr4c::Application.routes.draw do
-
   get 'static/about'
   get 'static/contribute'
   get 'static/contact'
   get 'static/projects'
+
+  resources :team_members
 
   get 'login',  to: 'sessions#new',     as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'

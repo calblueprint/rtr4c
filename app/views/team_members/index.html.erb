@@ -1,0 +1,35 @@
+<h1>Listing team_members</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Blurb</th>
+      <th>Role</th>
+      <th>Portfolio link</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @team_members.each do |team_member| %>
+      <tr>
+        <td><%= team_member.name %></td>
+        <td><%= team_member.title %></td>
+        <td><%= team_member.blurb %></td>
+        <td><%= team_member.role %></td>
+        <td><%= team_member.portfolio_link %></td>
+        <td><%= link_to 'Show', team_member %></td>
+        <td><%= link_to 'Edit', edit_team_member_path(team_member) %></td>
+        <td><%= link_to 'Destroy', team_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team member', new_team_member_path %>
