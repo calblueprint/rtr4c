@@ -5,11 +5,11 @@ class TeamMembersController < ApplicationController
   # GET /team_members.json
   def index
     @team_members      = TeamMember.all
-    @head_honchos      = @team_members.where(:role == 0)
-    @advisory_board    = @team_members.where(:role == 1)
-    @young_ambassadors = @team_members.where(:role == 2)
-    @designers         = @team_members.where(:role == 3)
-    @volunteers        = @team_members.where(:role == 4)
+    @head_honchos      = @team_members.where(role: 0)
+    @advisory_board    = @team_members.where(role: 1)
+    @young_ambassadors = @team_members.where(role: 2)
+    @designers         = @team_members.where(role: 3)
+    @volunteers        = @team_members.where(role: 4)
   end
 
   # GET /team_members/1
