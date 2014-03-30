@@ -4,7 +4,12 @@ class TeamMembersController < ApplicationController
   # GET /team_members
   # GET /team_members.json
   def index
-    @team_members = TeamMember.all
+    @team_members      = TeamMember.all
+    @head_honchos      = @team_members.where(:role == 0)
+    @advisory_board    = @team_members.where(:role == 1)
+    @young_ambassadors = @team_members.where(:role == 2)
+    @designers         = @team_members.where(:role == 3)
+    @volunteers        = @team_members.where(:role == 4)
   end
 
   # GET /team_members/1
@@ -85,6 +90,8 @@ class TeamMembersController < ApplicationController
         team_params[:blurb] = nil
         team_params[:portfolio_link] = nil
       end
+      puts "cleaned params"
+      puts team_params
       return team_params
     end
 
