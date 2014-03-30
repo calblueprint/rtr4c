@@ -4,7 +4,6 @@ $(document).ready(function() {
   }
 
   $("#team_member_role").change(function() {
-    console.log("change");
      if($(this).val() == 0) { // head honcho
       $('.team_member_blurb, .team_member_image, team_member_link').show();
     } else if ($(this).val() == 1  || $(this).val() == 2) { // advisory board or young ambassador
@@ -19,6 +18,16 @@ $(document).ready(function() {
       $('.team_member_blurb, .team_member_image, .team_member_link').hide();
     }
   });
-
   
+  // prevent multiple images being added
+  $("#add_image_team_member").click(function() {
+    $("#add_image_team_member").hide();
+  });
+});
+
+
+
+// JS written this way b/c gem interferes with the remove link
+$(document).on('nested:fieldRemoved', function(event) {
+  $("#add_image_team_member").show();
 });
