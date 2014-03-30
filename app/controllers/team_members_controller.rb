@@ -1,6 +1,5 @@
 class TeamMembersController < ApplicationController
   before_action :set_team_member, only: [:show, :edit, :update, :destroy]
-  before_action :nullify_params, only: [:create, :update]
 
   # GET /team_members
   # GET /team_members.json
@@ -30,8 +29,7 @@ class TeamMembersController < ApplicationController
   # POST /team_members
   # POST /team_members.json
   def create
-    @team_member = TeamMember.new(@cleaned_params)
-
+    @team_member = TeamMember.new(nullify_params team_member_params)
     respond_to do |format|
       if @team_member.save
         format.html { redirect_to @team_member, notice: 'Team member was successfully created.' }
@@ -47,7 +45,7 @@ class TeamMembersController < ApplicationController
   # PATCH/PUT /team_members/1.json
   def update
     respond_to do |format|
-      if @team_member.update(@cleaned_params)
+      if @team_member.update(nullify_params team_member_params)
         format.html { redirect_to @team_member, notice: 'Team member was successfully updated.' }
         format.json { head :no_content }
       else
@@ -91,8 +89,8 @@ class TeamMembersController < ApplicationController
         team_params[:blurb] = nil
         team_params[:portfolio_link] = nil
       end
-      puts "cleaned params"
-      puts team_params
+      puts "role is of type"
+      puts team_params[:role].is_a?
       @cleaned_params = team_params
     end
 
