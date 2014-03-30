@@ -78,7 +78,7 @@ class TeamMembersController < ApplicationController
 
     #set params to nil where necessary
     def nullify_params(team_params)
-      member_role = team_params[:role]
+      member_role = team_params[:role].to_i
       # only head honcho has images_attributes
       unless member_role == 0
         team_params = nullify_image team_params
@@ -89,8 +89,8 @@ class TeamMembersController < ApplicationController
         team_params[:blurb] = nil
         team_params[:portfolio_link] = nil
       end
-      puts "role is of type"
-      puts team_params[:role].is_a?
+      # puts "role is of type"
+      # puts team_params[:role].is_a?
       @cleaned_params = team_params
     end
 
