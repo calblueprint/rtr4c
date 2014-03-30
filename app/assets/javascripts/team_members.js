@@ -1,8 +1,17 @@
 $(document).ready(function() {
-  if ($('#team_member_role').find(":selected").text() == "") {
+  
+  // regular if statements for the edit form
+  if ($('#team_member_role').val() == 1 || $('#team_member_role').val() == 2) {
+    $('.team_member_image').hide();
+  } else if ($('#team_member_role').val() == 3) {
+    $('.team_member_blurb, .team_member_image').hide();
+  } else if ($('#team_member_role').val() == 4) {
+    $('.team_member_blurb, .team_member_image, .team_member_link').hide();
+  } else if ($('#team_member_role').find(":selected").text() == "") {
     $('.team_member_blurb, .team_member_image, .team_member_link').hide();
   }
 
+  // change fields when dropdown is changed
   $("#team_member_role").change(function() {
      if($(this).val() == 0) { // head honcho
       $('.team_member_blurb, .team_member_image, team_member_link').show();
