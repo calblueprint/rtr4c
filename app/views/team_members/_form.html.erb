@@ -13,9 +13,9 @@
 
   <div class="field">
     <%= f.label :role %>
-    <%= f.select(:role, options_for_select([['Head Honcho', 0], ['Advisory Board', 1], ['Young Ambassador', 2], ['Designer', 3], ['Volunteer', 4]]), include_blank: true )%>
+    <%= f.select(:role, options_for_select([['Head Honcho', 0], ['Advisory Board', 1], ['Young Ambassador', 2], ['Designer', 3], ['Volunteer', 4]], selected: get_role(params[:id])), include_blank: true )%>
   </div>
-
+  
   <div class="field team_member_name">
     <%= f.label :name %><br>
     <%= f.text_field :name %>

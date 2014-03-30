@@ -18,14 +18,12 @@ $(document).ready(function() {
       $('.team_member_blurb, .team_member_image, .team_member_link').hide();
     }
   });
-  
+
   // prevent multiple images being added
   $("#add_image_team_member").click(function() {
     $("#add_image_team_member").hide();
   });
 });
-
-
 
 // JS written this way b/c gem interferes with the remove link
 $(document).on('nested:fieldRemoved', function(event) {
