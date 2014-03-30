@@ -24,7 +24,7 @@ class TeamMembersController < ApplicationController
   # POST /team_members
   # POST /team_members.json
   def create
-    @team_member = TeamMember.new(team_member_params)
+    @team_member = TeamMember.new(nullify_params team_member_params)
 
     respond_to do |format|
       if @team_member.save
@@ -40,13 +40,8 @@ class TeamMembersController < ApplicationController
   # PATCH/PUT /team_members/1
   # PATCH/PUT /team_members/1.json
   def update
-    puts "TEAM MEMBER PARAMS"
-    puts team_member_params
-    puts "CLEANED PARAMS"
-    cleaned = nullify_params(team_member_params)
-    puts cleaned
     respond_to do |format|
-      if @team_member.update(cleaned)
+      if @team_member.update(nullify_params team_member_params)
         format.html { redirect_to @team_member, notice: 'Team member was successfully updated.' }
         format.json { head :no_content }
       else
