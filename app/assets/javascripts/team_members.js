@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  
-  // regular if statements for the edit form
+  console.log("ready!");
+  // display appropriate forms on page load
   if ($('#team_member_role').val() == 1 || $('#team_member_role').val() == 2) {
     $('.team_member_image').hide();
   } else if ($('#team_member_role').val() == 3) {
@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('.team_member_blurb, .team_member_image, .team_member_link').hide();
   }
 
-  // change fields when dropdown is changed
+  // change fields appropriately when dropdown is changed
   $("#team_member_role").change(function() {
      if($(this).val() == 0) { // head honcho
       $('.team_member_blurb, .team_member_image, team_member_link').show();
@@ -34,6 +34,7 @@ $(document).ready(function() {
   });
 });
 
+// give the option of adding a photo when 'remove' is clicked
 // JS written this way b/c gem interferes with the remove link
 $(document).on('nested:fieldRemoved', function(event) {
   $("#add_image_team_member").show();

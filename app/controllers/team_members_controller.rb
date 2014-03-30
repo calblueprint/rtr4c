@@ -40,9 +40,13 @@ class TeamMembersController < ApplicationController
   # PATCH/PUT /team_members/1
   # PATCH/PUT /team_members/1.json
   def update
+    puts "TEAM MEMBER PARAMS"
     puts team_member_params
+    puts "CLEANED PARAMS"
+    cleaned = nullify_params(team_member_params)
+    puts cleaned
     respond_to do |format|
-      if @team_member.update(team_member_params)
+      if @team_member.update(cleaned)
         format.html { redirect_to @team_member, notice: 'Team member was successfully updated.' }
         format.json { head :no_content }
       else
@@ -74,5 +78,26 @@ class TeamMembersController < ApplicationController
     end
 
     #set params to nil where necessary
-    
+    def nullify_params(team_params)
+      member_role = team_params[:role]
+      # only head honcho has images_attributes
+      unless member_role == 0
+        team_params = nullify_image team_params
+      end
+      if member_role == 3 # designer
+        team_params[:blurb] = nil
+      elsif member_role == 4 # volunteer 
+        team_params[:blurb] = nil
+        team_params[:portfolio_link] = nil
+      end
+      return team_params
+    end
+
+    # param may not contain images_attributes
+    def nullify_image(hash)
+      if hash.has_key? "images_attributes"
+        hash[:images_attributes] = {}
+        hash
+      end
+    end
 end
