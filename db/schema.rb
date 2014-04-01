@@ -48,16 +48,6 @@ ActiveRecord::Schema.define(version: 20140329205927) do
 
   add_index "images", ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type", using: :btree
 
-  create_table "photos", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image"
-    t.integer  "gallery_id"
-    t.integer  "imageable_id"
-    t.string   "imageable_type"
-  end
-
   create_table "press_updates", force: true do |t|
     t.string   "title"
     t.string   "link"
