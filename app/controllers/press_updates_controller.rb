@@ -6,10 +6,12 @@ class PressUpdatesController < ApplicationController
   def index
   	@press = PressUpdate.all
   end
+
+
   def create
   	@press = PressUpdate.new(press_params)
   	@press.save
-  	redirect_to @press
+  	redirect_to press_updates_path(@press)
   end
 
   def destroy
@@ -27,7 +29,7 @@ class PressUpdatesController < ApplicationController
 
   def update
   	@press = PressUpdate.find(params[:id])
-  	if @press.update(params[:pressupdate].permit(:title, :link, :videolink))
+  	if @press.update(params[:press].permit(:title, :link, :videolink))
   		redirect_to @press
   	else
   		render 'edit'
@@ -36,6 +38,6 @@ class PressUpdatesController < ApplicationController
 
   private
   	def press_params
-    	params.require(:pressupdate).permit(:title, :link, :videolink)
+    	params.require(:press).permit(:title, :link, :videolink)
   	end
 end

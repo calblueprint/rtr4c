@@ -40,6 +40,11 @@ class BlogpostsController < ApplicationController
   	@blogpost = Blogpost.find(params[:id])
   end
 
+  def destroy
+  	@blogpost = Blogpost.find(params[:id])
+  	@blogpost.destroy
+  	redirect_to blogposts_path
+  end
 
   private
   	def blogpost_params
