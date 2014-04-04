@@ -1,5 +1,42 @@
 <h1>Edit Press Updates </h1>
 
-<%= render "form" %>
+<%= form_for :pressupdate, url: {action: "update"} do |f| %>
+
+<p>
+  <%= f.label "Old Title" %><br>
+  <%= @press.title %>
+</p>
+
+<p>
+  <%= f.label "Old Link" %><br>
+  <%=h auto_link(@press.link) %>
+</p>
+
+<p>
+  <%= f.label "Old Video Link" %><br>
+  <%=h auto_link(@press.videolink) %>
+</p>
+
+
+
+<p>
+  <%= f.label "New Title" %>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <%= f.label "New Link" %>
+  <%= f.text_field :link %>
+</p>
+
+<p>
+  <%= f.label "New Video Link" %>
+  <%= f.text_field :videolink %>
+</p>
+
+<%= f.submit %>
+
+<% end %>
+
 
 <%= link_to 'Back', press_updates_path %>

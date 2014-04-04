@@ -14,6 +14,7 @@ class PressUpdatesController < ApplicationController
       redirect_to press_updates_path(@press)
     else
       flash[:notice] = "failed"
+      redirect_to new_press_update_path
     end
   end
 
@@ -34,7 +35,7 @@ class PressUpdatesController < ApplicationController
 
   def update
   	@press = PressUpdate.find(params[:id])
-  	if @press.update(params[:press].permit(:title, :link, :videolink))
+  	if @press.update(params[:pressupdate].permit(:title, :link, :videolink))
   		redirect_to @press
   	else
   		render 'edit'
@@ -43,6 +44,6 @@ class PressUpdatesController < ApplicationController
 
   private
   	def press_params
-    	params.require(:press).permit(:title, :link, :videolink)
+    	params.require(:pressupdate).permit(:title, :link, :videolink)
   	end
 end

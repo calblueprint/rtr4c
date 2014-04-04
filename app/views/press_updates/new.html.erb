@@ -1,5 +1,22 @@
-
 <h1> New Press Updates </h1>
 
-<%= render "form" %>
+<%= form_for :pressupdate, url: {action: "create"} do |f| %>
 
+<p>
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <%= f.label "Link" %>
+  <%= f.text_field :link %>
+</p>
+
+<p>
+  <%= f.label "Video Link" %>
+  <%= f.text_field :videolink %>
+</p>
+
+<%= f.submit %>
+
+<% end %>
