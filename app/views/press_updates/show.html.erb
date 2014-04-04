@@ -12,7 +12,7 @@
 
 <p>
   <strong>VideoLink:</strong>
-  <%= @press.videolink %>
+  <%=h auto_link(@press.videolink) %>
 </p>
 
 <%= link_to 'All Press Updates', press_updates_path %>

@@ -1,0 +1,21 @@
+
+<%= form_for @press, html: {multipart: true} do |f| %>
+
+<p>
+	<%= f.label "Title" %>
+	<%= f.text_field :title %>
+</p>
+
+<p>
+	<%= f.label "Link" %>
+	<%= f.text_field :link %>
+</p>
+
+<p>
+	<%= f.label "Video Link" %>
+	<%= f.text_field :videolink %>
+</p>
+
+<%= f.submit %>
+
+<% end %>

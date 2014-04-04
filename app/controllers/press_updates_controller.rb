@@ -1,5 +1,6 @@
 class PressUpdatesController < ApplicationController
   def new
+    @press = PressUpdate.new
   end
 
   def index
