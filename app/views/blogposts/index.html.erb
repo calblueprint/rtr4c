@@ -1,0 +1,22 @@
+<h1>Blogposts Index</h1>
+
+<table>
+	<tr>
+		<td>Title</td>
+		<td>Show</td>
+		<td>Edit</td>
+		<td>Destroy</td>
+	</tr>
+	<% @blogpost.each do |blogpost| %>
+	<tr>
+		<td><%= blogpost.title %></td>
+		<% if current_user %>
+		  <td><%= link_to "Show", blogpost %></td>
+		  <td><%= link_to "Edit", edit_blogpost_path(blogpost) %></td>
+		  <td><%= link_to "Destroy", blogpost, method: :delete, data: {confirm: "Are you sure?"} %></td>
+		<% end %>
+	</tr>
+	<% end %>
+</table>
+
+
