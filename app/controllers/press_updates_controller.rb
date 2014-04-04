@@ -26,7 +26,12 @@ class PressUpdatesController < ApplicationController
   end
 
   def show
-  	@press = PressUpdate.find(params[:id])
+    @press = PressUpdate.find(params[:id])
+    if @press.videolink == nil
+      @video_frame = @press.link
+    else
+      @video_frame = YouTubeAddy.youtube_embed_url(@press.videolink)
+    end
   end
 
   def edit
