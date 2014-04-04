@@ -17,7 +17,7 @@ p {
 h1 {
   width: 100%;
   text-align: center;
-  font-family: Love Ya Like A Sister, cursive;
+  font-family: Oswald, sans-serif;
   font-size: 64px;
   color: #333333;
   font-weight: normal;
@@ -113,7 +113,8 @@ h2 {
 }
 
 .tab:hover {
-  border-top: 3px solid #b77ed2;
+  border-top: 1px solid #b77ed2;
+  box-shadow: 0 -1px 0 #b77ed2;
 }
 
 #banner {
@@ -130,7 +131,7 @@ h2 {
   margin-top: 160px;
   color: #ffffff;
   font-size: 100px;
-  line-height: 90px;
+  line-height: 100px;
 }
 
 #banner_blurb {
@@ -150,7 +151,7 @@ h2 {
   background: url(<%= image_path "tweed.png"%>);
 }
 
-#featured {
+.white {
   color: #ffffff;
 }
 
@@ -183,8 +184,8 @@ h2 {
   float: left;
   width: 120px;
   height: 120px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
   border-radius: 65px;
   border: 5px solid #333333;
 }
@@ -197,7 +198,7 @@ h2 {
 #facebook {
   background: url(<%= image_path "facebook.png"%>);
   background-size: cover;
-  margin-left: 250px;
+  margin-left: 280px;
 }
 
 #facebook:hover {
@@ -225,7 +226,15 @@ h2 {
   background-size: cover;
 }
 
+#copyright_border {
+  margin: auto;
+  margin-top: 220px;
+  width: 150px;
+  border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 25px;
+}
+
 #copyright {
-  margin-top: 225px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }

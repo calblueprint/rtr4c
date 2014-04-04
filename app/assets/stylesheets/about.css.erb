@@ -1,28 +1,120 @@
 h3 {
   width: 100%;
   text-align: center;
-  font-family: Love Ya Like A Sister, cursive;
+  font-family: Oswald, sans-serif;
   font-size: 64px;
   margin: 0px;
-  margin-top: 25px;
+  margin-top: 50px;
   padding: 0px;
   line-height: 0.25em;
   color: #333333;
   font-weight: normal;
 }
 
+#about_title {
+  margin-top: 100px;
+}
+
+#about {
+  margin-top: 100px;
+  text-align: left;
+}
+
 .picture {
-	float: left;
-	border: 10px solid #333333;;
-	height: 280px;
-	width: 280px;
-	margin-top: 50px;
-	border-radius: 150px;
+  float: left;
+  border: 10px solid #333333;
+  height: 380px;
+  width: 380px;
+  margin-top: 100px;
+  border-radius: 200px;
+  background: url(<%= image_path "profile.svg"%>);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0px 25px;
 }
 
 .profile {
-	float: left;
-	height: 300px;
-	width: 700px;
-	margin-top: 50px;
+  float: left;
+  height: 400px;
+  width: 600px;
+  margin-top: 100px;
+}
+
+.advisory_picture {
+  float: left;
+  margin: 50px;
+  width: 380px;
+  height: 380px;
+  border-radius: 200px;
+  border: 10px solid #333333;
+  background: url(<%= image_path "profile.svg"%>);
+  background-size: cover;
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: 0px 25px;
+}
+
+.about_media {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 25px;
+}
+
+.about_media:hover {
+  cursor: pointer;
+}
+
+#homedepot {
+  background: url(<%= image_path "homedepot.png"%>);
+  background-size: cover;
+  margin-left: 150px;
+}
+
+#homedepot:hover {
+  background: url(<%= image_path "homedepot_alt.png"%>);
+  background-size: cover;
+}
+
+#chase {
+  background: url(<%= image_path "chase.png"%>);
+  background-size: cover;
+}
+
+#chase:hover {
+  background: url(<%= image_path "chase_alt.png"%>);
+  background-size: cover;
+}
+
+#giants {
+  background: url(<%= image_path "giants.png"%>);
+  background-size: cover;
+}
+
+#giants:hover {
+  background: url(<%= image_path "giants_alt.png"%>);
+  background-size: cover;
+}
+
+.mini_picture {
+  float: left;
+  margin: 25px;
+  width: 180px;
+  height: 180px;
+  border-radius: 100px;
+  border: 5px solid #333333;
+  background: url(<%= image_path "profile.svg"%>);
+  background-size: cover;
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: 0px 10px;
+}
+
+.mini_picture:hover {
+  cursor: pointer;
+  border: 5px solid #b77ed2;
+}
+
+.extra_margin {
+  margin-bottom: 100px;
 }
