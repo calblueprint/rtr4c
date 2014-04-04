@@ -17,6 +17,7 @@ class BlogpostsController < ApplicationController
       else
         format.html { render action: 'new' }
         format.json { render json: @blogpost.errors, status: :unprocessable_entity }
+        flash[:notice] = "FAILED"
       end
     end
   end
