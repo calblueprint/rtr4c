@@ -1,0 +1,25 @@
+<h1>Listing cart</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @current_cart.cart_items.each do |citem| %>
+      <tr>
+        <td><%= citem.product.name %></td>
+        <td><%= citem.product.description %></td>
+        <td>$<%= citem.product.price %></td> 
+        <td><%= number_field_tag :quantity, citem.quantity, name: nil %></td>
+        <td><%= link_to 'Show', citem.product %></td>
+        <td><%= link_to "Delete", delete_from_cart_path(:product_id => citem.product), :method => :post %></td>
+        <td><%= link_to "Update", update_cart_path(:product_id => citem.product, :new_quantity => :quantity), :method => :post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
