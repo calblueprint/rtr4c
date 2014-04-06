@@ -7,6 +7,9 @@ Rtr4c::Application.routes.draw do
 
   get 'login',  to: 'sessions#new',     as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
+  post '/delete_from_cart/:product_id' => 'cart#delete_from_cart', :as => 'delete_from_cart' 
+  post '/update_cart/' => 'cart#update_cart', :as => 'update_cart' # this I am not sure how to model since i have 2 parameters coming in.
   
   resources :sessions
   resources :users, except: [:new, :create]
@@ -18,6 +21,7 @@ Rtr4c::Application.routes.draw do
   resources :charges
   resources :donors
   resources :donations
+  resources :cart
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
