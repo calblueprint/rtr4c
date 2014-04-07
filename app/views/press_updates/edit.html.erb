@@ -1,6 +1,6 @@
 <h1>Edit Press Updates </h1>
 
-<%= form_for :pressupdate, url: press_update_path(@press), method: :patch do |f| %>
+<%= form_for @press do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>

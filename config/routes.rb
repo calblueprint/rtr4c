@@ -15,6 +15,7 @@ Rtr4c::Application.routes.draw do
   resources :users, except: [:new, :create]
   resources :updates
   resources :press_updates
+  resources :news
   root 'welcome#index'
 
   resources :products
