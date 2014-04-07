@@ -1,3 +1,5 @@
+<h1>Listing Donations</h1>
+
 <span>Download: <%= link_to "Excel", donations_path(format: "xls") %></span>
 <table>
   <thead>
@@ -25,3 +27,7 @@
     <% end %>
   </tbody>
 </table>
+
+<br/>
+
+<%= link_to 'New Donation', new_donation_path %>

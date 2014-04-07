@@ -45,6 +45,8 @@ gem 'nested_form'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+gem 'will_paginate', '~> 3.0'
+
 # gem 'protected_attributes'
 
 # For Heroku (https://github.com/heroku/rails_12factor)
