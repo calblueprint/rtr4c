@@ -22,30 +22,24 @@ class TeamMembersController < ApplicationController
 
   def create
     @team_member = TeamMember.new(nullify_params team_member_params)
-    respond_to do |format|
-      if @team_member.save
-        redirect_to @team_member, notice: 'Team member was successfully created.'
-      else
-        render action: 'new'
-      end
+    if @team_member.save
+      redirect_to @team_member, notice: 'Team member was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @team_member.update(nullify_params team_member_params)
-        redirect_to @team_member, notice: 'Team member was successfully updated.'
-      else
-        render action: 'edit'
-      end
+    if @team_member.update(nullify_params team_member_params)
+      redirect_to @team_member, notice: 'Team member was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @team_member.destroy
-    respond_to do |format|
-      redirect_to team_members_url
-    end
+    redirect_to team_members_url
   end
 
   private
