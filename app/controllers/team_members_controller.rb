@@ -55,18 +55,23 @@ class TeamMembersController < ApplicationController
 
     #set params to nil where necessary
     def nullify_params(team_params)
-      member_role = team_params[:role].to_i
-      # only head honcho has images_attributes
-      unless member_role == 0
-        team_params = nullify_image team_params
-      end
-      if member_role == 3 # designer
-        team_params[:blurb] = nil
-      elsif member_role == 4 # volunteer 
-        team_params[:blurb] = nil
-        team_params[:portfolio_link] = nil
-      end
-      @cleaned_params = team_params
+      # puts "team params we're going to clean up!"
+      # puts team_params
+      # puts "team params blurb is:"
+      # puts team_params["blurb"].empty?
+      # member_role = team_params[:role].to_i
+      # # only head honcho has images_attributes
+      # unless member_role == 0
+      #   team_params = nullify_image team_params
+      # end
+      # if member_role == 3 # designer
+      #   team_params["blurb"] = nil
+      # elsif member_role == 4 # volunteer 
+      #   team_params["blurb"] = nil
+      #   team_params[:portfolio_link] = nil
+      # end
+      # @cleaned_params = team_params
+      team_params
     end
 
     # param may not contain images_attributes
