@@ -32,11 +32,9 @@ class TeamMembersController < ApplicationController
     @team_member = TeamMember.new(nullify_params team_member_params)
     respond_to do |format|
       if @team_member.save
-        format.html { redirect_to @team_member, notice: 'Team member was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @team_member }
+        redirect_to @team_member, notice: 'Team member was successfully created.'
       else
-        format.html { render action: 'new' }
-        format.json { render json: @team_member.errors, status: :unprocessable_entity }
+        render action: 'new'
       end
     end
   end
@@ -46,11 +44,9 @@ class TeamMembersController < ApplicationController
   def update
     respond_to do |format|
       if @team_member.update(nullify_params team_member_params)
-        format.html { redirect_to @team_member, notice: 'Team member was successfully updated.' }
-        format.json { head :no_content }
+        redirect_to @team_member, notice: 'Team member was successfully updated.'
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @team_member.errors, status: :unprocessable_entity }
+        render action: 'edit'
       end
     end
   end
@@ -60,8 +56,7 @@ class TeamMembersController < ApplicationController
   def destroy
     @team_member.destroy
     respond_to do |format|
-      format.html { redirect_to team_members_url }
-      format.json { head :no_content }
+      redirect_to team_members_url
     end
   end
 
