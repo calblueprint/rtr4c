@@ -3,6 +3,7 @@ Rtr4c::Application.routes.draw do
   get 'static/contribute'
   get 'static/contact'
   get 'static/projects'
+  get 'static/news'
 
   resources :team_members
 
