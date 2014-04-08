@@ -1,8 +1,6 @@
 class TeamMembersController < ApplicationController
   before_action :set_team_member, only: [:show, :edit, :update, :destroy]
 
-  # GET /team_members
-  # GET /team_members.json
   def index
     @team_members      = TeamMember.all
     @head_honchos      = @team_members.where(role: 0)
@@ -12,22 +10,16 @@ class TeamMembersController < ApplicationController
     @volunteers        = @team_members.where(role: 4)
   end
 
-  # GET /team_members/1
-  # GET /team_members/1.json
   def show
   end
 
-  # GET /team_members/new
   def new
     @team_member = TeamMember.new
   end
 
-  # GET /team_members/1/edit
   def edit
   end
 
-  # POST /team_members
-  # POST /team_members.json
   def create
     @team_member = TeamMember.new(nullify_params team_member_params)
     respond_to do |format|
@@ -39,8 +31,6 @@ class TeamMembersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /team_members/1
-  # PATCH/PUT /team_members/1.json
   def update
     respond_to do |format|
       if @team_member.update(nullify_params team_member_params)
@@ -51,8 +41,6 @@ class TeamMembersController < ApplicationController
     end
   end
 
-  # DELETE /team_members/1
-  # DELETE /team_members/1.json
   def destroy
     @team_member.destroy
     respond_to do |format|
@@ -84,8 +72,6 @@ class TeamMembersController < ApplicationController
         team_params[:blurb] = nil
         team_params[:portfolio_link] = nil
       end
-      # puts "role is of type"
-      # puts team_params[:role].is_a?
       @cleaned_params = team_params
     end
 
