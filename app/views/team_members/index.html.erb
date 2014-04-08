@@ -1,0 +1,72 @@
+<h1>Our Team</h1>
+
+<h2>Head Honchos</h2>
+<% @head_honchos.each do |honcho| %>
+  <h3><%= honcho.name %></h3> 
+  <h3><%= honcho.title %></h3>
+  <p><%= honcho.blurb %></p>
+  <% honcho.images.each do |image| %>
+    <%= image_tag image.photo.url %>
+  <% end %>
+
+  <% if current_user %>
+  <p><%= link_to 'Show', honcho %></p>
+  <p><%= link_to 'Edit', edit_team_member_path(honcho) %></p>
+  <p><%= link_to 'Destroy', honcho, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+<% end %>
+
+<h2>Advisory Board</h2>
+<% @advisory_board.each do |board_member| %>
+  <h3><%= board_member.name %></h3> 
+  <h3><%= board_member.title %></h3>
+  <p><%= board_member.blurb %></p>
+
+  <% if current_user %>
+  <p><%= link_to 'Show', board_member %></p>
+  <p><%= link_to 'Edit', edit_team_member_path(board_member) %></p>
+  <p><%= link_to 'Destroy', board_member, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+<% end %>
+
+<h2>Young Ambassadors</h2>
+<% @young_ambassadors.each do |young_ambassador| %>
+  <h3><%= young_ambassador.name %></h3> 
+  <h3><%= young_ambassador.title %></h3>
+  <p><%= young_ambassador.blurb %></p>
+
+  <% if current_user %>
+  <p><%= link_to 'Show', young_ambassador %></p>
+  <p><%= link_to 'Edit', edit_team_member_path(young_ambassador) %></p>
+  <p><%= link_to 'Destroy', young_ambassador, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+<% end %>
+
+<h2>Designers</h2>
+<% @designers.each do |designer| %>
+  <h3><%= designer.name %></h3> 
+  <h3><%= designer.title %></h3>
+  <p><%= designer.portfolio_link %></p>
+
+  <% if current_user %>
+  <p><%= link_to 'Show', designer %></p>
+  <p><%= link_to 'Edit', edit_team_member_path(designer) %></p>
+  <p><%= link_to 'Destroy', designer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+<% end %>
+
+<h2>Volunteers</h2>
+<% @volunteers.each do |volunteer| %>
+  <h3><%= volunteer.name %></h3> 
+  <h3><%= volunteer.title %></h3>
+
+  <% if current_user %>
+  <p><%= link_to 'Show', volunteer %></p>
+  <p><%= link_to 'Edit', edit_team_member_path(volunteer) %></p>
+  <p><%= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+<% end %>
+
+<br>
+
+<%= link_to 'New Team member', new_team_member_path %>

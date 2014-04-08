@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403025648) do
+ActiveRecord::Schema.define(version: 20140404011326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blogposts", force: true do |t|
+    t.string   "title"
+    t.text     "post"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cart_items", force: true do |t|
     t.integer  "quantity"
@@ -73,6 +80,16 @@ ActiveRecord::Schema.define(version: 20140403025648) do
     t.string   "name"
     t.text     "description"
     t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "team_members", force: true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.text     "blurb"
+    t.integer  "role"
+    t.string   "portfolio_link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

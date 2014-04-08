@@ -1,12 +1,14 @@
 Rtr4c::Application.routes.draw do
-
   get 'static/about'
   get 'static/contribute'
   get 'static/contact'
   get 'static/projects'
 
+  resources :team_members
+
   get 'login',  to: 'sessions#new',     as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+
   post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
   post '/delete_from_cart/:product_id' => 'cart#delete_from_cart', :as => 'delete_from_cart' 
   post '/update_cart/' => 'cart#update_cart', :as => 'update_cart' # this I am not sure how to model since i have 2 parameters coming in.
@@ -16,6 +18,8 @@ Rtr4c::Application.routes.draw do
   resources :updates
   resources :press_updates
   resources :news
+  resources :blogposts
+
   root 'welcome#index'
 
   resources :products
