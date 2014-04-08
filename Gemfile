@@ -42,6 +42,7 @@ gem 'newrelic_rpm'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'nested_form'
+gem 'youtube_addy'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 

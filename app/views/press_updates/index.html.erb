@@ -13,7 +13,7 @@
   <tr>
     <td><%= press.title %></td>
     <td><%=h auto_link(press.link) %></td>
-    <td><%= press.videolink %></td>
+    <td><%=h auto_link(press.videolink) %></td>
     <td><%= link_to 'Show', press %></td>
     <td><%= link_to 'Edit', edit_press_update_path(press) %></td>
     <td><%= link_to 'Destroy', press, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,19 @@
+<h1>Blogpost Show</h1>
+
+<p>
+	Title:
+	<%= @blogpost.title %>
+</p>
+<p>
+	Post:
+	<%= @blogpost.post %>
+</p>
+
+
+<% @blogpost.images.each do |image| %>
+  <%= image.name %><br>
+  <%= image_tag image.photo.url %><br>
+<% end %>
+
+<%= link_to "All Posts", blogposts_path %>
+<%= link_to "Edit", edit_blogpost_path(@blogpost) %>
