@@ -1,5 +1,5 @@
 ################################## Products ###################################
-Product.create( 
+Product.create( =
   name:         "Shirt",
   description:  "This is an awesome shirt!",
   price:        "10.00")
@@ -11,9 +11,19 @@ Product.create(
 
 Product.create( 
   name:         "Mark Miyashita",
-  description:  "He puts the -shit- in Miyashita",
+  description:  "He puts the -shirt- in Miyashita",
   price:        "0.69")
 
+
+Product.create(
+  name: "Giants Ball",
+  description: "A ball signed by the SF Giants",
+  price: "$12.00")
+
+Product.create(
+  name: "Giants Hat",
+  description: "An original Hat from an SF Giant",
+  price: "$25.00")
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
