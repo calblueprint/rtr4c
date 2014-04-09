@@ -2,7 +2,8 @@
 update = PressUpdate.create( 
     title: "RTR4C featured on Cincy Chic",
     link:  "http://cincychic.com/index.php?option=com_content&view=article"\
-           "&id=5014:rooms-that-rock-4-chemo&catid=15:health&Itemid=10882")
+           "&id=5014:rooms-that-rock-4-chemo&catid=15:health&Itemid=10882",
+    videolink: "https://www.youtube.com/watch?v=moSFlvxnbgk")
 date_time = DateTime.new(2013,11,17)
 update.created_at = date_time
 update.updated_at = date_time
@@ -11,7 +12,8 @@ update.save
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 update = PressUpdate.create( 
     title: "Wood + Candy = Room that Rocks Sweetly",
-    link:  "http://www.ariahealth.org/default.aspx?pageid=6849")
+    link:  "http://www.ariahealth.org/default.aspx?pageid=6849",
+    videolink: "https://www.youtube.com/watch?v=moSFlvxnbgk")
 date_time = DateTime.new(2013,11,17)
 update.created_at = date_time
 update.updated_at = date_time
@@ -22,7 +24,8 @@ update = PressUpdate.create(
     title: "Photo at 2012 City and County of San Francisco Combined"\
            "Charities Campaign",
     link:  "https://www.facebook.com/photo.php?fbid=10151150092047144"\
-           "&set=o.341818389241454&type=1")
+           "&set=o.341818389241454&type=1",
+    videolink: "https://www.youtube.com/watch?v=moSFlvxnbgk")
 date_time = DateTime.new(2012,10,4)
 update.created_at = date_time
 update.updated_at = date_time
@@ -32,7 +35,8 @@ update.save
 update = PressUpdate.create( 
     title: "Camden Clark Medical Center shows new chemotherapy rooms",
     link:  "http://www.newsandsentinel.com/page/content.detail/id/565842/"\
-           "CCMC-shows-new-chemotherapy-rooms.html?nav=5061")
+           "CCMC-shows-new-chemotherapy-rooms.html?nav=5061",
+    videolink: "https://www.youtube.com/watch?v=moSFlvxnbgk")
 date_time = DateTime.new(2012,10,1)
 update.created_at = date_time
 update.updated_at = date_time
@@ -42,7 +46,8 @@ update.save
 update = PressUpdate.create( 
     title: "National Maternity Hospital in El Salvador Receives Makeover of "\
            "Oncology Ward",
-    link:  "http://www.prweb.com/releases/2012/9/prweb9858039.htm")
+    link:  "http://www.prweb.com/releases/2012/9/prweb9858039.htm",
+    videolink: "https://www.youtube.com/watch?v=moSFlvxnbgk")
 date_time = DateTime.new(2012,9,20)
 update.created_at = date_time
 update.updated_at = date_time
@@ -111,7 +116,7 @@ update.updated_at = date_time
 update.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-update = PressUpdate.create( 
+update = PressUpdate.create(
     title: "RTR4C featured in the San Francisco Chronicle",
     link:  "http://www.sfchronicle.com/health/article/Rooms-That-Rock-4-"\
            "Chemo-adds-cheer-4477454.php#ixzz2SAGFaggX")
@@ -121,7 +126,7 @@ update.updated_at = date_time
 update.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-update = PressUpdate.create( 
+update = PressUpdate.create(
     title: "Mountain View's El Camino Hospital Cancer Center's brighter "\
            "walls help patients heal",
     link:  "http://www.mercurynews.com/breaking-news/ci_23799133/brighter-"\
@@ -132,7 +137,7 @@ update.updated_at = date_time
 update.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-update = PressUpdate.create( 
+update = PressUpdate.create(
     title: "Cutting Edge Stencils Help Brighten Rooms That Rock 4 Chemo!",
     link:  "http://blog.cuttingedgestencils.com/stenciling-rooms-that-rock-"\
            "4-chemo.html")
@@ -142,7 +147,7 @@ update.updated_at = date_time
 update.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-update = PressUpdate.create( 
+update = PressUpdate.create(
     title: "Featured on Upside CNN",
     link:  "https://www.facebook.com/photo.php?v=544682168915103&saved")
 date_time = DateTime.new(2013,8,9)
@@ -159,5 +164,8 @@ date_time = DateTime.new(2013,11,14)
 update.created_at = date_time
 update.updated_at = date_time
 update.save
+
+
+
 
 ###############################################################################
