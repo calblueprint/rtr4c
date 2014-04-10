@@ -6,12 +6,14 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @products.each do |product| %>
       <tr>
+        <td><%= image_tag first_image product %></td>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
         <td>$<%= product.price %></td>
@@ -28,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<% if current_user %>
+  <%= link_to 'New Product', new_product_path %>
+<% end %>
