@@ -36,6 +36,10 @@ class Cart < ActiveRecord::Base
   end
 
   def total_price
-    cart_items.to_a.sum(&:price)
+    total = 0
+    cart_items.each do |citem|
+      total += citem.product.price.to_f * citem.quantity
+    end 
+    total
   end
 end
