@@ -1,13 +1,55 @@
 #pict_one {
 	background-image: url(<%= image_path "Projects/Mammoth/pict_two.jpg"%>);
-	position: relative;
-	top: 50px;
 	height: 300px;
-	width: 399px;
+	width: 550px;
+	background-size: cover;
+	float: left;
+}
+
+.featured {
+	margin: auto;
+	margin-top: 90px;
+	width: 800px;
+	height: 300px;
+	outline: 8px solid;
+	outline-color:#333333;;
 }
 
 .featured_text {
 	background-color: white;
+	width: 250px;
 	height: 300px;
 	float: left;
+	text-align: center;
+}
+
+.featured_line {
+	margin: auto;
+	margin-top:30px;
+	background-color: black;
+	height: 3px;
+	width:30px;
+}
+
+.featured_text p {
+	margin-top: 120px;
+	font-family: Oswald, sans-serif;
+	font-size: 23px;
+}
+
+p {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.arrow-left {
+	position: absolute;
+	right: 503px;
+	top:535px;
+	width: 0;
+	height: 0;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right:10px solid white;
+	z-index: 3;
 }
