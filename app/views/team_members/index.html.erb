@@ -5,9 +5,7 @@
   <h3><%= honcho.name %></h3> 
   <h3><%= honcho.title %></h3>
   <p><%= honcho.blurb %></p>
-  <% honcho.images.each do |image| %>
-    <%= image_tag image.photo.url %>
-  <% end %>
+  <%= image_tag first_image honcho %>
 
   <% if current_user %>
   <p><%= link_to 'Show', honcho %></p>
