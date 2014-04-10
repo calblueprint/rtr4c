@@ -15,7 +15,7 @@ class CartController < ApplicationController
   end
 
   def update_cart
-    current_cart.update_item(params[:product_id], params[:new_quantity])
+    current_cart.update_item(params[:cart_item][:product_id], params[:cart_item][:quantity])
     redirect_to action: "index"
   end
 end

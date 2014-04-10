@@ -2,14 +2,18 @@
 
 <table>
 	<tr>
-		<td>Title</td>
-		<td>Show</td>
-		<td>Edit</td>
-		<td>Destroy</td>
+		<td>Title</td>		
+		<td>Post</td>
+		<% if current_user %>
+			<td>Show</td>
+			<td>Edit</td>
+			<td>Destroy</td>
+		<%end%>
 	</tr>
 	<% @blogpost.each do |blogpost| %>
 	<tr>
 		<td><%= blogpost.title %></td>
+		<td><%= blogpost.post %></td>
 		<% if current_user %>
 		  <td><%= link_to "Show", blogpost %></td>
 		  <td><%= link_to "Edit", edit_blogpost_path(blogpost) %></td>

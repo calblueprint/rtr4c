@@ -18,14 +18,20 @@ class Cart < ActiveRecord::Base
   end
 
   def delete_item(product_id)
-    citem = cart_items.where('product_id= ?', product_id).first
+    citem = cart_items.where(product_id: product_id).first
     cart_items.delete(citem)
+    citem.destroy
     save
   end
 
   def update_item(product_id, quantity)
-    citem = cart_items.where('product_id= ?', product_id).first
-    citem.update_attributes(:quantity => quantity)
+    citem = cart_items.where(product_id: product_id.to_i).first
+    if quantity.to_i == 0
+      # delete instead
+      delete_item(product_id)
+    else
+      citem.update_attributes(:quantity => quantity)
+    end
     save
   end
 
