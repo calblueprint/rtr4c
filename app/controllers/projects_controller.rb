@@ -35,11 +35,10 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
-      if @project.update(project_params)
-        redirect_to @project, notice: 'Project was successfully updated.'
-      else
-        render action: 'edit'
-      end
+    if @project.update(project_params)
+      redirect_to @project, notice: 'Project was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
@@ -48,7 +47,6 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     format.html { redirect_to projects_url }
-    end
   end
 
   private
