@@ -1,4 +1,6 @@
 Rtr4c::Application.routes.draw do
+  resources :projects
+
   get 'static/about'
   get 'static/contribute'
   get 'static/contact'
