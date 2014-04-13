@@ -5,8 +5,8 @@ class NewsController < ApplicationController
 
   def sorted_news
     press = PressUpdate.all
-    # blog = Blog.all
-    # news = (press + blog).sort_by(&:created_at)
-    press.reorder("created_at DESC").page(params[:page]).per_page(10)
+    blog = Blogpost.all
+    news = (press + blog).sort_by(&:created_at).reverse
+    news.paginate(:page => params[:page], :per_page => 10)
   end
 end

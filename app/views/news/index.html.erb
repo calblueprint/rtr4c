@@ -7,7 +7,7 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Link</th>
+    <th>Content</th>
     <th>Video Link</th>
     <th></th>
   </tr>
@@ -21,12 +21,12 @@
       <td><%= link_to 'Show', news %></td>
       <td><%= link_to 'Edit', edit_press_update_path(news) %></td>
       <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% elsif news.is_a? Blog %>
+    <% elsif news.is_a? Blogpost %>
       <td><%= news.title %></td>
-      <td><%=h auto_link(news.link) %></td>
-      <td><%= news.videolink %></td>
+      <td><%= news.post %></td>
+      <td>None</td>
       <td><%= link_to 'Show', news %></td>
-      <td><%= link_to 'Edit', edit_blog_path(news) %></td>
+      <td><%= link_to 'Edit', edit_blogpost_path(news) %></td>
       <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
   </tr>

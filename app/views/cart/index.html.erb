@@ -10,16 +10,24 @@
   </thead>
 
   <tbody>
+    <% if @current_cart.cart_items.empty? %>
+      <h2> No products in cart! </h2>
+    <% else %>
     <% @current_cart.cart_items.each do |citem| %>
       <tr>
         <td><%= citem.product.name %></td>
         <td><%= citem.product.description %></td>
         <td>$<%= citem.product.price %></td> 
-        <td><%= number_field_tag :quantity, citem.quantity, name: nil %></td>
+        <%= form_for(citem, url: update_cart_path, method: :post) do |f| %>
+          <td><%= f.number_field :quantity, value: citem.quantity %></td>
+          <td><%= f.hidden_field :product_id, value: citem.product_id %></td>
+          <td><%= f.submit "Update" %></td>
+        <% end %>
         <td><%= link_to 'Show', citem.product %></td>
         <td><%= link_to "Delete", delete_from_cart_path(:product_id => citem.product), :method => :post %></td>
-        <td><%= link_to "Update", update_cart_path(:product_id => citem.product, :new_quantity => :quantity), :method => :post %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
+<p> Total price: <%= number_to_currency(@current_cart.total_price) %> </p>
