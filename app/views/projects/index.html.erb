@@ -1,32 +1,15 @@
 <h1>Listing projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Location</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% @projects.each do |project| %>
+  <h2><%= link_to project.title, project %></h2>
+  <%= image_tag first_image project %>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.date %></td>
-        <td><%= project.description %></td>
-        <td><%= project.location %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% if current_user %>
+    <p><%= link_to 'Show', project %></p>
+    <p><%= link_to 'Edit', edit_project_path(project) %></p>
+    <p><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+<% end %>
 
 <br>
 
