@@ -1,0 +1,21 @@
+<h1>Listing Purchases</h1>
+
+<span>Download: <%= link_to "Excel", donations_path(format: "xls") %></span>
+
+<% @purchases.each do |purchase| %>
+  <div>
+    <p><%= purchase.name %></p>
+    <p><%= purchase.email %></p>
+    <p><%= purchase.address %></p>
+    <p><%= purchase.created_at %></p>
+  </div>
+  <br/>
+  <p><u>Items</u></p>
+  <br/>
+  <% purchase.cart_items.each do |citem| %>
+    <div>
+      <p><%= citem.product.name %> | <%= citem.product.description %> | <%= number_to_currency(citem.product.price) %> | <%= citem.quantity %></p>
+    </div>
+  <% end %>
+<% end %>
+<br/>

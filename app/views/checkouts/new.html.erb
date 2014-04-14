@@ -1,0 +1,58 @@
+<h1> Checkout </h1>
+
+<h2> Contact Info </h2>
+
+<%= form_tag(checkouts_path, :id => "new_checkout") do %>
+  <p>
+    <%= label :checkout, "First Name" %>
+    <%= text_field :checkout, :firstname %>
+  <p/>  
+  <p>
+    <%= label :checkout, "Last Name" %>
+    <%= text_field :checkout, :lastname %>
+  <p/>
+  <p>
+    <%= label :checkout, "Address 1" %>  
+    <%= text_field :checkout, :address1 %>
+  </p>   
+  <p>
+    <%= label :checkout, "Address 2" %>  
+    <%= text_field :checkout, :address2 %>
+  </p>   
+  <p>
+    <%= label :checkout, :city %>  
+    <%= text_field :checkout, :city %>
+  </p>    
+  <p>
+    <%= label :checkout, :state %>  
+    <%= text_field :checkout, :state %>
+  </p>   
+  <p>
+    <%= label :checkout, :zip %>  
+    <%= text_field :checkout, :zip %>
+  </p>
+  <p>
+    <%= label :checkout, :email %>
+    <%= text_field :checkout, :email %>
+  <p/>  
+  <p>
+    <%= label :checkout, :phone %>
+    <%= text_field :checkout, :phone %>
+  <p/>
+
+  <h2> Credit Card </h2>
+  <p>
+    <%= label_tag :card_number, "Card #" %>  
+    <%= text_field_tag :card_number, "4242 4242 4242 4242", name: nil, :data => {:stripe => 'number'} %>  
+  </p>  
+  <p class="credit_card_fields">
+    <%= label_tag :card_month, "Exp Date" %>   
+    <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month", :data => {:stripe => 'exp-month'}} %>  
+    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :data => {:stripe => 'exp-year'}} %>
+    <%= label_tag :card_code, "CVC" %>
+    <%= text_field_tag :card_code, "123", name: nil, :data => {:stripe => 'cvc'}, maxlength: 3, size: 3 %>  
+  <p/>
+  <p>
+    <%= submit_tag("Checkout") %>
+  </p>
+<% end %> 
