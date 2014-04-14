@@ -1,11 +1,3 @@
-#pict_one {
-	background-image: url(<%= image_path "Projects/Mammoth/pict_two.jpg"%>);
-	height: 300px;
-	width: 550px;
-	background-size: cover;
-	float: left;
-}
-
 .featured {
 	margin: auto;
 	margin-top: 90px;
@@ -14,6 +6,42 @@
 	outline: 8px solid;
 	outline-color:#333333;;
 }
+
+.featured_picture {
+	height: 300px;
+	width: 550px;
+	background-size: cover;
+	float: left;
+}
+
+#pict_one {
+	background-image: url(<%= image_path "Projects/Mammoth/pict_two.jpg"%>);
+	height: 300px;
+	width: 550px;
+	background-size: cover;
+	float: left;
+}
+
+#pict_two {
+	background-image: url(<%= image_path "Projects/Oakland_Hospital/room_four.jpg"%>);
+	height: 300px;
+	width: 550px;
+	background-size: cover;
+	float: right;
+}
+
+#pict_three {
+	background-image: url(<%= image_path "Projects/Oakland_Hospital/room_four.jpg"%>);
+	height: 300px;
+	width: 550px;
+	background-size: cover;
+	float: left;
+}
+
+#mid {
+	float:right;
+}
+
 
 .featured_text {
 	background-color: white;
@@ -42,14 +70,10 @@ p {
 	padding-right: 0px;
 }
 
-.arrow-left {
-	position: absolute;
-	right: 503px;
-	top:535px;
-	width: 0;
-	height: 0;
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-right:10px solid white;
-	z-index: 3;
+.projects_all {
+	background-image: url(<%= image_path "Projects/Mammoth/pict_two.jpg"%>);
+	height: 200px;
+	width: 200px;
+	background-size: cover;
+	background-repeat:repeat-x;
 }
