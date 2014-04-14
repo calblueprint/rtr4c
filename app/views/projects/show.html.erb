@@ -20,5 +20,10 @@
   <%= @project.location %>
 </p>
 
+<% @project.images.each do |image| %>
+  <p><%= image.name %></p>
+  <%= image_tag image.photo.url %>
+<% end %>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
