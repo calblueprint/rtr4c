@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20140413233330) do
 
   create_table "cart_items", force: true do |t|
     t.integer  "quantity"
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "product_id"
     t.integer  "cart_id"
   end
 
