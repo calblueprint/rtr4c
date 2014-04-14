@@ -1,0 +1,16 @@
+<h1>Listing projects</h1>
+
+<% @projects.each do |project| %>
+  <h2><%= link_to project.title, project %></h2>
+  <%= image_tag first_image project %>
+
+  <% if current_user %>
+    <p><%= link_to 'Show', project %></p>
+    <p><%= link_to 'Edit', edit_project_path(project) %></p>
+    <p><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+<% end %>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>
