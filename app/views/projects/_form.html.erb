@@ -1,33 +1,33 @@
-<%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-      <ul>
-      <% @project.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
+<%= nested_form_for @project, html: { multipart: true } do |f| %>
+  <p>
+    <%= f.label :title %>
     <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
+  </p>
+
+  <p>
+    <%= f.label :date %>
+    <%= date_select(@project, :date) %>
+  </p>
+
+  <p>
+    <%= f.label :description %>
     <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br>
+  </p>
+
+  <p>
+    <%= f.label :location %>
     <%= f.text_field :location %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </p>
+
+  <%= f.fields_for :images do |image_form| %>
+    <fieldset>
+      <%= image_form.label :name %>
+      <%= image_form.text_field :name %>
+      <%= image_form.label :photo %>
+      <%= image_form.file_field :photo %>
+      <%= image_form.link_to_remove "Remove image" %>
+    </fieldset>
+  <% end %>
+  <%= f.link_to_add "Add photo", :images %>
+  <p><%= f.submit %></p>
 <% end %>

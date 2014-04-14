@@ -46,7 +46,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1.json
   def destroy
     @project.destroy
-    format.html { redirect_to projects_url }
+    redirect_to projects_url
   end
 
   private
