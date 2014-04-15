@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Date</Data></Cell>
+        <Cell><Data ss:Type="String">Name</Data></Cell>
+        <Cell><Data ss:Type="String">Email</Data></Cell>
+        <Cell><Data ss:Type="String">Address</Data></Cell>
+        <% @products.each do |product| %>
+          <Cell><Data ss:Type="String"><%= product.name %></Data></Cell>
+        <% end %>
+      </Row>
+    <% @purchases.each do |purchase| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= purchase.created_at %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= purchase.name %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= purchase.email %></Data></Cell>        
+        <Cell><Data ss:Type="String"><%= purchase.address %></Data></Cell>
+        <% @products.each do |product| %>
+          <% found = false %>
+          <% purchase.cart_items.each do |citem| %>
+            <% if citem.product.name == product.name %>
+              <% found = true %>
+              <Cell><Data ss:Type="Number"><%= citem.quantity %></Data></Cell>
+            <% end %>
+          <% end %>
+          <% if not found %>
+            <Cell><Data ss:Type="Number">0</Data></Cell>
+          <% end %>
+        <% end %>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
