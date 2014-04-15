@@ -3,8 +3,9 @@
 	margin-top: 90px;
 	width: 800px;
 	height: 300px;
-	outline: 8px solid;
-	outline-color:#333333;;
+	border-style: solid;
+	border-width: 8px;
+	border-color:#333333;;
 }
 
 .featured_picture {
@@ -13,6 +14,12 @@
 	background-size: cover;
 	float: left;
 }
+
+.featured:hover {
+	cursor: pointer;
+  	border: 8px solid #b77ed2;
+}
+
 #pict_one {
 	background-image: url(<%= image_path "Projects/Mammoth/pict_two.jpg"%>);
 	height: 300px;
@@ -72,7 +79,7 @@ p {
 #tweed {
 	background-image: url(<%= image_path "tweed.png"%>);
 	height: 800px;
-	width: 1350px;
+	width: 1360px;
 	margin-top: 80px;
 }
 
@@ -112,6 +119,11 @@ p {
 	margin: 25px;
 }
 
+.project_thumb:hover {
+	cursor: pointer;
+  	border: 5px solid #b77ed2;
+}
+
 #projects_one {
 	background-image: url(<%= image_path "Projects/El_Camino/pict_one.jpg"%>);
 }
@@ -134,4 +146,12 @@ p {
 
 #projects_six {
 	background-image: url(<%= image_path "Projects/El_Camino/pict_one.jpg"%>);
+}
+
+.proj_link {
+	margin-left: 1000px;
+	margin-top: 20px;
+	font-family: Oswald, sans-serif;
+	color: white;
+	font-size: 18px;
 }
