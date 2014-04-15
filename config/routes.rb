@@ -1,5 +1,6 @@
 Rtr4c::Application.routes.draw do
 
+  get "purchases/index"
   get 'static/about'
   get 'static/contribute'
   get 'static/contact'
@@ -11,7 +12,7 @@ Rtr4c::Application.routes.draw do
 
   post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
   post '/delete_from_cart/:product_id' => 'cart#delete_from_cart', :as => 'delete_from_cart' 
-  post '/update_cart/' => 'cart#update_cart', :as => 'update_cart' # this I am not sure how to model since i have 2 parameters coming in.
+  post '/update_cart/' => 'cart#update_cart', :as => 'update_cart'
   
   root 'welcome#index'
 
@@ -28,6 +29,8 @@ Rtr4c::Application.routes.draw do
   resources :donations
   resources :cart
   resources :team_members
+  resources :checkouts
+  resources :purchases
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

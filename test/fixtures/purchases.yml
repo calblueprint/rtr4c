@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyText
+  email: MyString
+  total: 9.99
+
+two:
+  name: MyString
+  address: MyText
+  email: MyString
+  total: 9.99

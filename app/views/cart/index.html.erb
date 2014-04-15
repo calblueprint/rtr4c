@@ -31,3 +31,4 @@
   </tbody>
 </table>
 <p> Total price: <%= number_to_currency(@current_cart.total_price) %> </p>
+<p><%= button_to 'Checkout', {:controller => :checkouts, :action => :new}, {:method => :get} %></p>
