@@ -1,6 +1,6 @@
 <h1>Listing Purchases</h1>
 
-<span>Download: <%= link_to "Excel", donations_path(format: "xls") %></span>
+<span>Download: <%= link_to "Excel", purchases_path(format: "xls") %></span>
 
 <% @purchases.each do |purchase| %>
   <div>
@@ -17,5 +17,5 @@
       <p><%= citem.product.name %> | <%= citem.product.description %> | <%= number_to_currency(citem.product.price) %> | <%= citem.quantity %></p>
     </div>
   <% end %>
+  <br/><br/>
 <% end %>
-<br/>
