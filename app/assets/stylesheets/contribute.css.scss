@@ -1,0 +1,49 @@
+// Place all the styles related to the contribute controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.donations {
+  float: left;
+  margin: 50px;
+  margin-bottom: 100px;
+  width: 380px;
+  height: 380px;
+  border-radius: 200px;
+  border: 10px solid #333333;
+}
+
+.donations:hover {
+  cursor: pointer;
+  border: 10px solid #b77ed2;
+}
+
+#mail {
+  background: url(image_path("mail.jpg"));
+  background-size: cover;
+}
+
+#electronic {
+  background: url(image_path("electronic.svg"));
+  background-color: #ffffff;
+  background-size: cover;
+}
+
+#volunteer {
+  display: block;
+  margin-top: 50px;
+  margin-left: 400px;
+  padding: 20px 20px 30px 30px;
+  height: 24px;
+  width: 140px;
+  border-radius: 15px;
+  font-size: 24px;
+  font-family: Oswald, sans-serif;
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+}
+
+#volunteer:hover {
+  cursor: pointer;
+  border: 3px solid #b77ed2;
+  color: #b77ed2;
+}
