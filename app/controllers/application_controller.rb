@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   
 def authorize
+  session[:return_to] = request.original_url
   redirect_to login_url, alert: "Not authorized" if current_user.nil?
 end
 
