@@ -1,0 +1,20 @@
+<h1>Thanks for checking out RTR4C!</h1> <br/>
+
+Your purchase will definitely support our cause and we appreciate your support. <br/><br/>
+
+Below is your checkout details: <br/><br/>
+
+<div>
+  <p><%= @purchase.name %></p>
+  <p><%= @purchase.address %></p>
+</div>
+<br/>
+
+<p><u>Items</u></p>
+<% @purchase.cart_items.each do |citem| %>
+  <div>
+    <p><%= citem.product.name %> | <%= citem.product.description %> | <%= number_to_currency(citem.product.price) %> | <%= citem.quantity %></p>
+  </div>
+<% end %>
+<br/>
+Your total: <%= number_to_currency(@purchase.total) %>

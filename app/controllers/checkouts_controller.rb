@@ -23,6 +23,9 @@ class CheckoutsController < ApplicationController
       cart.cart_items.each do |citem|
         @purchase.cart_items << citem
       end
+      # deliver email
+      mail_info = {:mail => params[:checkout][:email], :purchase => @purchase}
+      StoreMailer.confirm_email(mail_info).deliver
       cart.destroy
       cart.save
     else
