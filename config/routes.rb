@@ -31,6 +31,8 @@ Rtr4c::Application.routes.draw do
   resources :team_members
   resources :checkouts
   resources :purchases
+  resources :contribute
+  resources :about
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

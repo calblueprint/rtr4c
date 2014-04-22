@@ -247,3 +247,34 @@ h2 {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+.tooltip{
+  text-align: center;
+  font-family: 'Special Elite', cursive;
+  font-size: 16px;
+  display: inline;
+  position: relative;
+}
+
+.tooltip:hover:before{
+  border: solid;
+  border-color: #333 transparent;
+  border-width: 10px 10px 0 10px;
+  top: 15px;
+  content: "";
+  right: 80px;
+  position: absolute;
+  z-index: 99;
+}
+
+.tooltip:hover:after{
+  background: #333;
+  border-radius: 5px;
+  top: -25px;
+  color: #fff;
+  content: attr(title);
+  right: 20px;
+  padding: 15px 15px 10px;
+  position: absolute;
+  z-index: 98;
+}
