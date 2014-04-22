@@ -1,4 +1,87 @@
-<h1>Our Team</h1>
+<div id="navbar_container">
+  <div id="navbar">
+    <div id="logo"></div>
+    <a class="tab" href="contact"> CONTACT </a>
+    <a class="tab" href="../donations"> CONTRIBUTE </a>
+    <a class="tab" href="../news"> NEWS </a>
+    <a class="tab" href="../products"> STORE </a>
+    <a class="tab" href="#"> PROJECTS </a>
+    <a class="tab" href="about"> ABOUT </a>
+  </div>
+</div>
+<div class="banner">
+</div>
+<div class="container">
+  <div class="content">
+    <h3 id="about_title"> ABOUT </h3>
+    <p class="" id="about">
+      We work with interior designers and hospitals/clinics that provide chemotherapy, Our custom-designed rooms host over 713 ,000 patient visits per year in ten facilities and 99 rooms in the USA and San Salvador in El Salvador
+      <br><br>
+      We began with a simple philanthropic gesture, Nancy Linebarger Ballard offered to donate her botanical paintings to the dreary chemotherapy rooms in Dr. Hufford’s San Francisco medical office. Dr. Hufford was overjoyed with the artistic gifts of generosity, yet she saw a much bigger future for the project.
+      <br><br>
+      In an effort to revamp the chemotherapy rooms in their entirety, Nancy reached out to twenty local interior designers for their professional aid. Within three days, six designers had reacted enthusiastically, volunteering their time and creative efforts for the first RTR4C Project. Since then, talented teams of room revamping designers have been transforming bland spaces into vibrant, warm and colorful environments that evoke positive vibes into the dreary circumstances often experienced in these treatment rooms. These rooms have been completed and are highlighted on our website.
+    </p>
+
+    <% @head_honchos.each do |head_honcho| %>
+      <div class="border"></div>
+      <%= image_tag(first_image(head_honcho), class: "picture") %>
+      <div class="profile">
+        <h3><%= head_honcho.title %></h3>
+        <h2><%= head_honcho.name %></h2>
+        <div class="border"></div>
+        <p><%= head_honcho.blurb %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container black_container">
+  <div class="content">
+    <h1 class="white"> ADVISORY BOARD </h1>
+    <div class="advisory_picture"></div>
+    <div class="advisory_picture"></div>
+    <div class="advisory_picture"></div>
+    <div class="advisory_picture "></div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <h1> OUR SPONSORS </h1>
+    <div class="about_media" id="homedepot"></div>
+    <div class="about_media" id="chase"></div>
+    <div class="about_media " id="giants"></div>
+  </div>
+</div>
+<div class="container black_container">
+  <div class="content">
+    <h1 class="white"> DESIGNERS & VOLUNTEERS </h1>
+    <div class="mini_picture"></div>
+    <div class="mini_picture"></div>
+    <div class="mini_picture"></div>
+    <div class="mini_picture"></div>
+    <div class="mini_picture"></div>
+    <div class="mini_picture"></div>
+    <div class="mini_picture"></div>
+    <div class="mini_picture"></div>
+    <div class="mini_picture"></div>
+    <div class="mini_picture"></div>
+    <div class="mini_picture "></div>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <h1> FOLLOW US </h1>
+    <div class="media" id="facebook"></div>
+    <div class="media" id="linkedin"></div>
+    <div class="media" id="twitter"></div>
+    <div id="copyright_border"></div>
+    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
+  </div>
+</div>
+
+
+
+
+<!-- <h1>Our Team</h1>
 
 <h2>Head Honchos</h2>
 <% @head_honchos.each do |honcho| %>
@@ -68,3 +151,4 @@
 <br>
 
 <%= link_to 'New Team member', new_team_member_path %>
+ -->
