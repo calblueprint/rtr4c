@@ -22,6 +22,8 @@
       In an effort to revamp the chemotherapy rooms in their entirety, Nancy reached out to twenty local interior designers for their professional aid. Within three days, six designers had reacted enthusiastically, volunteering their time and creative efforts for the first RTR4C Project. Since then, talented teams of room revamping designers have been transforming bland spaces into vibrant, warm and colorful environments that evoke positive vibes into the dreary circumstances often experienced in these treatment rooms. These rooms have been completed and are highlighted on our website.
     </p>
 
+    <%= link_to 'New Team member', new_team_member_path %>
+
     <% @head_honchos.each do |head_honcho| %>
       <div class="border"></div>
       <%= image_tag(first_image(head_honcho), class: "picture") %>
@@ -37,10 +39,9 @@
 <div class="container black_container">
   <div class="content">
     <h1 class="white"> ADVISORY BOARD </h1>
-    <div class="advisory_picture"></div>
-    <div class="advisory_picture"></div>
-    <div class="advisory_picture"></div>
-    <div class="advisory_picture "></div>
+    <% @advisory_board.each do |advisory_board| %>
+      <%= image_tag(first_image(advisory_board), class: "picture") %>
+    <% end %>
   </div>
 </div>
 <div class="container">
@@ -48,23 +49,19 @@
     <h1> OUR SPONSORS </h1>
     <div class="about_media" id="homedepot"></div>
     <div class="about_media" id="chase"></div>
-    <div class="about_media " id="giants"></div>
+    <div class="about_media" id="giants"></div>
   </div>
 </div>
 <div class="container black_container">
   <div class="content">
     <h1 class="white"> DESIGNERS & VOLUNTEERS </h1>
-    <div class="mini_picture"></div>
-    <div class="mini_picture"></div>
-    <div class="mini_picture"></div>
-    <div class="mini_picture"></div>
-    <div class="mini_picture"></div>
-    <div class="mini_picture"></div>
-    <div class="mini_picture"></div>
-    <div class="mini_picture"></div>
-    <div class="mini_picture"></div>
-    <div class="mini_picture"></div>
-    <div class="mini_picture "></div>
+    <% @designers.each do |designer| %>
+      <%= image_tag(first_image(designer), class: "mini_picture") %>
+    <% end %>
+
+    <% @volunteers.each do |volunteer| %>
+      <%= image_tag(first_image(volunteer), class: "mini_picture") %>
+    <% end %>
   </div>
 </div>
 <div class="container">
