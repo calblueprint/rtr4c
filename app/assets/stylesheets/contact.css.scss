@@ -1,0 +1,31 @@
+// Place all the styles related to the contact controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+input, textarea {
+  float: none;
+  width: 500px;
+  padding: 10px;
+  font-family: Merriweather, serif;
+  font-weight: normal;
+  margin-top: 18px;
+  margin-bottom: 50px;
+  opacity: 0.5;
+  border: 1px solid #333333;
+  border-radius: 5px;
+}
+
+.labels {
+  margin-left: 50px;
+  padding-right: 50px;
+  float: left;
+  width: 250px;
+}
+
+.label {
+  text-align: right;
+}
+
+input:focus, textarea:focus {
+  opacity: 1;
+}
