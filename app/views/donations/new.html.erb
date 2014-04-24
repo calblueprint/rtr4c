@@ -1,5 +1,17 @@
-<h1> New Donation </h1>
-
+<div id="navbar_container">
+  <div id="navbar">
+    <a id="logo" href="../"></a>
+    <a class="tab" href="../contact"> CONTACT </a>
+    <a class="tab" href="../contribute"> CONTRIBUTE </a>
+    <a class="tab" href="../news"> NEWS </a>
+    <a class="tab" href="../products"> STORE </a>
+    <a class="tab" href="../projects"> PROJECTS </a>
+    <a class="tab" href="../about"> ABOUT </a>
+  </div>
+</div>
+<h1> ONLINE DONATION </h1>
+<div class="container">
+<div class="content">
 <%= form_for @donation do |f| %>  
   <% if @donation.errors.any? %>  
     <div class="error_messages">  
@@ -49,5 +61,25 @@
     <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month", :data => {:stripe => 'exp-month'}} %>  
     <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :data => {:stripe => 'exp-year'}} %>  
   </div>                 
-  <div class="actions"><%= f.submit "Donate" %></div>  
-<% end %>  
+  <div class="actions"><%= f.submit "DONATE" %></div>  
+<% end %>
+</div>
+</div>
+<div class="container black_container">
+  <div class="content">
+    <h1 class="white"> ADDITIONAL INFORMATION </h1>
+    <div class="white_border"></div>
+    <p class="white extra_margin"> RTR4C is a volunteer organization operating through contributions, in-kind donations, and proceeds from fund-raising events. They do not receive state or federal funding and are solely dependent on contributions from the community, individuals and corporations. RTR4C has no religious or political agendas or affiliations.
+    </p>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <h1> FOLLOW US </h1>
+    <a class="media tooltip" title="Facebook" id="facebook" href="https://www.facebook.com/pages/Rooms-That-Rock-4-Chemo/112153845548333"></a>
+    <a class="media tooltip" title="LinkedIn" id="linkedin" href="http://www.linkedin.com/profile/view?id=43149579&amp;trk=tab_pro"></a>
+    <a class="media tooltip" title="Twitter" id="twitter" href="https://twitter.com/RoomsThatRock"></a>
+    <div id="copyright_border"></div>
+    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
+  </div>
+</div>
