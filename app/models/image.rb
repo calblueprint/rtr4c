@@ -4,4 +4,8 @@ class Image < ActiveRecord::Base
     medium: '300x300'
   }
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+
+  def photo_from_url(url)
+    self.photo = URI.parse(url)
+  end
 end
