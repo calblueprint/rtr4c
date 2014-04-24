@@ -12,6 +12,8 @@ class ContactsController < ApplicationController
     @contact = Contact.new(:fname => params[:contact][:fname], :lname => params[:contact][:lname], :email => params[:contact][:email], :phone => params[:contact][:phone], :message => params[:contact][:message])
     if @contact.save
       render action: 'create'
+    else
+      render action: 'new'
     end
   end
 
