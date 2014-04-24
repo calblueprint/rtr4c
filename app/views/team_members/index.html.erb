@@ -22,7 +22,9 @@
       In an effort to revamp the chemotherapy rooms in their entirety, Nancy reached out to twenty local interior designers for their professional aid. Within three days, six designers had reacted enthusiastically, volunteering their time and creative efforts for the first RTR4C Project. Since then, talented teams of room revamping designers have been transforming bland spaces into vibrant, warm and colorful environments that evoke positive vibes into the dreary circumstances often experienced in these treatment rooms. These rooms have been completed and are highlighted on our website.
     </p>
 
+    <% if current_user %>
     <%= link_to 'New Team member', new_team_member_path %>
+    <% end %>
 
     <% @head_honchos.each do |head_honcho| %>
       <div class="border"></div>
@@ -33,6 +35,12 @@
         <div class="border"></div>
         <p><%= head_honcho.blurb %></p>
       </div>
+
+      <% if current_user %>
+      <p><%= link_to 'Show', head_honcho %></p>
+      <p><%= link_to 'Edit', edit_team_member_path(head_honcho) %></p>
+      <p><%= link_to 'Destroy', head_honcho, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
     <% end %>
   </div>
 </div>
@@ -41,6 +49,12 @@
     <h1 class="white"> ADVISORY BOARD </h1>
     <% @advisory_board.each do |advisory_board| %>
       <%= image_tag(first_image(advisory_board), class: "picture") %>
+
+      <% if current_user %>
+      <p><%= link_to 'Show', advisory_board %></p>
+      <p><%= link_to 'Edit', edit_team_member_path(advisory_board) %></p>
+      <p><%= link_to 'Destroy', advisory_board, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
     <% end %>
   </div>
 </div>
@@ -57,10 +71,20 @@
     <h1 class="white"> DESIGNERS & VOLUNTEERS </h1>
     <% @designers.each do |designer| %>
       <%= image_tag(first_image(designer), class: "mini_picture") %>
+      <% if current_user %>
+      <p><%= link_to 'Show', designer %></p>
+      <p><%= link_to 'Edit', edit_team_member_path(designer) %></p>
+      <p><%= link_to 'Destroy', designer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
     <% end %>
 
     <% @volunteers.each do |volunteer| %>
       <%= image_tag(first_image(volunteer), class: "mini_picture") %>
+      <% if current_user %>
+      <p><%= link_to 'Show', volunteer %></p>
+      <p><%= link_to 'Edit', edit_team_member_path(volunteer) %></p>
+      <p><%= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
     <% end %>
   </div>
 </div>
