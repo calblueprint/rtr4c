@@ -31,5 +31,4 @@ class ContactsController < ApplicationController
     def set_contact
       @contact = Contact.find(params[:id])
     end
-
 end

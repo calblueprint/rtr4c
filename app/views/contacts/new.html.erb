@@ -23,26 +23,26 @@
           </ul>
         </div>  
       <% end %>
-      <h2>
+      <div class="field">
         <%= e.label "First Name" %>
         <%= e.text_field :fname %>
-      </h2>      
-      <h2>
+      </div>      
+      <div class="field">
         <%= e.label "Last Name" %>
         <%= e.text_field :lname %>
-      </h2>      
-      <h2>
+      </div>      
+      <div class="field">
         <%= e.label "Email" %>
         <%= e.text_field :email %>
-      </h2>      
-      <h2>
+      </div>      
+      <div class="field">
         <%= e.label "Phone" %>
         <%= e.text_field :phone %>
-      </h2>      
-      <h2>
+      </div>      
+      <div class="field">
         <%= e.label "Message" %>
-        <%= e.text_area :message %>
-      </h2>
+        <%= e.text_area :message, :class => 'extra_margin' %>
+      </div>
       <p>
         <%= e.submit "Send Message" %>
       </p>
