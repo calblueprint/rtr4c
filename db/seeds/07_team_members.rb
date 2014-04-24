@@ -62,4 +62,5 @@ t = TeamMember.new(
   blurb: 'Shoshana Ungerleider, MD is originally from Eugene, Oregon. She has lived in the Bay area for the last four years and completed her residency training in San Francisco at California Pacific Medical Center. She currently works as a hospital-based internal medicine physician and is Chair of the RoomThatRock4Chemo Ambassador Board for young professionals.',
   role: 0,
 )
-t.images.
+t.images.new().photo_from_url("http://www.roomsthatrock4chemo.us/images/shoshana-ungerleider-1.jpg")
+t.save

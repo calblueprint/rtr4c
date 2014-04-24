@@ -25,9 +25,9 @@
     <% if current_user %>
     <%= link_to 'New Team member', new_team_member_path %>
     <% end %>
-
+    <div class="border"></div>
     <% @head_honchos.each do |head_honcho| %>
-      <div class="border"></div>
+      
       <%= image_tag(first_image(head_honcho), class: "picture") %>
       <div class="profile">
         <h3><%= head_honcho.title %></h3>
