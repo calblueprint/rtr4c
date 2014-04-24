@@ -1,21 +1,27 @@
-
+<div class="container">
+<div class="content">
 <%= form_for @press, html: {multipart: true} do |f| %>
 
-<p>
+
+<div class="field">
 	<%= f.label "Title" %>
 	<%= f.text_field :title %>
-</p>
+</div>
 
-<p>
+<div class="field">
 	<%= f.label "Link" %>
 	<%= f.text_field :link %>
-</p>
+</div>
 
-<p>
+<div class="field">
 	<%= f.label "Video Link" %>
 	<%= f.text_field :videolink %>
-</p>
+</div>
 
+<div class="submit_spacer"></div>
 <%= f.submit %>
 
+
 <% end %>
+</div>
+</div>
