@@ -34,13 +34,15 @@
         <h2><%= head_honcho.name %></h2>
         <div class="border"></div>
         <p><%= head_honcho.blurb %></p>
+        
+        <% if current_user %>
+        <p><%= link_to 'Show', head_honcho %></p>
+        <p><%= link_to 'Edit', edit_team_member_path(head_honcho) %></p>
+        <p><%= link_to 'Destroy', head_honcho, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <% end %>
       </div>
 
-      <% if current_user %>
-      <p><%= link_to 'Show', head_honcho %></p>
-      <p><%= link_to 'Edit', edit_team_member_path(head_honcho) %></p>
-      <p><%= link_to 'Destroy', head_honcho, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      <% end %>
+      
     <% end %>
   </div>
 </div>
