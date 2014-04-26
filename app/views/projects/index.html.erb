@@ -3,6 +3,7 @@
 <% @projects.each do |project| %>
   <h2><%= link_to project.title, project %></h2>
   <%= image_tag first_image project %>
+  <%= project.id %>
 
   <% if current_user %>
     <p><%= link_to 'Show', project %></p>
