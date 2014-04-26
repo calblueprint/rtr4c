@@ -2,9 +2,9 @@
   <div id="navbar">
     <div id="logo"></div>
     <a class="tab" href="contact"> CONTACT </a>
-    <a class="tab" href="../donations"> CONTRIBUTE </a>
+    <a class="tab" href="../contribute"> CONTRIBUTE </a>
     <a class="tab" href="../news"> NEWS </a>
-    <a class="tab" href="../products"> STORE </a>
+    <a class="tab" href="../store"> STORE </a>
     <a class="tab" href="#"> PROJECTS </a>
     <a class="tab" href="about"> ABOUT </a>
   </div>
@@ -12,6 +12,10 @@
 <div class="container">
   <div class="content">
     <h1> NEWS </h1>
+    <% if current_user %>
+      <p> <%= link_to 'New Blog', new_blogpost_path %> </p>
+      <p> <%= link_to 'New Press', new_press_update_path %> </p>
+    <% end %>
     <div class="apple_pagination">
       <%= will_paginate @news %>
     </div>
@@ -26,8 +30,10 @@
             <h4> <%= news.created_at.strftime('%x') %> </h4>
             <p> <%= news.blurb %> </p>
             <p> <%= link_to "Read More", news.link %> </p>
-            <span> <%= link_to 'Edit', edit_press_update_path(news) %> </span>
-            <span><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %><span>
+            <% if current_user %>
+              <span> <%= link_to 'Edit', edit_press_update_path(news) %> </span>
+              <span><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %><span>
+            <% end %>
           </div>
           <div class="border extra_margin"></div>
         </div>
@@ -40,8 +46,10 @@
             <h2> <%= news.title %> </h2>
             <h4> <%= news.created_at.strftime('%x') %> </h4>
             <p> <%= news.post %> </p>
-            <span> <%= link_to 'Edit', edit_blogpost_path(news) %> </span>
-            <span><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %><span>
+            <% if current_user %>
+              <span> <%= link_to 'Edit', edit_blogpost_path(news) %> </span>
+              <span><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %><span>
+            <% end %>
           </div>
           <div class="border extra_margin"></div>
         </div>

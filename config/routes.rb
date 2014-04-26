@@ -10,6 +10,8 @@ Rtr4c::Application.routes.draw do
 
   get 'login',  to: 'sessions#new',     as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'store',  to: 'products#index',   as: 'store'
+  get 'contact',to: 'contacts#new',     as: 'contact'
 
   post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
   post '/delete_from_cart/:product_id' => 'cart#delete_from_cart', :as => 'delete_from_cart' 
