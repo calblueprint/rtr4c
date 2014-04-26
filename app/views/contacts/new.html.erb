@@ -12,28 +12,41 @@
 <div class="container">
   <div class="content">
   <h1> CONTACT </h1>
-    <form id="inputs">
+    <%= form_for @contact do |e| %>
+      <% if @contact.errors.any? %>  
+        <div class="error_messages">  
+          <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this email from being saved:</h2>  
+          <ul>  
+          <% @contact.errors.full_messages.each do |msg| %>  
+            <li><%= msg %></li>  
+          <% end %>  
+          </ul>
+        </div>  
+      <% end %>
       <div class="field">
-        <label> First Name </label>
-        <input type="text" name="first"/>
+        <%= e.label "First Name" %>
+        <%= e.text_field :fname %>
+      </div>      
+      <div class="field">
+        <%= e.label "Last Name" %>
+        <%= e.text_field :lname %>
+      </div>      
+      <div class="field">
+        <%= e.label "Email" %>
+        <%= e.text_field :email %>
+      </div>      
+      <div class="field">
+        <%= e.label "Phone" %>
+        <%= e.text_field :phone %>
+      </div>      
+      <div class="field">
+        <%= e.label "Message" %>
+        <%= e.text_area :message, :class => 'extra_margin' %>
       </div>
-      <div class="field">
-        <label> Last Name </label>
-        <input type="text" name="last"/>
-      </div>  
-      <div class="field">
-        <label> Email </label>
-        <input type="text" name="email"/>
-      </div>
-      <div class="field">
-        <label> Phone </label>
-        <input type="text" name="phone"/>
-      </div>
-      <div class="field">
-        <label> Message </label>
-        <textarea class="extra_margin" rows="10"> </textarea>
-      </div>
-    </form>
+      <p>
+        <%= e.submit "Send Message" %>
+      </p>
+    <% end %>
   </div>
 </div>
 <div class="container black_container">
