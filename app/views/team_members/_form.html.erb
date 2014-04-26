@@ -17,19 +17,19 @@
   </div>
   
   <div class="field team_member_name">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field team_member_title">
-    <%= f.label :title %><br>
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   <div class="field team_member_blurb">
-    <%= f.label :blurb %><br>
+    <%= f.label :blurb %>
     <%= f.text_area :blurb %>
   </div>
   <div class="field team_member_link">
-    <%= f.label :portfolio_link %><br>
+    <%= f.label :portfolio_link %>
     <%= f.text_field :portfolio_link %>
   </div>
 
@@ -45,7 +45,7 @@
     <% end %>
     <%= f.link_to_add "Add photo", :images, id: "add_image_team_member" %>
   </div>
-
+  <div class="submit_spacer"></div>
   <div class="actions">
     <%= f.submit %>
   </div>

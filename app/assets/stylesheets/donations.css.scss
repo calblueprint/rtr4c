@@ -1,3 +1,70 @@
 // Place all the styles related to the Donations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.field {
+  float: left;
+  width: 900px;
+  margin-top: 25px;
+  display: block;
+}
+
+label {
+  float: left;
+  width: 300px;
+  text-align: right;
+  font-family: 'Special Elite', cursive;
+  font-size: 32px;
+  margin: 5px;
+  margin-right: 0px;
+}
+
+select {
+  float: right;
+  margin: 15px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+
+input {
+  float: right;
+  margin: 15px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+
+textarea {
+  float: right;
+  margin: 0px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.submit_spacer {
+  float: left;
+  height: 100px;
+  width: 100%;
+}
+
+input[type="submit"] {
+  float: none !important;
+  display: block;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 20px 20px 20px 20px;
+  border-radius: 15px;
+  font-size: 24px;
+  font-family: Oswald, sans-serif;
+  color: #333333;
+  background: transparent;
+  border: 3px solid #333333;
+  opacity: 1;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  border: 3px solid #b77ed2;
+  color: #b77ed2;
+}
