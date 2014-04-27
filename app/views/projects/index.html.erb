@@ -17,27 +17,27 @@
     	<p> <%= link_to "Add Project", new_project_path %> </p>
     <% end %>
     <% @projects.each do |project| %>
-    	<%= image_tag project.images[0].photo.url, size: "50x50" %>
+    	<%= image_path project.images[0].photo.url %>
     <% end %>
 
     <div class = "featured">
       <div class = "featured_picture" id = "pict_one"></div>
       <div class = "featured_text">
-        <p>Mammoth Hospital<br>Mammoth,CA</p>
+        <p> <%= @featured_one.title %> <br> <%= @featured_one.location %> </p>
         <div class = "featured_line"></div>
       </div>
     </div>
     <div class = "featured">
       <div class = "featured_picture" id = "pict_two"></div>
       <div class = "featured_text" id = "mid">
-        <p>Oakland Hospital<br>Oakland,CA</p>
+        <p><%= @featured_two.title %> <br> <%= @featured_two.location %> </p>
         <div class = "featured_line"></div>
       </div>
     </div>
     <div class = "featured">
       <div class = "featured_picture" id = "pict_three"></div>
       <div class = "featured_text">
-        <p>Mammoth Hospital<br>Mammoth,CA</p>
+        <p><%= @featured_three.title %> <br> <%= @featured_three.location %></p>
         <div class = "featured_line"></div>
       </div>
     </div>
@@ -47,12 +47,14 @@
 <div class="content">
   <h1 id = "all_p"> All Projects </h1>
   <div class = "projects_all">
+  	<% @rest_array.each do |project| %>
       <div class = "project_block">
-        <div class = "project_thumb" id = "projects_one"></div>
+        <div class = "project_thumb" id = "projects_one"><%= image_tag project.images[0].photo.url %> </div>
         <div class ="project_text">
-          <p>Camden Hospital</p>
+          <p><%= project.title %> </p>
         </div>
       </div>
+    <% end %>
       <div class = "project_block">
         <div class = "project_thumb" id = "projects_two"></div>
         <div class ="project_text">

@@ -8,6 +8,9 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     @project_array = @projects.sort_by! {|a| a.created_at}
     @featured_array = @project_array[0..2]
+    @featured_one = @featured_array[0]
+    @featured_two = @featured_array[1]
+    @featured_three = @featured_array[2]
     @rest_array = @project_array[3..@project_array.length]
   end
 
