@@ -1,3 +1,108 @@
+<div id="navbar_container">
+  <div id="navbar">
+    <div id="logo"></div>
+    <a class="tab" href="#"> CONTACT </a>
+    <a class="tab" href="#"> CONTRIBUTE </a>
+    <a class="tab" href="#"> NEWS </a>
+    <a class="tab" href="#"> STORE </a>
+    <a class="tab" href="#"> PROJECTS </a>
+    <a class="tab" href="#"> ABOUT </a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="content">
+    <h1>Featured Projects</h1>
+    <% if current_user %>
+    	<p> <%= link_to "Add Project", new_project_path %> </p>
+    <% end %>
+    <% @projects.each do |project| %>
+    	<%= image_tag project.images[0].photo.url, size: "50x50" %>
+    <% end %>
+
+    <div class = "featured">
+      <div class = "featured_picture" id = "pict_one"></div>
+      <div class = "featured_text">
+        <p>Mammoth Hospital<br>Mammoth,CA</p>
+        <div class = "featured_line"></div>
+      </div>
+    </div>
+    <div class = "featured">
+      <div class = "featured_picture" id = "pict_two"></div>
+      <div class = "featured_text" id = "mid">
+        <p>Oakland Hospital<br>Oakland,CA</p>
+        <div class = "featured_line"></div>
+      </div>
+    </div>
+    <div class = "featured">
+      <div class = "featured_picture" id = "pict_three"></div>
+      <div class = "featured_text">
+        <p>Mammoth Hospital<br>Mammoth,CA</p>
+        <div class = "featured_line"></div>
+      </div>
+    </div>
+</div>
+
+<div class = "container black_container">
+<div class="content">
+  <h1 id = "all_p"> All Projects </h1>
+  <div class = "projects_all">
+      <div class = "project_block">
+        <div class = "project_thumb" id = "projects_one"></div>
+        <div class ="project_text">
+          <p>Camden Hospital</p>
+        </div>
+      </div>
+      <div class = "project_block">
+        <div class = "project_thumb" id = "projects_two"></div>
+        <div class ="project_text">
+          <p>Aria Hospital</p>
+        </div>
+      </div>
+      <div class = "project_block">
+        <div class = "project_thumb" id = "projects_three"></div>
+        <div class ="project_text">
+          <p>El Salvador</p>
+        </div>
+      </div>
+      <div class = "project_block">
+        <div class = "project_thumb" id = "projects_four"></div>
+        <div class ="project_text">
+          <p>Marin Hospital</p>
+        </div>
+      </div>
+      <div class = "project_block">
+        <div class = "project_thumb" id = "projects_five"></div>
+        <div class ="project_text">
+          <p>Sophia's Room</p>
+        </div>
+      </div>
+      <div class = "project_block">
+        <div class = "project_thumb" id = "projects_six"></div>
+        <div class ="project_text">
+          <p>Ocean Room</p>
+        </div>
+      </div>
+    </div>
+    <div class = "proj_link">1     2     Next</div>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="content">
+    <h1> FOLLOW US </h1>
+    <div class="media" id="facebook"></div>
+    <div class="media" id="linkedin"></div>
+    <div class="media" id="twitter"></div>
+    <div id = "copyright_border"></div>
+    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
+  </div>
+</div>
+
+
+
+
+
 <h1>Listing projects</h1>
 
 <% @projects.each do |project| %>

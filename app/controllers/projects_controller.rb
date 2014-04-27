@@ -6,6 +6,9 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    @project_array = @projects.sort_by! {|a| a.created_at}
+    @featured_array = @project_array[0..2]
+    @rest_array = @project_array[3..@project_array.length]
   end
 
   # GET /projects/1
