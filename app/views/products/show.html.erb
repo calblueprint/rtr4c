@@ -7,5 +7,10 @@
   <%= image.name %><br>
   <%= image_tag image.photo.url %><br>
 <% end %>
+<% @product.size_variants.each do |size| %>
+  <% size.sizes.each do |s| %>
+    <p> <%= s %> </p>
+  <% end %>
+<% end %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
