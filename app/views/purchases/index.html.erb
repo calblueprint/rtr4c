@@ -14,7 +14,11 @@
   <br/>
   <% purchase.cart_items.each do |citem| %>
     <div>
-      <p><%= citem.product.name %> | <%= citem.product.description %> | <%= number_to_currency(citem.product.price) %> | <%= citem.quantity %></p>
+      <% if citem.selected_size.nil? %>
+        <p><%= citem.product.name %> | <%= citem.product.description %> | <%= number_to_currency(citem.product.price) %> | <%= citem.quantity %></p>
+      <% else %>
+        <p><%= citem.product.name %> | <%= citem.product.description %> | <%= citem.selected_size %> | <%= number_to_currency(citem.product.price) %> | <%= citem.quantity %></p>
+      <% end %>
     </div>
   <% end %>
   <br/><br/>

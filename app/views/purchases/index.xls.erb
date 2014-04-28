@@ -12,7 +12,13 @@
         <Cell><Data ss:Type="String">Email</Data></Cell>
         <Cell><Data ss:Type="String">Address</Data></Cell>
         <% @products.each do |product| %>
-          <Cell><Data ss:Type="String"><%= product.name %></Data></Cell>
+          <% if product.size_variants.any? %>
+            <% product.size_variants.first.sizes.each do |psize| %>
+              <Cell><Data ss:Type="String"><%= product.name %> - <%= psize %></Data></Cell>
+            <% end %>
+          <% else %>
+            <Cell><Data ss:Type="String"><%= product.name %></Data></Cell>
+          <% end %>
         <% end %>
       </Row>
     <% @purchases.each do |purchase| %>
@@ -22,15 +28,30 @@
         <Cell><Data ss:Type="String"><%= purchase.email %></Data></Cell>        
         <Cell><Data ss:Type="String"><%= purchase.address %></Data></Cell>
         <% @products.each do |product| %>
-          <% found = false %>
-          <% purchase.cart_items.each do |citem| %>
-            <% if citem.product.name == product.name %>
-              <% found = true %>
-              <Cell><Data ss:Type="Number"><%= citem.quantity %></Data></Cell>
+          <% if product.size_variants.any? %>
+            <% product.size_variants.first.sizes.each do |psize| %>
+              <% found = false %>
+              <% purchase.cart_items.each do |citem| %>
+                <% if citem.product.name == product.name && citem.selected_size == psize %>
+                  <% found = true %>
+                  <Cell><Data ss:Type="Number"><%= citem.quantity %></Data></Cell>
+                <% end %>
+              <% end %>
+              <% if not found %>
+                <Cell><Data ss:Type="Number">0</Data></Cell>
+              <% end %>
             <% end %>
-          <% end %>
-          <% if not found %>
-            <Cell><Data ss:Type="Number">0</Data></Cell>
+          <% else %>
+            <% found = false %>
+            <% purchase.cart_items.each do |citem| %>
+              <% if citem.product.name == product.name %>
+                <% found = true %>
+                <Cell><Data ss:Type="Number"><%= citem.quantity %></Data></Cell>
+              <% end %>
+            <% end %>
+            <% if not found %>
+              <Cell><Data ss:Type="Number">0</Data></Cell>
+            <% end %>
           <% end %>
         <% end %>
       </Row>
