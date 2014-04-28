@@ -27,13 +27,29 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
-    if @product.save
-      redirect_to @product, notice: 'Product was successfully created.'
-    else
-      render action: 'new'
+      size = SizeVariant.new
+      if params.has_key?(:small)
+        size.sizes << params[:small]
+      end
+      if params.has_key?(:medium)
+        size.sizes << params[:medium]
+      end    
+      if params.has_key?(:large)
+        size.sizes << params[:large]
+      end    
+
+      @product = Product.new(product_params)
+      if @product.save
+        if size.sizes.any?
+          size.product = @product
+          @product.size_variants << size
+          size.save
+        end
+        redirect_to @product, notice: 'Product was successfully created.'
+      else
+        render action: 'new'
+      end
     end
-  end
 
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json

@@ -17,14 +17,20 @@
       <tr>
         <td><%= citem.product.name %></td>
         <td><%= citem.product.description %></td>
+        <% if citem.selected_size.nil? %>
+          <td> N/A </td>
+        <% else %>
+          <td><%= citem.selected_size %></td>
+        <% end %>
         <td>$<%= citem.product.price %></td> 
         <%= form_for(citem, url: update_cart_path, method: :post) do |f| %>
           <td><%= f.number_field :quantity, value: citem.quantity %></td>
           <td><%= f.hidden_field :product_id, value: citem.product_id %></td>
+          <td><%= f.hidden_field :selected_size, value: citem.selected_size %></td>
           <td><%= f.submit "Update" %></td>
         <% end %>
         <td><%= link_to 'Show', citem.product %></td>
-        <td><%= link_to "Delete", delete_from_cart_path(:product_id => citem.product), :method => :post %></td>
+        <td><%= link_to "Delete", delete_from_cart_path(:product_id => citem.product, :selected_size => citem.selected_size), :method => :post %></td>
       </tr>
     <% end %>
     <% end %>
