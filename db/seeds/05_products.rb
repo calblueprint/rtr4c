@@ -1,4 +1,12 @@
 ################################## Products ###################################
+
+ys = SizeVariant.new
+ys.sizes << "Youth Small"
+ys.sizes << "Youth Medium"
+ys.sizes << "Youth Large"
+ys.sizes << "Youth X-Large"
+ys.save
+
 p = Product.create( 
   name:         "Limited Edition Apron",
   description:  "NOTE: ITEMS WILL BE FULFILLED 1 WEEK AFTER ORDER IS PLACED.
@@ -16,8 +24,15 @@ p = Product.create(
   100% cotton. Made in the USA.",
   price:        "50.00")
 
-
 p.images.new().photo_from_url("https://d2isyty7gbnm74.cloudfront.net/qLtofPFqjKBBa1IKMHslDu6Ymok=/276x276/square-production.s3.amazonaws.com/files/c5f2d996b36ece0fa9258d206ab41110f4da6e23/original.jpeg")
+s = SizeVariant.new
+s.sizes << "Adult Small"
+s.sizes << "Adult Medium"
+s.sizes << "Adult Large"
+s.sizes << "Adult X-Large"
+s.sizes << "Adult XX-Large"
+p.size_variants << s
+s.save
 p.save
 
 p = Product.create( 
@@ -28,6 +43,14 @@ p = Product.create(
   price:        "35.00")
 
 p.images.new().photo_from_url("https://d2isyty7gbnm74.cloudfront.net/Kw_lkN2Ke7J5nVQ31XofCIlqO8I=/276x276/square-production.s3.amazonaws.com/files/37cdfc95a29cd88053087ee7eec5635b/original.jpeg")
+s = SizeVariant.new
+s.sizes << "Adult Small"
+s.sizes << "Adult Medium"
+s.sizes << "Adult Large"
+s.sizes << "Adult X-Large"
+s.sizes << "Adult XX-Large"
+p.size_variants << s
+s.save
 p.save
 
 p = Product.create( 
@@ -38,6 +61,14 @@ p = Product.create(
   price:        "25.00")
 
 p.images.new().photo_from_url("https://d2isyty7gbnm74.cloudfront.net/krVderDjv6d6W64YBg8wp399DHg=/276x276/square-production.s3.amazonaws.com/files/07fadeb59b280866fa1c666f783a1eedba924594/original.jpeg")
+s = SizeVariant.new
+s.sizes << "Adult Small"
+s.sizes << "Adult Medium"
+s.sizes << "Adult Large"
+s.sizes << "Adult X-Large"
+s.sizes << "Adult XX-Large"
+p.size_variants << s
+s.save
 p.save
 
 p = Product.create( 
@@ -48,6 +79,13 @@ p = Product.create(
   price:        "45.00")
 
 p.images.new().photo_from_url("https://d2isyty7gbnm74.cloudfront.net/qLtofPFqjKBBa1IKMHslDu6Ymok=/276x276/square-production.s3.amazonaws.com/files/c5f2d996b36ece0fa9258d206ab41110f4da6e23/original.jpeg")
+ys = SizeVariant.new
+ys.sizes << "Youth Small"
+ys.sizes << "Youth Medium"
+ys.sizes << "Youth Large"
+ys.sizes << "Youth X-Large"
+p.size_variants << ys
+ys.save
 p.save
 
 p = Product.create( 
@@ -58,6 +96,13 @@ p = Product.create(
   price:        "30.00")
 
 p.images.new().photo_from_url("https://d2isyty7gbnm74.cloudfront.net/Kw_lkN2Ke7J5nVQ31XofCIlqO8I=/276x276/square-production.s3.amazonaws.com/files/37cdfc95a29cd88053087ee7eec5635b/original.jpeg")
+ys = SizeVariant.new
+ys.sizes << "Youth Small"
+ys.sizes << "Youth Medium"
+ys.sizes << "Youth Large"
+ys.sizes << "Youth X-Large"
+p.size_variants << ys
+ys.save
 p.save
 
 p = Product.create( 
@@ -68,6 +113,13 @@ p = Product.create(
   price:        "20.00")
 
 p.images.new().photo_from_url("https://d2isyty7gbnm74.cloudfront.net/krVderDjv6d6W64YBg8wp399DHg=/276x276/square-production.s3.amazonaws.com/files/07fadeb59b280866fa1c666f783a1eedba924594/original.jpeg")
+ys = SizeVariant.new
+ys.sizes << "Youth Small"
+ys.sizes << "Youth Medium"
+ys.sizes << "Youth Large"
+ys.sizes << "Youth X-Large"
+p.size_variants << ys
+ys.save
 p.save
 
 p = Product.create( 
