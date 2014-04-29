@@ -20,7 +20,12 @@ project = Project.new(
   volunteers: 'Donations by Tracy Sistili, Founder The Beverly Fund,  ION Solutions, Rebecca C Knockemus, Dali Decals, Cutting Edget Stencils, Ann Marie Edwards, COO Alliance Cancer Specialists, Cora Sue Anthony (HGTV Designer), Andres Torres Fine Arts Photographer, Nate Wood, Video Producer: VisionLine Media, Amy Ocasio, Fine Artist/Founder Whimsical Spirits of Whim-en, Colorful Artwork by Amy O, Wes Coventry, Fine Work Carpenter, Home Depot, and all the wonderful local volunteers!',
   location: 'Philadelphia, PA'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/pict_one.png")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/a_1.png")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/a_2.png")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/a_3.png")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/b_1.png")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/b_2.png")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/b_3.png")
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -108,7 +113,7 @@ project = Project.new(
   volunteers: 'NA',
   location: 'Oakland, CA'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/pict_one.png")
+project.images.new().photo_from_url("http://upload.wikimedia.org/wikipedia/commons/2/26/YellowLabradorLooking_new.jpg")
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
