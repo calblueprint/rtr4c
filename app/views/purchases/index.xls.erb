@@ -11,6 +11,8 @@
         <Cell><Data ss:Type="String">Name</Data></Cell>
         <Cell><Data ss:Type="String">Email</Data></Cell>
         <Cell><Data ss:Type="String">Address</Data></Cell>
+        <Cell><Data ss:Type="String">Subtotal</Data></Cell>
+        <Cell><Data ss:Type="String">Grand Total</Data></Cell>
         <% @products.each do |product| %>
           <% if product.size_variants.any? %>
             <% product.size_variants.first.sizes.each do |psize| %>
@@ -27,6 +29,8 @@
         <Cell><Data ss:Type="String"><%= purchase.name %></Data></Cell>
         <Cell><Data ss:Type="String"><%= purchase.email %></Data></Cell>        
         <Cell><Data ss:Type="String"><%= purchase.address %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= purchase.subtotal %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= purchase.total %></Data></Cell>
         <% @products.each do |product| %>
           <% if product.size_variants.any? %>
             <% product.size_variants.first.sizes.each do |psize| %>
