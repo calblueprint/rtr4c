@@ -15,8 +15,8 @@
     <% else %>
     <% @current_cart.cart_items.each do |citem| %>
       <tr>
+        <td><%= image_tag first_image citem.product %></td>
         <td><%= citem.product.name %></td>
-        <td><%= citem.product.description %></td>
         <% if citem.selected_size.nil? %>
           <td> N/A </td>
         <% else %>
@@ -36,5 +36,9 @@
     <% end %>
   </tbody>
 </table>
-<p> Total price: <%= number_to_currency(@current_cart.total_price) %> </p>
-<p><%= button_to 'Checkout', {:controller => :checkouts, :action => :new}, {:method => :get} %></p>
+<% if @current_cart.cart_items.present? %>
+  <p> Subtotal: <%= number_to_currency(@current_cart.total_price) %> </p>
+  <p> Shipping: <%= number_to_currency(5.95) %> </p>
+  <p> Tax: <i> Applied during checkout </i></p>
+  <p><%= button_to 'Checkout', {:controller => :checkouts, :action => :new}, {:method => :get} %></p>
+<% end %>

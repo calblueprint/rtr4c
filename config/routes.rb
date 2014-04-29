@@ -33,7 +33,11 @@ Rtr4c::Application.routes.draw do
   resources :donations
   resources :cart
   resources :team_members
-  resources :checkouts
+  resources :checkouts do 
+    collection do
+      get 'confirm'
+    end
+  end
   resources :purchases
   resources :contribute
   resources :about
