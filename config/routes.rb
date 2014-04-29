@@ -7,6 +7,7 @@ Rtr4c::Application.routes.draw do
   get 'static/projects'
   get 'static/news'
   get 'contribute/location'
+  get 'static/ind_projects'
 
   get 'login',  to: 'sessions#new',     as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
