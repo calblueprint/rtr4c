@@ -1,1 +1,34 @@
-<h1> Purchase Successful </h1>
+<h1> Confirm Your Purchase! </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cart.cart_items.each do |citem| %>
+      <tr>
+        <td><%= image_tag first_image citem.product %></td>
+        <td><%= citem.product.name %></td>
+        <% if citem.selected_size.nil? %>
+          <td> N/A </td>
+        <% else %>
+          <td><%= citem.selected_size %></td>
+        <% end %>
+        <td>$<%= citem.product.price %></td> 
+        <td><%= citem.quantity %></td>
+        <td><%= link_to 'Show', citem.product %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p> Subtotal: <%= number_to_currency(@cart.total_price) %> </p>
+<p> Shipping: <%= number_to_currency(@shipping) %> </p>
+<p> Tax Rate: <%= @tax_rate %>%</p>
+<p> Tax Total: <%= number_to_currency(@tax_amount) %></p>
+<p> Total: <%= number_to_currency(@grand_total) %></p>
+<p><%= button_to 'Confirm Checkout', {:controller => :checkouts, :action => :confirm}, {:method => :get} %></p>
