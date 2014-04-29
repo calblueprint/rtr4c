@@ -1,4 +1,7 @@
 class PressUpdatesController < ApplicationController
+
+  before_action :authorize
+
   def new
     @press = PressUpdate.new
   end
