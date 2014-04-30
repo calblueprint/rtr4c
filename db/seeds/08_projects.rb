@@ -55,7 +55,9 @@ project = Project.new(
   volunteers: 'Designer: Marsha Heckman, beautifully painted by Decorative Artist David R. Campbell,David@RowanArt.com his wife Donnelle Campbell, volunteer Floyd Heckman. Art by Gary Kinson of Mill Valley gkinson@yahoo.com, high quality print donated by Skylard Images in Sebastopol, darren@skylarkimages.com the LOTUS decal donated by Walter Hawkins of Dali Decals marketing@dalidecals.com.',
   location: 'Greenbrae, CA'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Hospital/pict_one.png")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Hospital/a_1.png")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Hospital/a_2.png")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Hospital/a_3.png")
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
