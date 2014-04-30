@@ -9,17 +9,17 @@ class CheckoutsController < ApplicationController
     if @@cart.cart_items.present?
       @@name = params[:checkout][:firstname] + ", " + params[:checkout][:lastname]
       if (params[:checkout][:address2].blank?)
-        @@address = params[:checkout][:address1] + ", " + params[:checkout][:city] + ", " + params[:checkout][:state] + " " + params[:checkout][:zip]
+        @@address = params[:checkout][:address1] + ", " + params[:checkout][:city] + ", " + params[:state] + " " + params[:checkout][:zip]
       else
-        @@address = params[:checkout][:address1] + ", " + params[:checkout][:address2] + ", " + params[:checkout][:city] + ", " + params[:checkout][:state] + " " + params[:checkout][:zip]
+        @@address = params[:checkout][:address1] + ", " + params[:checkout][:address2] + ", " + params[:checkout][:city] + ", " + params[:state] + " " + params[:checkout][:zip]
       end
       @@token = params[:stripeToken]
       @@email = params[:checkout][:email]
-      @tax_rate = get_state_rate(params[:checkout][:state]) * 100
-      @tax_amount = get_tax_amount(@@cart.total_price.to_f, params[:checkout][:state])
+      @tax_rate = get_state_rate(params[:state]) * 100
+      @tax_amount = get_tax_amount(@@cart.total_price.to_f, params[:state])
       @shipping = 5.95  
 
-      @@tax_amount = get_tax_amount(@@cart.total_price.to_f, params[:checkout][:state])
+      @@tax_amount = get_tax_amount(@@cart.total_price.to_f, params[:state])
       @grand_total = @@cart.total_price.to_f + @@tax_amount + @shipping  
       @@grand_total = @@cart.total_price.to_f + @@tax_amount + @shipping
     else

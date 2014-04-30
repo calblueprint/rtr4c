@@ -23,7 +23,7 @@
 <br>
 <p><%= @product.description %></p>
 <br>
-<p>$<%= @product.price %></p>
+<p><%= number_to_currency(@product.price) %></p>
 <br>
 <%= form_tag add_to_cart_path(:product_id => @product), :method => :post do %>
   <% if @product.size_variants.any? %>
