@@ -1,3 +1,7 @@
+#admin_add_project {
+	font-size: 24px;
+}
+
 .featured {
 	margin: auto;
 	margin-top: 30px;
@@ -8,36 +12,26 @@
 	border-color:#333333;;
 }
 
-.featured_picture {
-	height: 300px;
-	width: 550px;
-	background-size: cover;
-	float: left;
-}
-
 .featured:hover {
 	cursor: pointer;
   	border: 8px solid #b77ed2;
 }
 
-#pict_one {
-	background-image: url(<%= image_path "Projects/Mammoth/pict_two.jpg"%>);
+#pict_one img {
 	height: 300px;
 	width: 550px;
 	background-size: cover;
 	float: left;
 }
 
-#pict_two {
-	background-image: url(<%= image_path "Projects/Oakland_Hospital/room_four.jpg"%>);
+#pict_two img {
 	height: 300px;
 	width: 550px;
 	background-size: cover;
 	float: right;
 }
 
-#pict_three {
-	background-image: url(<%= image_path "Projects/El_Camino/pict_one.jpg"%>);
+#pict_three img {
 	height: 300px;
 	width: 550px;
 	background-size: cover;
@@ -69,13 +63,10 @@
 	margin-top: 80px;
 	font-family: Oswald, sans-serif;
 	font-size: 23px;
+	color: black;
+
 }
 
-/*
-p {
-	padding-left: 0px;
-	padding-right: 0px;
-}*/
 
 #tweed {
 	background-image: url(<%= image_path "tweed.png"%>);
@@ -90,6 +81,16 @@ p {
 	margin-top: 80px;
 }
 
+.projects_pagination {
+	width:800px;
+	height:30px;
+	margin: auto;
+	text-align: center;
+	font-family: 'Merriweather';
+	font-size: 24px;
+	text-decoration: none;
+	color: white;
+}
 .projects_all {
 	width: 800px;
 	height: 600px;
@@ -104,14 +105,17 @@ p {
 	margin-top: 20px;
 }
 
-.project_text p {
+.project_text a,p {
+	text-decoration: none;
 	font-size: 26px;
 	color: white;
 	font-family: Oswald, sans-serif;
 	text-align: center;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
-.project_thumb {
+.project_thumb img{
 	height:200px;
 	width: 200px;
 	border-radius: 100px;
@@ -122,34 +126,11 @@ p {
 	margin: 25px;
 }
 
-.project_thumb:hover {
+.project_thumb img:hover {
 	cursor: pointer;
   	border: 5px solid #b77ed2;
 }
 
-#projects_one {
-	background-image: url(<%= image_path "Projects/El_Camino/pict_one.jpg"%>);
-}
-
-#projects_two {
-	background-image: url(<%= image_path "Projects/Cancer_Institute/room_two.jpg"%>);
-}
-
-#projects_three {
-	background-image: url(<%= image_path "Projects/Aria/pict_one.png"%>);
-}
-
-#projects_four {
-	background-image: url(<%= image_path "Projects/Maternity_Hospital/pict_two.png"%>);
-}
-
-#projects_five {
-	background-image: url(<%= image_path "Projects/Sequoia_Hospital/pict_one.jpg"%>);
-}
-
-#projects_six {
-	background-image: url(<%= image_path "Projects/El_Camino/pict_one.jpg"%>);
-}
 
 .proj_link {
 	margin-left: 900px;
@@ -159,6 +140,6 @@ p {
 	font-size: 18px;
 }
 
-.container {
-	margin-top: 5px;
+.black_container {
+	margin-top: 15px;
 }
