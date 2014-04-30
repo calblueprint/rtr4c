@@ -23,7 +23,11 @@
       <% if news.is_a? PressUpdate %>
         <div class="blogpost">
           <% if news.videolink != nil %>
-            <iframe width="1000" height="500" src="//www.youtube.com/embed/<%= news.get_embed_link %>"></iframe>
+            <% if news.is_youtube && !news.is_embed %>
+              <iframe width="1000" height="500" src="//www.youtube.com/embed/<%= news.get_embed_link %>"></iframe>
+            <% else %>
+              <iframe width="1000" height="500" src="<%= news.videolink %>"></iframe>
+            <% end %>
           <% end %>
           <div class="post extra_margin">
             <h2> <%= news.title %> </h2>

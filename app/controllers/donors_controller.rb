@@ -1,4 +1,7 @@
 class DonorsController < ApplicationController
+
+  before_action :authorize
+
   # tier amounts
   @@gold_tier = 500.0
   @@silver_tier = 250.0
