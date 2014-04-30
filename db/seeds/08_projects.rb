@@ -96,7 +96,7 @@ project.save
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 project = Project.new(
-  title: 'Marin Specialty Care: Corrine Fuller Room',
+  title: 'Marin Specialty Care: Fuller Room',
   description: 'This Center includes 12 chairs and one bed/private room, offering 16,900 patient visits per year including adults (18 and older) from all backgrounds and ethnic groups. Paint, wallpaper, curtains, stencils, art work, refinish cabinets, etc. This is now a much more hopeful and peaceful environment for those suffering with cancer and needing chemotherapy. Patients and staff alike are appreciative and enjoy the new environments. Below are two of the rooms.',
   volunteers: 'Designer Corinne Fuller, Taylor Watts, Mario Ballard',
   location: 'Greenbrae, CA'
