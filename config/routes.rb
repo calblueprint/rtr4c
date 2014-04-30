@@ -27,7 +27,7 @@ Rtr4c::Application.routes.draw do
   resources :press_updates
   resources :news
   resources :blogposts
-  resources :products
+  resources :products, :path => "store"
   resources :charges
   resources :donors
   resources :donations
