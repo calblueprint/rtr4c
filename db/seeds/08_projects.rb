@@ -2,15 +2,16 @@
 project = Project.new(
   title: 'Mammoth Hospital',
   description: 'Mammoth Hospital was in need of revamping a large chemotherapy community room that had 10 chairs to provide 13,000 patient visits per year. Our RTR4C Southern California Designer, Nicole Cavanaugh came to their aid with a full crew and all needed supplies to create a healing loving room with a FIREPLACE! They open their doors to all that need chemotherapy. It went from drab and average to fabulous, amazing, cozy and warm. A special thank you to Enterprise Car Rental who donated a 4WD/SUV for the snowy trip to Mammoth and to Erica Wells, Chemo Nurse Manager at Mammoth Hospital who added all these details to her already busy schedule. You all rock!',
-  volunteers: 'No volunteers',
+  volunteers: 'Donations by Tracy Sistili, Founder The Beverly Fund,  ION Solutions, Rebecca C Knockemus, Dali Decals, Cutting Edget Stencils, Ann Marie Edwards, COO Alliance Cancer Specialists, Cora Sue Anthony (HGTV Designer), Andres Torres Fine Arts Photographer, Nate Wood, Video Producer: VisionLine Media, Amy Ocasio, Fine Artist/Founder Whimsical Spirits of Whim-en, Colorful Artwork by Amy O, Wes Coventry, Fine Work Carpenter, Home Depot, and all the wonderful local volunteers!',
   location: 'Mammoth, CA'
 )
 
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/b_1.jpg")
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/b_2.jpg")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/b_3.jpg")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_1.jpg")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_2.jpg")
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_3.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_4.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_5.jpg")
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -36,10 +37,11 @@ project = Project.new(
   title: 'Camden Clark Medical Center',
   description: 'This facility of over 5000 square feet included 9 treatments rooms/ 6 exams rooms / 3 nurses stations / 4 bathrooms / 1 conference room / 2 waiting areas / 2 doctors offices. This project resulted in over 50,000 patient/family visits per year. Those using the rooms benefit by a healing, calm and lovely environment in which to receive treatment. They even received a one year donation of candy in each chemo room, with a promise to keep them fully stocked. Each room was hosted and facilitated by individual groups including Susan G. Komen West Virginia, Habitat for Humanity, and many local establishments. There are over 100 pieces of donated art on the halls walls and in each room.',
   volunteers: 'Designer Tamy Brady, Amy Ocasio, Project Manager, Kim Couch Executive Director Camden Clark Foundation, RTR4C Rock Star Sponsors: BB&T Lighthouse Project, The Virginia Neptune Foundation, The Oakland Foundation, The Family of Daniel O. Martin, Family and Friends of Joel Stout, Family and Friends of Tim Moore, Paradise Grille, The John Patrick Albright Foundation, in memory of Joe, Patricia, and John Patrick Albright, and The Allen C. Spurgeon Family. Jan Dils & Chuck Hughes, J. P. Henry’s Restaurant, Bre Hughes in memory of her grandmother Dorothy V. Smith, and Susan Hill Richardson in memory of her mother Lucy W. Hill , Barbara J. Martino, in memory of the family of Carlton C. Woo.',
-  location: 'Parkersburg, West Virginia'
+  location: 'Parkersburg, WV'
 )
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/b_1.jpg")
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/b_2.jpg")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/b_3.jpg")
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_1.jpg")
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_2.jpg")
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_3.jpg")
