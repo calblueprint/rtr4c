@@ -172,8 +172,7 @@ update = PressUpdate.create(
     title: "KTVU News - BAY AREA PEOPLE: Rooms That Rock 4 Chemo",
     blurb: "Rooms that Rock 4 Chemo, is a volunteer based organization helping chemotherapy patients. The organization turns drab hospital rooms into light, fun and peaceful environments for patients.",
     link:  "http://www.ktvu.com/videos/news/bay-area-people-rooms-that-rock-"\
-           "4-chemo/v2zXx/",
-    videolink: "//www.youtube.com/embed/w4C2nBTpsAo")
+           "4-chemo/v2zXx/")
 date_time = DateTime.new(2013,11,14)
 update.created_at = date_time
 update.updated_at = date_time
