@@ -41,7 +41,7 @@ Rtr4c::Application.routes.draw do
   end
   resources :purchases
   resources :contribute
-  resources :contacts
+  resources :contacts, :path => "contact"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
