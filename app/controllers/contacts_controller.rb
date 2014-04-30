@@ -1,7 +1,11 @@
 class ContactsController < ApplicationController
 
   def index
-    @contacts = Contact.all
+    if current_user
+      @contacts = Contact.all
+    else
+      render_404
+    end
   end
 
   def new

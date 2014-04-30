@@ -1,17 +1,77 @@
-<h1>Listing projects</h1>
+<div id="navbar_container">
+  <div id="navbar">
+    <div id="logo"></div>
+    <a class="tab" href="#"> CONTACT </a>
+    <a class="tab" href="#"> CONTRIBUTE </a>
+    <a class="tab" href="#"> NEWS </a>
+    <a class="tab" href="#"> STORE </a>
+    <a class="tab" href="#"> PROJECTS </a>
+    <a class="tab" href="#"> ABOUT </a>
+  </div>
+</div>
 
-<% @projects.each do |project| %>
-  <h2><%= link_to project.title, project %></h2>
-  <%= image_tag first_image project %>
-  <%= project.id %>
+<div class="container">
+  <div class="content">
+    <h1>Featured Projects</h1>
+    <% if current_user %>
+    	<p id="admin_add_project"> <%= link_to "Add A Project", new_project_path %> </p>
+    <% end %>
+    <div class = "featured">
+      <div class = "featured_picture" id = "pict_one">
+        <%= link_to(image_tag(@featured_one.images[0].photo.url), project_path(@featured_one.id))%>
+      </div>
+      <div class = "featured_text">
+        <p> <%= @featured_one.title %> <br> <%= @featured_one.location %> </p>
+        <div class = "featured_line"></div>
+      </div>
+    </div>
+    <div class = "featured">
+      <div class = "featured_picture" id = "pict_two">
+        <%= link_to(image_tag(@featured_two.images[0].photo.url), project_path(@featured_two.id))%>
+      </div>
+      <div class = "featured_text" id = "mid">
+        <p><%= @featured_two.title %> <br> <%= @featured_two.location %> </p>
+        <div class = "featured_line"></div>
+      </div>
+    </div>
+    <div class = "featured">
+      <div class = "featured_picture" id = "pict_three">
+        <%= link_to(image_tag(@featured_three.images[0].photo.url), project_path(@featured_three.id))%>
+      </div>
+      <div class = "featured_text">
+        <p><%= @featured_three.title %> <br> <%= @featured_three.location %></p>
+        <div class = "featured_line"></div>
+      </div>
+    </div>
+</div>
 
-  <% if current_user %>
-    <p><%= link_to 'Show', project %></p>
-    <p><%= link_to 'Edit', edit_project_path(project) %></p>
-    <p><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <% end %>
-<% end %>
+<div class = "container black_container">
+<div class="content">
+  <h1 id = "all_p"> All Projects </h1>
+  <div class = "projects_pagination">
+    <%= will_paginate @paginated_projects %>
+  </div>
+  <div class = "projects_all">
+  	<% @paginated_projects.each do |project| %>
+      <div class = "project_block">
+        <div class = "project_thumb" id = "projects_one"><%= link_to(image_tag(project.images[0].photo.url), project_path(project.id))%></div>
+        <div class ="project_text">
+          <p><%= link_to(project.title, project_path(project.id)) %> </p>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+</div>
 
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+<div class="container">
+  <div class="content">
+    <h1> FOLLOW US </h1>
+    <div class="media" id="facebook"></div>
+    <div class="media" id="linkedin"></div>
+    <div class="media" id="twitter"></div>
+    <div id = "copyright_border"></div>
+    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
+  </div>
+</div>

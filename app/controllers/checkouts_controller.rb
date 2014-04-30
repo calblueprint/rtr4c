@@ -30,7 +30,7 @@ class CheckoutsController < ApplicationController
   def confirm
     if @@cart.cart_items.present?
       charge = (@@grand_total.to_f * 100).to_i
-      @purchase = Purchase.new(:name => @@name, :address => @@address, :email => @@email, :total => @@cart.total_price)
+      @purchase = Purchase.new(:name => @@name, :address => @@address, :email => @@email, :subtotal => @@cart.total_price, :total => @@grand_total)
       if @purchase.save
         charge = Stripe::Charge.create(
           :amount => charge,
