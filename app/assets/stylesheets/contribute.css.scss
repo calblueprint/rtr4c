@@ -5,7 +5,6 @@
 .donations {
   float: left;
   margin: 50px;
-  margin-bottom: 100px;
   width: 380px;
   height: 380px;
   border-radius: 200px;
@@ -30,9 +29,11 @@
 
 #volunteer {
   display: block;
+  text-decoration: none;
   margin-top: 50px;
-  margin-left: 400px;
-  padding: 20px 20px 30px 20px;
+  margin-bottom: 25px;
+  margin-left: 410px;
+  padding: 20px 10px 30px 20px;
   height: 24px;
   width: 140px;
   border-radius: 15px;
