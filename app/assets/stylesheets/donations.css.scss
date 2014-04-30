@@ -51,8 +51,8 @@ input[type="submit"] {
   float: none !important;
   display: block;
   margin: auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   padding: 20px 20px 20px 20px;
   border-radius: 15px;
   font-size: 24px;
@@ -61,6 +61,7 @@ input[type="submit"] {
   background: transparent;
   border: 3px solid #333333;
   opacity: 1;
+  text-transform: uppercase;
 }
 
 input[type="submit"]:hover {
