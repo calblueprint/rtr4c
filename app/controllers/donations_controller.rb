@@ -1,6 +1,6 @@
 class DonationsController < ApplicationController
 
-  before_action :authorize, except: [:new, :create]
+  before_action :authorize, except: [:new, :create, :show]
 
   def new
     @donation = Donation.new
@@ -14,14 +14,19 @@ class DonationsController < ApplicationController
     #no need to use permits if you are not passing in all params!
     @donation = Donation.new(:amount => params[:donation][:amount], :message => params[:donation][:message]) 
     token = params[:stripeToken]
-    charge = @donation[:amount].to_i * 100
+    charge = (@donation[:amount].to_f * 100).to_i
     if @donation.save
-      charge = Stripe::Charge.create(
-        :amount => charge,
-        :currency => "usd",
-        :card => token,
-        :description => "Donation from " + params[:email]
-      )
+      begin
+        charge = Stripe::Charge.create(
+          :amount => charge,
+          :currency => "usd",
+          :card => token,
+          :description => "Donation from " + params[:email]
+        )
+      rescue Stripe::InvalidRequestError => e
+        flash[:error] = "Invalid donation amount, #{e.message}"
+        redirect_to new_donation_path(@donation)
+      end
       @donor = Donor.find_by(email: params[:email])
       if @donor.nil?
         @donor = Donor.new(:amount => params[:donation][:amount], :email => params[:email], :name => params[:name], :title => params[:title], :profile => params[:profile])
@@ -33,9 +38,9 @@ class DonationsController < ApplicationController
         @donor.donations << @donation
         @donor.save
       end
-      redirect_to @donation, notice: 'Donation was successfully created.'
     else
-      render action: 'new'
+      flash[:error] = "Amount and message are required fields"
+      redirect_to new_donation_path(@donation)
     end
   end
 
