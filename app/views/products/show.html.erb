@@ -1,19 +1,47 @@
-<p id="notice"><%= notice %></p>
-
-<p><%= @product.name %></p>
-<p><%= @product.description %></p>
-<p><%= @product.price %></p>
+<div id="navbar_container">
+  <div id="navbar">
+    <a id="logo" href="../"></a>
+    <a class="tab" href="../contact"> CONTACT </a>
+    <a class="tab" href="../contribute"> CONTRIBUTE </a>
+    <a class="tab" href="../news"> NEWS </a>
+    <a class="tab" href="../store"> STORE </a>
+    <a class="tab" href="../projects"> PROJECTS </a>
+    <a class="tab" href="../about"> ABOUT </a>
+  </div>
+</div>
+<div class="container">
+<div class="content">
+<div class="product_specific">
+  <h1><%= @product.name %></h1>
+  <%= link_to 'Back', products_path, id: "back_product" %>
+  <a id="view_cart" href="../cart"> View Cart </a>
 <% @product.images.each do |image| %>
   <%= image.name %><br>
   <%= image_tag image.photo.url %><br>
 <% end %>
-
+<p id="notice"><%= notice %></p>
+<br>
+<p><%= @product.description %></p>
+<br>
+<p>$<%= @product.price %></p>
+<br>
 <%= form_tag add_to_cart_path(:product_id => @product), :method => :post do %>
   <% if @product.size_variants.any? %>
     <p><%= label_tag "Select a Size" %></p>
     <p><%= select_tag :selected_size, options_for_select(@product.size_variants.first.sizes, params[:selected_size]) %></p>
   <% end %>
-  <%= submit_tag 'Add to Cart' %>
+  <p><%= submit_tag 'Add to Cart' %></p>
 <% end %>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+</div>
+</div>
+</div>
+<div class="container">
+  <div class="content">
+    <h1> FOLLOW US </h1>
+    <a class="media tooltip" title="Facebook" id="facebook" href="https://www.facebook.com/pages/Rooms-That-Rock-4-Chemo/112153845548333"></a>
+    <a class="media tooltip" title="LinkedIn" id="linkedin" href="http://www.linkedin.com/profile/view?id=43149579&amp;trk=tab_pro"></a>
+    <a class="media tooltip" title="Twitter" id="twitter" href="https://twitter.com/RoomsThatRock"></a>
+    <div id="copyright_border"></div>
+    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
+  </div>
+</div>
