@@ -1,11 +1,11 @@
 <div id="navbar_container">
   <div id="navbar">
-    <div id="logo"></div>
+    <a id="logo" href=".."></a>
     <a class="tab" href="contact"> CONTACT </a>
-    <a class="tab" href="../contribute"> CONTRIBUTE </a>
-    <a class="tab" href="../news"> NEWS </a>
-    <a class="tab" href="../store"> STORE </a>
-    <a class="tab" href="#"> PROJECTS </a>
+    <a class="tab" href="contribute"> CONTRIBUTE </a>
+    <a class="tab" href="news"> NEWS </a>
+    <a class="tab" href="store"> STORE </a>
+    <a class="tab" href="projects"> PROJECTS </a>
     <a class="tab" href="about"> ABOUT </a>
   </div>
 </div>
@@ -29,7 +29,7 @@
             <h2> <%= news.title %> </h2>
             <h4> <%= news.created_at.strftime('%x') %> </h4>
             <p> <%= news.blurb %> </p>
-            <p> <%= link_to "Read More", news.link %> </p>
+            <p> <br><%= link_to "Read More", news.link, class: "read_more" %> </p>
             <% if current_user %>
               <span> <%= link_to 'Edit', edit_press_update_path(news) %> </span>
               <span><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %><span>
@@ -63,9 +63,9 @@
 <div class="container">
   <div class="content">
     <h1> FOLLOW US </h1>
-    <div class="media" id="facebook"></div>
-    <div class="media" id="linkedin"></div>
-    <div class="media" id="twitter"></div>
+    <a class="media tooltip" title="Facebook" id="facebook" href="https://www.facebook.com/pages/Rooms-That-Rock-4-Chemo/112153845548333"></a>
+    <a class="media tooltip" title="LinkedIn" id="linkedin" href="http://www.linkedin.com/profile/view?id=43149579&amp;trk=tab_pro"></a>
+    <a class="media tooltip" title="Twitter" id="twitter" href="https://twitter.com/RoomsThatRock"></a>
     <div id="copyright_border"></div>
     <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
   </div>
