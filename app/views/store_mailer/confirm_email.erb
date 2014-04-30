@@ -21,4 +21,5 @@ Below is your checkout details: <br/><br/>
   </div>
 <% end %>
 <br/>
-Your total: <%= number_to_currency(@purchase.total) %>
+Your subtotal: <%= number_to_currency(@purchase.subtotal) %>
+Your grand total (after tax and shipping): <%= number_to_currency(@purchase.total) %>

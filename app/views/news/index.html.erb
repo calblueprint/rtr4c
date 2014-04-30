@@ -1,7 +1,7 @@
 <div id="navbar_container">
   <div id="navbar">
     <div id="logo"></div>
-    <a class="tab" href="contact"> CONTACT </a>
+    <a class="tab" href="../contact"> CONTACT </a>
     <a class="tab" href="../contribute"> CONTRIBUTE </a>
     <a class="tab" href="../news"> NEWS </a>
     <a class="tab" href="../store"> STORE </a>
@@ -23,7 +23,11 @@
       <% if news.is_a? PressUpdate %>
         <div class="blogpost">
           <% if news.videolink != nil %>
-            <iframe width="1000" height="500" src="//www.youtube.com/embed/<%= news.get_embed_link %>"></iframe>
+            <% if news.is_youtube && !news.is_embed %>
+              <iframe width="1000" height="500" src="//www.youtube.com/embed/<%= news.get_embed_link %>"></iframe>
+            <% else %>
+              <iframe width="1000" height="500" src="<%= news.videolink %>"></iframe>
+            <% end %>
           <% end %>
           <div class="post extra_margin">
             <h2> <%= news.title %> </h2>
