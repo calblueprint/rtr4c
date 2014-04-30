@@ -5,6 +5,7 @@ project = Project.new(
   volunteers: 'No volunteers',
   location: 'Mammoth, CA'
 )
+
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/b_1.jpg")
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/b_2.jpg")
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_3.jpg")
@@ -130,8 +131,5 @@ project = Project.new(
 )
 project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/El_Camino/pict_one.jpg")
 project.save
-
-
-
 
 

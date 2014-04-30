@@ -3,8 +3,7 @@ update = PressUpdate.create(
     title: "RTR4C featured on Cincy Chic",
     blurb: "Striving to create a positive, healing and uplifting space that spiritually and emotionally supports patients coping with chemotherapy, national nonprofit organization, Rooms that Rock 4 Chemo (RTR4C), tackles their first project in Cincinnati.",
     link:  "http://cincychic.com/index.php?option=com_content&view=article"\
-           "&id=5014:rooms-that-rock-4-chemo&catid=15:health&Itemid=10882",
-    videolink: "https://www.youtube.com/watch?v=moSFlvxnbgk")
+           "&id=5014:rooms-that-rock-4-chemo&catid=15:health&Itemid=10882")
 date_time = DateTime.new(2013,11,17)
 update.created_at = date_time
 update.updated_at = date_time
@@ -14,8 +13,7 @@ update.save
 update = PressUpdate.create( 
     title: "Wood + Candy = Room that Rocks Sweetly",
     blurb: "Alliance Cancer Specialists unveiled their updated chemotherapy and injection room on Monday, following a weekend-long makeover by HGTV “Real Estate Intervention” star and set stager extraordinaire Cora Sue Anthony.  During the ceremony, the room was dedicated in memory of Aria Health Cancer Center patient, and namesake of the Beverly Fund, Beverly Pierandozzi, and author, Lori Hope.",
-    link:  "http://www.ariahealth.org/default.aspx?pageid=6849",
-    videolink: "https://www.youtube.com/watch?v=moSFlvxnbgk")
+    link:  "http://www.ariahealth.org/default.aspx?pageid=6849")
 date_time = DateTime.new(2013,11,17)
 update.created_at = date_time
 update.updated_at = date_time
@@ -27,8 +25,7 @@ update = PressUpdate.create(
            "Charities Campaign",
     blurb: "DPW hosted an information table this week at our annual Health Fair to promote the 2012 City and County of San Francisco Combined Charities Campaign Joining us: Nathan Rodis (DPW), and Nancy Ballard, Executive Director of Rooms That Rock 4 Chemo.",
     link:  "https://www.facebook.com/photo.php?fbid=10151150092047144"\
-           "&set=o.341818389241454&type=1",
-    videolink: "https://www.youtube.com/watch?v=moSFlvxnbgk")
+           "&set=o.341818389241454&type=1")
 date_time = DateTime.new(2012,10,4)
 update.created_at = date_time
 update.updated_at = date_time
@@ -39,8 +36,7 @@ update = PressUpdate.create(
     title: "Camden Clark Medical Center shows new chemotherapy rooms",
     blurb: "PARKERSBURG - An open house on Sunday to unveil the results of a project to beautify the chemotherapy rooms at the Camden Clark Medical Center's Memorial Campus drew dozens of visitors, including the founder of the Rooms That Rock 4 Chemo program who traveled across the country to attend.",
     link:  "http://www.newsandsentinel.com/page/content.detail/id/565842/"\
-           "CCMC-shows-new-chemotherapy-rooms.html?nav=5061",
-    videolink: "https://www.youtube.com/watch?v=moSFlvxnbgk")
+           "CCMC-shows-new-chemotherapy-rooms.html?nav=5061")
 date_time = DateTime.new(2012,10,1)
 update.created_at = date_time
 update.updated_at = date_time
@@ -52,7 +48,7 @@ update = PressUpdate.create(
            "Oncology Ward",
     blurb: "San Salvador, August 31 2012. Representatives of the organization Basic Health International (BHI) announced the renovations of the Oncology ward at El Salvador’s National Maternity Hospital “Dr. Raúl Arguello Escolán”.",
     link:  "http://www.prweb.com/releases/2012/9/prweb9858039.htm",
-    videolink: "https://www.youtube.com/watch?v=moSFlvxnbgk")
+    videolink: "https://www.youtube.com/watch?v=0tO4i3YQQwE")
 date_time = DateTime.new(2012,9,20)
 update.created_at = date_time
 update.updated_at = date_time
@@ -63,7 +59,8 @@ update = PressUpdate.create(
     title: "El Salvador's National Maternity Hospital",
     blurb: "Basic Health International (BHI), a nonprofit organization dedicated to eradicating cervical cancer in Latin America and the Caribbean, has joined forces with RoomsThatRock4Chemo, which redesigns dilapidated chemotherapy rooms by connecting interior designers with hospitals and clinics that provide outpatient chemotherapy.",
     link:  "http://www.prweb.com/releases/2012/7/prweb9618516.htm"\
-           "#.UA8VJCiNQAk.email")
+           "#.UA8VJCiNQAk.email",
+    videolink: "https://www.youtube.com/watch?v=Y3ij2if6qqg")
 date_time = DateTime.new(2012,7,24)
 update.created_at = date_time
 update.updated_at = date_time
