@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:index, :show]
-
   # GET /projects
   # GET /projects.json
   def index
@@ -12,7 +11,9 @@ class ProjectsController < ApplicationController
     @featured_two = @featured_array[1]
     @featured_three = @featured_array[2]
     @rest_array = @project_array[3..@project_array.length]
+    @paginated_projects = @rest_array.paginate(:page => params[:page], :per_page => 6)
   end
+
 
   # GET /projects/1
   # GET /projects/1.json

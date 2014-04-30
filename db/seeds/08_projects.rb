@@ -36,7 +36,11 @@ project = Project.new(
   volunteers: 'Designer Tamy Brady, Amy Ocasio, Project Manager, Kim Couch Executive Director Camden Clark Foundation, RTR4C Rock Star Sponsors: BB&T Lighthouse Project, The Virginia Neptune Foundation, The Oakland Foundation, The Family of Daniel O. Martin, Family and Friends of Joel Stout, Family and Friends of Tim Moore, Paradise Grille, The John Patrick Albright Foundation, in memory of Joe, Patricia, and John Patrick Albright, and The Allen C. Spurgeon Family. Jan Dils & Chuck Hughes, J. P. Henry’s Restaurant, Bre Hughes in memory of her grandmother Dorothy V. Smith, and Susan Hill Richardson in memory of her mother Lucy W. Hill , Barbara J. Martino, in memory of the family of Carlton C. Woo.',
   location: 'Parkersburg, West Virginia'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/pict_one.jpg")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_1.jpg")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_2.jpg")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_3.jpg")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/b_1.jpg")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/b_2.jpg")
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -113,7 +117,7 @@ project = Project.new(
   volunteers: 'NA',
   location: 'Oakland, CA'
 )
-project.images.new().photo_from_url("http://upload.wikimedia.org/wikipedia/commons/2/26/YellowLabradorLooking_new.jpg")
+project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Oakland_Hospital/pict_two.jpg")
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
