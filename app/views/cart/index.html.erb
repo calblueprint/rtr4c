@@ -34,7 +34,7 @@
         <% else %>
           <td><%= citem.selected_size %></td>
         <% end %>
-        <td>$<%= citem.product.price %></td> 
+        <td><%= number_to_currency(citem.product.price) %></td> 
         <%= form_for(citem, url: update_cart_path, method: :post) do |f| %>
           <td><%= f.number_field :quantity, value: citem.quantity, style: "width: 50px; margin-top: 25px;" %></td>
           <td><%= f.hidden_field :product_id, value: citem.product_id %></td>
