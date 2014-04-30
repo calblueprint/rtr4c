@@ -39,7 +39,7 @@ gem 'rails_autolink'
 # New Relic for monitoring
 gem 'newrelic_rpm'
 
-gem 'paperclip', '~> 3.0'
+gem 'paperclip', '~> 4.0.0'
 gem 'aws-sdk'
 gem 'nested_form'
 gem 'youtube_addy'

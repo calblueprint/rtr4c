@@ -21,7 +21,7 @@ class TeamMembersController < ApplicationController
   end
 
   def create
-    @team_member = TeamMember.new(nullify_params team_member_params)
+    @team_member = TeamMember.new(nullify_params(team_member_params))
     if @team_member.save
       redirect_to @team_member, notice: 'Team member was successfully created.'
     else

@@ -12,6 +12,7 @@ Rtr4c::Application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'store',  to: 'products#index',   as: 'store'
   get 'contact',to: 'contacts#new',     as: 'contact'
+  get 'contribute/online', to: 'donations#new',     as: 'contribute/online'
 
   post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
   post '/delete_from_cart/:product_id' => 'cart#delete_from_cart', :as => 'delete_from_cart' 
@@ -31,11 +32,14 @@ Rtr4c::Application.routes.draw do
   resources :donors
   resources :donations
   resources :cart
-  resources :team_members
-  resources :checkouts
+  resources :team_members, :path => "about"
+  resources :checkouts do 
+    collection do
+      get 'confirm'
+    end
+  end
   resources :purchases
   resources :contribute
-  resources :about
   resources :contacts
 
   # The priority is based upon order of creation: first created -> highest priority.
