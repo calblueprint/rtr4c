@@ -32,7 +32,7 @@ Rtr4c::Application.routes.draw do
   resources :donors
   resources :donations
   resources :cart
-  resources :team_members
+  resources :team_members, :path => "about"
   resources :checkouts do 
     collection do
       get 'confirm'
@@ -40,7 +40,6 @@ Rtr4c::Application.routes.draw do
   end
   resources :purchases
   resources :contribute
-  resources :about
   resources :contacts
 
   # The priority is based upon order of creation: first created -> highest priority.
