@@ -19,7 +19,7 @@
         <% else %>
           <td><%= citem.selected_size %></td>
         <% end %>
-        <td>$<%= citem.product.price %></td> 
+        <td><%= number_to_currency(citem.product.price) %></td> 
         <td><%= citem.quantity %></td>
         <td><%= link_to 'Show', citem.product %></td>
       </tr>

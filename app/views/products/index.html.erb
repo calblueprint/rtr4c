@@ -1,34 +1,34 @@
-<h1>Listing products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <div class="content">
+  <h1> STORE </h1>
+  <a id="view_cart" href="cart"> View Cart </a>
     <% @products.each do |product| %>
-      <tr>
-        <td><%= image_tag first_image product %></td>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td>$<%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
+      <div class="product">
+      <a href="<%= product_path(product) %>"><%= image_tag first_image product %></a>
+      <p><%= product.name %></p>
+      <p><%= number_to_currency(product.price) %></p>
         <% if current_user %>
-          <td><%= link_to 'Edit', edit_product_path(product) %></td>
-          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <p><%= link_to 'Edit', edit_product_path(product) %></p>
+          <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <% end %>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  <br>
 
-<br>
+  <% if current_user %>
+    <%= link_to 'New Product', new_product_path %>
+  <% end %>
+</div>
+</div>
+<div class="container">
+  <div class="content">
+    <h1> FOLLOW US </h1>
+    <a class="media tooltip" title="Facebook" id="facebook" href="https://www.facebook.com/pages/Rooms-That-Rock-4-Chemo/112153845548333"></a>
+    <a class="media tooltip" title="LinkedIn" id="linkedin" href="http://www.linkedin.com/profile/view?id=43149579&amp;trk=tab_pro"></a>
+    <a class="media tooltip" title="Twitter" id="twitter" href="https://twitter.com/RoomsThatRock"></a>
+    <div id="copyright_border"></div>
+    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
+  </div>
+</div>
 
-<% if current_user %>
-  <%= link_to 'New Product', new_product_path %>
-<% end %>
