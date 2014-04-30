@@ -25,7 +25,7 @@ class DonationsController < ApplicationController
         )
       rescue Stripe::InvalidRequestError => e
         flash[:error] = "Invalid donation amount, #{e.message}"
-        redirect_to new_donation_path(@donation)
+        redirect_to contribute_online_path
       end
       @donor = Donor.find_by(email: params[:email])
       if @donor.nil?
@@ -40,7 +40,7 @@ class DonationsController < ApplicationController
       end
     else
       flash[:error] = "Amount and message are required fields"
-      redirect_to new_donation_path(@donation)
+      redirect_to contribute_online_path
     end
   end
 
