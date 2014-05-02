@@ -41,15 +41,17 @@
     <%= label_tag :card_number, "Credit Card Number " %>  
     <%= text_field_tag :card_number, "4242 4242 4242 4242", name: nil, :data => {:stripe => 'number'} %>  
   </div>  
-  <div class="field">  
-    <%= label_tag :card_code, "Security Code (CVV)" %>  
-    <%= text_field_tag :card_code, "123", name: nil, :data => {:stripe => 'cvc'} %>  
-  </div>  
-  <div class="field">  
-    <%= label_tag :card_month, "Expiration Date" %>  
-    <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month", :data => {:stripe => 'exp-month'}} %>  
-    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :data => {:stripe => 'exp-year'}} %>  
-  </div>                
+  <div class="credit_card_fields">  
+    <div class="field">  
+      <%= label_tag :card_month, "Expiration Date" %>  
+      <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month", :data => {:stripe => 'exp-month'}} %>  
+      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :data => {:stripe => 'exp-year'}} %>  
+    </div>
+    <div class="field">  
+      <%= label_tag :card_code, "CVC" %>  
+      <%= text_field_tag :card_code, "123", name: nil, :data => {:stripe => 'cvc'} %>  
+    </div> 
+  </div>               
   <div class="submit_spacer"></div>
   <div class="actions"><%= f.submit "DONATE" %></div>  
 <% end %>
