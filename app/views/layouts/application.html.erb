@@ -20,15 +20,20 @@
 <div id="navbar_container">
   <div id="navbar">
     <a id="logo" href=".."></a>
-    <a class="tab" href=<%= contacts_path %>> CONTACT </a>
+    <a class="tab" href=<%= contacts_path %>>         CONTACT    </a>
     <a class="tab" href=<%= contribute_index_path %>> CONTRIBUTE </a>
-    <a class="tab" href=<%= news_index_path %>> NEWS </a>
-    <a class="tab" href=<%= products_path %>> STORE </a>
-    <a class="tab" href=<%= projects_path %>> PROJECTS </a>
-    <a class="tab" href=<%= team_members_path %>> ABOUT </a>
+    <a class="tab" href=<%= news_index_path %>>       NEWS       </a>
+    <a class="tab" href=<%= products_path %>>         STORE      </a>
+    <a class="tab" href=<%= projects_path %>>         PROJECTS   </a>
+    <a class="tab" href=<%= team_members_path %>>     ABOUT      </a>
   </div>
 </div>
-<%= yield %>
+
+<div class="container">
+  <div class="content">
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>
