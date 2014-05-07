@@ -19,6 +19,11 @@
     <%= f.text_field :location %>
   </div>
 
+  <div class="field">
+    <%= f.label :volunteers %>
+    <%= f.text_area :volunteers %>
+  </div>
+
   <%= f.fields_for :images do |image_form| %>
     <fieldset>
       <%= image_form.label :name %>
