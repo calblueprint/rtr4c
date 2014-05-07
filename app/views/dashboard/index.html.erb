@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Admin Dashboard</h1>
+    <h2>Resources</h2>
+      <p><%= link_to "Projects", projects_path %></p>
+      <p><%= link_to "Team Members", team_members_path(anchor: 'team_members') %></p>
+      <p><%= link_to "Updates", updates_path %></p>
+      <p><%= link_to "Press_Updates", press_updates_path%></p>
+      <p><%= link_to "Blogposts", blogposts_path %></p>
+      <p><%= link_to "News", news_index_path %></p>
+      <p><%= link_to "Products", products_path %></p>
+      <p><%= link_to "Donors", donors_path %></p>
+      <p><%= link_to "Donations", donations_path %></p>
+  <h2>Spreadsheets</h2>
+  <p><%= link_to "Purchases Spreadsheet", purchases_path(format: "xls") %></p>
+  <p><%= link_to "Donations SpreadSheet", donations_path(format: "xls") %></p>
+</div>

@@ -1,11 +1,13 @@
 Rtr4c::Application.routes.draw do
 
+  get 'dashboard', to: 'dashboard#index'
   get "purchases/index"
   get 'static/about'
   get 'static/contribute'
   get 'static/contact'
   get 'static/projects'
   get 'static/news'
+  get 'static/dashboard'
   get 'contribute/location'
   get 'static/ind_projects'
 
