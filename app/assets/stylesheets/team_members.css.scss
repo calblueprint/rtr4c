@@ -2,9 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.small_button {
+  width: 20%;
+  display: inline;
+  /*float: left;*/
+  margin: auto;
+  /*margin-top: 50px;*/
+  /*margin-bottom: 0px;*/
+  /*padding: 20px 20px 20px 20px;*/
+  border-radius: 15px;
+  font-size: 24px;
+  font-family: Oswald, sans-serif;
+  color: #333333;
+  background: transparent;
+  border: 3px solid #333333;
+  opacity: 1;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+}
 
 .new_team_member {
-  width: 400px;
+  width: 20%;
   float: none !important;
   display: block;
   margin: auto;
@@ -27,4 +46,13 @@
   cursor: pointer;
   border: 3px solid #b77ed2;
   color: #b77ed2;
+}
+
+.admin_buttons {
+  display: block;
+  height: 200px;
+}
+
+.profile_container {
+  display: block;
 }

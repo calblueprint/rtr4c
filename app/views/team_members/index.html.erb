@@ -10,8 +10,6 @@
       <br><br>
       In an effort to revamp the chemotherapy rooms in their entirety, Nancy reached out to twenty local interior designers for their professional aid. Within three days, six designers had reacted enthusiastically, volunteering their time and creative efforts for the first RTR4C Project. Since then, talented teams of room revamping designers have been transforming bland spaces into vibrant, warm and colorful environments that evoke positive vibes into the dreary circumstances often experienced in these treatment rooms. These rooms have been completed and are highlighted on our website.
     </p>
-
-
     
     <a id="team_members" href=""></a>
     <div class="border"></div>
@@ -19,22 +17,22 @@
       <%= link_to 'Add Team member', new_team_member_path, {class: "new_team_member"} %>
     <% end %>
     <% @head_honchos.each do |head_honcho| %>
-      
-      <%= image_tag(first_image(head_honcho), class: "picture") %>
-      <div class="profile">
-        <h3><%= head_honcho.title %></h3>
-        <h2><%= head_honcho.name %></h2>
-        <div class="border"></div>
-        <p><%= head_honcho.blurb %></p>
+      <div class="profile_container">
+        <%= image_tag(first_image(head_honcho), class: "picture") %>
+        <div class="profile">
+          <h3><%= head_honcho.title %></h3>
+          <h2><%= head_honcho.name %></h2>
+          <div class="border"></div>
+          <p><%= head_honcho.blurb %></p>
+        </div> <!-- end profile div -->
+      </div> <!-- end profile_container div -->
 
-        <% if current_user %>
-        <p><%= link_to 'Show', head_honcho %></p>
-        <p><%= link_to 'Edit', edit_team_member_path(head_honcho) %></p>
-        <p><%= link_to 'Destroy', head_honcho, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        <% end %>
-      </div>
-
-      
+      <% if current_user %>
+        <div class="admin_buttons">
+          <%= button_to 'Edit', edit_team_member_path(head_honcho), {class: "small_button edit_button"} %>
+          <%= button_to 'Destroy', head_honcho, method: :delete, data: { confirm: 'Are you sure?' }, class: "small_button destroy_button" %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
@@ -43,9 +41,7 @@
     <h1 class="white"> ADVISORY BOARD </h1>
     <% @advisory_board.each do |advisory_board| %>
       <%= image_tag(first_image(advisory_board), class: "picture") %>
-
       <% if current_user %>
-      <p><%= link_to 'Show', advisory_board %></p>
       <p><%= link_to 'Edit', edit_team_member_path(advisory_board) %></p>
       <p><%= link_to 'Destroy', advisory_board, method: :delete, data: { confirm: 'Are you sure?' } %></p>
       <% end %>
