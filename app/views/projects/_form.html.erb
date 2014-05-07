@@ -1,54 +1,60 @@
-<%= nested_form_for @project, html: { multipart: true } do |f| %>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+<div class="container">
+  <div class="content">
+    <%= nested_form_for @project, html: { multipart: true } do |f| %>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
 
-  <div class="field">
-    <%= f.label :date %>
-    <%= date_select(@project, :date) %>
-  </div>
+      <div class="field">
+        <%= f.label :date %>
+        <%= date_select(@project, :date) %>
+      </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </div>
 
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
+      <div class="field">
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+      </div>
 
-  <div class="field">
-    <%= f.label :volunteers %>
-    <%= f.text_area :volunteers %>
-  </div>
+      <div class="field">
+        <%= f.label :volunteers %>
+        <%= f.text_area :volunteers %>
+      </div>
 
-  <%= f.fields_for :designers do |designer_form| %>
-    <fieldset>
-      <%= designer_form.label :name %>
-      <%= designer_form.text_field :name %>
-      <%= designer_form.label :url %>
-      <%= designer_form.text_field :url %>
-      <%= designer_form.link_to_remove "Remove Designer" %>
-    </fieldset>
-  <% end %>
-  <div class="field">
-      <%= f.link_to_add "Add Designer", :designers %>
-  </div>
+      <%= f.fields_for :designers do |designer_form| %>
+        <fieldset>
+          <%= designer_form.label :name %>
+          <%= designer_form.text_field :name %>
+          <%= designer_form.label :url %>
+          <%= designer_form.text_field :url %>
+          <%= designer_form.link_to_remove "Remove Designer" %>
+        </fieldset>
+      <% end %>
+      <div class="field">
+          <%= f.link_to_add "Add Designer", :designers %>
+      </div>
 
-  <%= f.fields_for :images do |image_form| %>
-    <fieldset>
-      <%= image_form.label :name %>
-      <%= image_form.text_field :name %>
-      <%= image_form.label :photo %>
-      <%= image_form.file_field :photo %>
-      <%= image_form.link_to_remove "Remove image" %>
-    </fieldset>
-  <% end %>
-  <div class="field">
-      <%= f.link_to_add "Add photo", :images %>
+      <%= f.fields_for :images do |image_form| %>
+        <fieldset>
+          <%= image_form.label :name %>
+          <%= image_form.text_field :name %>
+          <%= image_form.label :photo %>
+          <%= image_form.file_field :photo %>
+          <%= image_form.link_to_remove "Remove image" %>
+        </fieldset>
+      <% end %>
+      <div class="field">
+          <%= f.link_to_add "Add photo", :images %>
+      </div>
+      <div class="submit_spacer"></div>
+      <%= f.submit %>
+    <% end %>
   </div>
-  <div class="submit_spacer"></div>
-  <%= f.submit %>
-<% end %>
+</div>
+
+    

@@ -39,12 +39,14 @@
       <div id="ind_project_line_about"></div>
       <div>
         <p class="ind_about_text">
-          Designers: 
+          <b>Designers:</b>
           <% @project.designers.each do |designer| %>
-            <%= designer.name %>
+            <%= designer_url designer %>
           <% end %>
+          <br>
+          <br>
+          <%= @project.description %>
         </p>
-        <p class="ind_about_text"><%= @project.description %></p>
       </div>
     </div>
     <div class="ind_project_volunteers">

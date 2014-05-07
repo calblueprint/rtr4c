@@ -1,52 +1,57 @@
-<%= nested_form_for(@team_member) do |f| %>
-  <% if @team_member.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@team_member.errors.count, "error") %> prohibited this team_member from being saved:</h2>
+<div class="container">
+  <div class="content">
+    <%= nested_form_for(@team_member) do |f| %>
+      <% if @team_member.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@team_member.errors.count, "error") %> prohibited this team_member from being saved:</h2>
 
-      <ul>
-      <% @team_member.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <ul>
+          <% @team_member.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :role %>
-    <%= f.select(:role, options_for_select([['Head Honcho', 0], ['Advisory Board', 1], ['Young Ambassador', 2], ['Designer', 3], ['Volunteer', 4]], selected: get_role(params[:id])), include_blank: true )%>
-  </div>
-  
-  <div class="field team_member_name">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field team_member_title">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field team_member_blurb">
-    <%= f.label :blurb %>
-    <%= f.text_area :blurb %>
-  </div>
-  <div class="field team_member_link">
-    <%= f.label :portfolio_link %>
-    <%= f.text_field :portfolio_link %>
-  </div>
+      <div class="field">
+        <%= f.label :role %>
+        <%= f.select(:role, options_for_select([['Head Honcho', 0], ['Advisory Board', 1], ['Young Ambassador', 2], ['Designer', 3], ['Volunteer', 4]], selected: get_role(params[:id])), include_blank: true )%>
+      </div>
+      
+      <div class="field team_member_name">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+      <div class="field team_member_title">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+      <div class="field team_member_blurb">
+        <%= f.label :blurb %>
+        <%= f.text_area :blurb %>
+      </div>
+      <div class="field team_member_link">
+        <%= f.label :portfolio_link %>
+        <%= f.text_field :portfolio_link %>
+      </div>
 
-  <div class="team_member_image">
-    <%= f.fields_for :images do |image_form| %>
-      <fieldset>
-        <%= image_form.label :name %>
-        <%= image_form.text_field :name %>
-        <%= image_form.label :photo %>
-        <%= image_form.file_field :photo %>
-        <%= image_form.link_to_remove "Remove image", id: "remove_image_team_member" %>
-      </fieldset>
+      <div class="team_member_image">
+        <%= f.fields_for :images do |image_form| %>
+          <fieldset>
+            <%= image_form.label :name %>
+            <%= image_form.text_field :name %>
+            <%= image_form.label :photo %>
+            <%= image_form.file_field :photo %>
+            <%= image_form.link_to_remove "Remove image", id: "remove_image_team_member" %>
+          </fieldset>
+        <% end %>
+        <%= f.link_to_add "Add photo", :images, id: "add_image_team_member" %>
+      </div>
+      <div class="submit_spacer"></div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
     <% end %>
-    <%= f.link_to_add "Add photo", :images, id: "add_image_team_member" %>
   </div>
-  <div class="submit_spacer"></div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+    
