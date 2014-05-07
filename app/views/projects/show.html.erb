@@ -38,8 +38,13 @@
       </div>
       <div id="ind_project_line_about"></div>
       <div>
-        <p>Designers: </p>
-        <p id="ind_about_text"><%= @project.description %></p>
+        <p class="ind_about_text">
+          Designers: 
+          <% @project.designers.each do |designer| %>
+            <%= designer.name %>
+          <% end %>
+        </p>
+        <p class="ind_about_text"><%= @project.description %></p>
       </div>
     </div>
     <div class="ind_project_volunteers">
