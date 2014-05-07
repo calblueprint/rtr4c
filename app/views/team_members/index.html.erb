@@ -29,8 +29,8 @@
 
       <% if current_user %>
         <div class="admin_buttons">
-          <%= button_to 'Edit', edit_team_member_path(head_honcho), {class: "small_button edit_button"} %>
-          <%= button_to 'Destroy', head_honcho, method: :delete, data: { confirm: 'Are you sure?' }, class: "small_button destroy_button" %>
+          <%= link_to 'Edit', edit_team_member_path(head_honcho), {class: "small_button edit_button"} %>
+          <%= link_to 'Destroy', head_honcho, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       <% end %>
     <% end %>
