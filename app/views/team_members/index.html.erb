@@ -11,10 +11,13 @@
       In an effort to revamp the chemotherapy rooms in their entirety, Nancy reached out to twenty local interior designers for their professional aid. Within three days, six designers had reacted enthusiastically, volunteering their time and creative efforts for the first RTR4C Project. Since then, talented teams of room revamping designers have been transforming bland spaces into vibrant, warm and colorful environments that evoke positive vibes into the dreary circumstances often experienced in these treatment rooms. These rooms have been completed and are highlighted on our website.
     </p>
 
-    <% if current_user %>
-    <%= link_to 'New Team member', new_team_member_path %>
-    <% end %>
+
+    
+    <a id="team_members" href=""></a>
     <div class="border"></div>
+    <% if current_user %>
+      <%= link_to 'Add Team member', new_team_member_path, {class: "new_team_member"} %>
+    <% end %>
     <% @head_honchos.each do |head_honcho| %>
       
       <%= image_tag(first_image(head_honcho), class: "picture") %>
