@@ -1,5 +1,6 @@
-<h1>Listing cart</h1>
-
+<div class="container">
+<div class="content">
+  <h1>CART</h1>
 <table>
   <thead>
     <tr>
@@ -9,26 +10,45 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="cart_table">
     <% if @current_cart.cart_items.empty? %>
       <h2> No products in cart! </h2>
     <% else %>
     <% @current_cart.cart_items.each do |citem| %>
       <tr>
+        <td><%= image_tag first_image citem.product %></td>
         <td><%= citem.product.name %></td>
-        <td><%= citem.product.description %></td>
-        <td>$<%= citem.product.price %></td> 
+        <% if citem.selected_size.nil? %>
+          <td> N/A </td>
+        <% else %>
+          <td><%= citem.selected_size %></td>
+        <% end %>
+        <td><%= number_to_currency(citem.product.price) %></td> 
         <%= form_for(citem, url: update_cart_path, method: :post) do |f| %>
-          <td><%= f.number_field :quantity, value: citem.quantity %></td>
+          <td><%= f.number_field :quantity, value: citem.quantity, style: "width: 50px; margin-top: 25px;" %></td>
           <td><%= f.hidden_field :product_id, value: citem.product_id %></td>
+          <td><%= f.hidden_field :selected_size, value: citem.selected_size %></td>
           <td><%= f.submit "Update" %></td>
         <% end %>
-        <td><%= link_to 'Show', citem.product %></td>
-        <td><%= link_to "Delete", delete_from_cart_path(:product_id => citem.product), :method => :post %></td>
+        <td><%= link_to "Remove", delete_from_cart_path(:product_id => citem.product, :selected_size => citem.selected_size), :method => :post, class: "remove" %></td>
       </tr>
     <% end %>
     <% end %>
   </tbody>
 </table>
-<p> Total price: <%= number_to_currency(@current_cart.total_price) %> </p>
-<p><%= button_to 'Checkout', {:controller => :checkouts, :action => :new}, {:method => :get} %></p>
+<% if @current_cart.cart_items.present? %>
+  <p> Subtotal: <%= number_to_currency(@current_cart.total_price) %> </p>
+  <p> Shipping: <%= number_to_currency(5.95) %> </p>
+  <p> Tax: <i> Applied during checkout </i></p>
+  <p><%= button_to 'Checkout', {:controller => :checkouts, :action => :new}, {:method => :get} %></p>
+<% end %>
+<div class="container">
+  <div class="content">
+    <h1> FOLLOW US </h1>
+    <a class="media tooltip" title="Facebook" id="facebook" href="https://www.facebook.com/pages/Rooms-That-Rock-4-Chemo/112153845548333"></a>
+    <a class="media tooltip" title="LinkedIn" id="linkedin" href="http://www.linkedin.com/profile/view?id=43149579&amp;trk=tab_pro"></a>
+    <a class="media tooltip" title="Twitter" id="twitter" href="https://twitter.com/RoomsThatRock"></a>
+    <div id="copyright_border"></div>
+    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
+  </div>
+</div>

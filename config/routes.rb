@@ -7,9 +7,14 @@ Rtr4c::Application.routes.draw do
   get 'static/projects'
   get 'static/news'
   get 'static/dashboard'
+  get 'contribute/location'
+  get 'static/ind_projects'
 
   get 'login',  to: 'sessions#new',     as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'store',  to: 'products#index',   as: 'store'
+  get 'contact',to: 'contacts#new',     as: 'contact'
+  get 'contribute/online', to: 'donations#new',     as: 'contribute/online'
 
   post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
   post '/delete_from_cart/:product_id' => 'cart#delete_from_cart', :as => 'delete_from_cart' 
@@ -24,14 +29,20 @@ Rtr4c::Application.routes.draw do
   resources :press_updates
   resources :news
   resources :blogposts
-  resources :products
+  resources :products, :path => "store"
   resources :charges
   resources :donors
   resources :donations
   resources :cart
-  resources :team_members
-  resources :checkouts
+  resources :team_members, :path => "about"
+  resources :checkouts do 
+    collection do
+      get 'confirm'
+    end
+  end
   resources :purchases
+  resources :contribute
+  resources :contacts, :path => "contact"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

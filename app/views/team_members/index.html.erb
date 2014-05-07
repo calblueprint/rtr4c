@@ -1,70 +1,93 @@
-<h1>Our Team</h1>
+<div class="banner">
+</div>
+<div class="container">
+  <div class="content">
+    <h3 id="about_title"> ABOUT </h3>
+    <p class="" id="about">
+      We work with interior designers and hospitals/clinics that provide chemotherapy, Our custom-designed rooms host over 713 ,000 patient visits per year in ten facilities and 99 rooms in the USA and San Salvador in El Salvador
+      <br><br>
+      We began with a simple philanthropic gesture, Nancy Linebarger Ballard offered to donate her botanical paintings to the dreary chemotherapy rooms in Dr. Hufford’s San Francisco medical office. Dr. Hufford was overjoyed with the artistic gifts of generosity, yet she saw a much bigger future for the project.
+      <br><br>
+      In an effort to revamp the chemotherapy rooms in their entirety, Nancy reached out to twenty local interior designers for their professional aid. Within three days, six designers had reacted enthusiastically, volunteering their time and creative efforts for the first RTR4C Project. Since then, talented teams of room revamping designers have been transforming bland spaces into vibrant, warm and colorful environments that evoke positive vibes into the dreary circumstances often experienced in these treatment rooms. These rooms have been completed and are highlighted on our website.
+    </p>
 
-<h2>Head Honchos</h2>
-<% @head_honchos.each do |honcho| %>
-  <h3><%= honcho.name %></h3> 
-  <h3><%= honcho.title %></h3>
-  <p><%= honcho.blurb %></p>
-  <%= image_tag first_image honcho %>
+    <% if current_user %>
+    <%= link_to 'New Team member', new_team_member_path %>
+    <% end %>
+    <div class="border"></div>
+    <% @head_honchos.each do |head_honcho| %>
+      
+      <%= image_tag(first_image(head_honcho), class: "picture") %>
+      <div class="profile">
+        <h3><%= head_honcho.title %></h3>
+        <h2><%= head_honcho.name %></h2>
+        <div class="border"></div>
+        <p><%= head_honcho.blurb %></p>
 
-  <% if current_user %>
-  <p><%= link_to 'Show', honcho %></p>
-  <p><%= link_to 'Edit', edit_team_member_path(honcho) %></p>
-  <p><%= link_to 'Destroy', honcho, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <% end %>
-<% end %>
+        <% if current_user %>
+        <p><%= link_to 'Show', head_honcho %></p>
+        <p><%= link_to 'Edit', edit_team_member_path(head_honcho) %></p>
+        <p><%= link_to 'Destroy', head_honcho, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <% end %>
+      </div>
 
-<h2>Advisory Board</h2>
-<% @advisory_board.each do |board_member| %>
-  <h3><%= board_member.name %></h3> 
-  <h3><%= board_member.title %></h3>
-  <p><%= board_member.blurb %></p>
+      
+    <% end %>
+  </div>
+</div>
+<div class="container black_container">
+  <div class="content">
+    <h1 class="white"> ADVISORY BOARD </h1>
+    <% @advisory_board.each do |advisory_board| %>
+      <%= image_tag(first_image(advisory_board), class: "picture") %>
 
-  <% if current_user %>
-  <p><%= link_to 'Show', board_member %></p>
-  <p><%= link_to 'Edit', edit_team_member_path(board_member) %></p>
-  <p><%= link_to 'Destroy', board_member, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <% end %>
-<% end %>
+      <% if current_user %>
+      <p><%= link_to 'Show', advisory_board %></p>
+      <p><%= link_to 'Edit', edit_team_member_path(advisory_board) %></p>
+      <p><%= link_to 'Destroy', advisory_board, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <h1> OUR SPONSORS </h1>
+    <a class="about_media tooltip" title="Home Depot" id="homedepot" href="http://www.homedepot.com/"></a>
+    <a class="about_media tooltip" title="Chase PR" id="chase" href="http://chasepr.com/"></a>
+    <a class="about_media tooltip" title="Giants" id="giants" href="http://www.sfgiants.com/"></a>
+  </div>
+</div>
 
-<h2>Young Ambassadors</h2>
-<% @young_ambassadors.each do |young_ambassador| %>
-  <h3><%= young_ambassador.name %></h3> 
-  <h3><%= young_ambassador.title %></h3>
-  <p><%= young_ambassador.blurb %></p>
 
-  <% if current_user %>
-  <p><%= link_to 'Show', young_ambassador %></p>
-  <p><%= link_to 'Edit', edit_team_member_path(young_ambassador) %></p>
-  <p><%= link_to 'Destroy', young_ambassador, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <% end %>
-<% end %>
+<div class="container black_container">
+  <div class="content">
+    <h1 class="white"> DESIGNERS & VOLUNTEERS </h1>
+    <% @designers.each do |designer| %>
+      <%= image_tag(first_image(designer), class: "mini_picture tooltip") %>
+      <% if current_user %>
+      <p><%= link_to 'Show', designer %></p>
+      <p><%= link_to 'Edit', edit_team_member_path(designer) %></p>
+      <p><%= link_to 'Destroy', designer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
+    <% end %>
 
-<h2>Designers</h2>
-<% @designers.each do |designer| %>
-  <h3><%= designer.name %></h3> 
-  <h3><%= designer.title %></h3>
-  <p><%= designer.portfolio_link %></p>
-
-  <% if current_user %>
-  <p><%= link_to 'Show', designer %></p>
-  <p><%= link_to 'Edit', edit_team_member_path(designer) %></p>
-  <p><%= link_to 'Destroy', designer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <% end %>
-<% end %>
-
-<h2>Volunteers</h2>
-<% @volunteers.each do |volunteer| %>
-  <h3><%= volunteer.name %></h3> 
-  <h3><%= volunteer.title %></h3>
-
-  <% if current_user %>
-  <p><%= link_to 'Show', volunteer %></p>
-  <p><%= link_to 'Edit', edit_team_member_path(volunteer) %></p>
-  <p><%= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <% end %>
-<% end %>
-
-<br>
-
-<%= link_to 'New Team member', new_team_member_path %>
+    <% @volunteers.each do |volunteer| %>
+      <%= image_tag(first_image(volunteer), class: "mini_picture") %>
+      <% if current_user %>
+      <p><%= link_to 'Show', volunteer %></p>
+      <p><%= link_to 'Edit', edit_team_member_path(volunteer) %></p>
+      <p><%= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <h1> FOLLOW US </h1>
+    <a class="media tooltip" title="Facebook" id="facebook" href="https://www.facebook.com/pages/Rooms-That-Rock-4-Chemo/112153845548333"></a>
+    <a class="media tooltip" title="LinkedIn" id="linkedin" href="http://www.linkedin.com/profile/view?id=43149579&amp;trk=tab_pro"></a>
+    <a class="media tooltip" title="Twitter" id="twitter" href="https://twitter.com/RoomsThatRock"></a>
+    <div id="copyright_border"></div>
+    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
+  </div>
+</div>

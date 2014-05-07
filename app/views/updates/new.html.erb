@@ -1,15 +1,20 @@
+
+<div class="container">
+<div class="content">
 <h1> New Update </h1>
 
 <%= form_for :update, url: updates_path do |u| %>
-  <p>
-    <%= u.label :title %><br><%= u.text_field :header%>
-  </p>
+  <div class="field">
+    <%= u.label :title %><%= u.text_field :header%>
+  </div>
 
-  <p>
-    <%= u.label :bodytext %><br><%= u.text_area :body%>
-  </p>
-
+  <div class="field">
+    <%= u.label :bodytext %><%= u.text_area :body%>
+  </div>
+  <div class="submit_spacer"></div>
   <p>
     <%= u.submit %>
   </p>
 <%end%>
+</div>
+</div>

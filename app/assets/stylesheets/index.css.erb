@@ -15,6 +15,7 @@ p {
 }
 
 h1 {
+  text-transform: uppercase;
   width: 100%;
   text-align: center;
   font-family: Oswald, sans-serif;
@@ -62,6 +63,7 @@ h2 {
 
 .container {
   float: left;
+  padding-bottom: 50px;
   width: 100%;
 }
 
@@ -72,7 +74,7 @@ h2 {
 
 .third {
   width: 333px;
-  height: 425px;
+  height: 375px;
   float: left;
 }
 
@@ -167,7 +169,6 @@ h2 {
 .project {
   float: left;
   margin: 50px;
-  margin-bottom: 100px;
   width: 380px;
   height: 380px;
   border-radius: 200px;
@@ -245,5 +246,35 @@ h2 {
 
 #copyright {
   margin-top: 50px;
-  margin-bottom: 50px;
+}
+
+.tooltip{
+  text-align: center;
+  font-family: 'Special Elite', cursive;
+  font-size: 16px;
+  display: inline;
+  position: relative;
+}
+
+.tooltip:hover:before{
+  border: solid;
+  border-color: #333 transparent;
+  border-width: 10px 10px 0 10px;
+  top: 15px;
+  content: "";
+  right: 80px;
+  position: absolute;
+  z-index: 99;
+}
+
+.tooltip:hover:after{
+  background: #333;
+  border-radius: 5px;
+  top: -25px;
+  color: #fff;
+  content: attr(title);
+  right: 20px;
+  padding: 15px 15px 10px;
+  position: absolute;
+  z-index: 98;
 }

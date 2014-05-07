@@ -1,40 +1,65 @@
-<h1> News </h1>
-
-<div class="apple_pagination">
-  <%= will_paginate @news %>
-</div>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>Video Link</th>
-    <th></th>
-  </tr>
-
-<% @news.each do |news| %>
-  <tr>
-    <% if news.is_a? PressUpdate %>
-      <td><%= news.title %></td>
-      <td><%=h auto_link(news.link) %></td>
-      <td><%= news.videolink %></td>
-      <td><%= link_to 'Show', news %></td>
-      <td><%= link_to 'Edit', edit_press_update_path(news) %></td>
-      <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% elsif news.is_a? Blogpost %>
-      <td><%= news.title %></td>
-      <td><%= news.post %></td>
-      <td>None</td>
-      <td><%= link_to 'Show', news %></td>
-      <td><%= link_to 'Edit', edit_blogpost_path(news) %></td>
-      <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class="container">
+  <div class="content">
+    <h1> NEWS </h1>
+    <% if current_user %>
+      <p> <%= link_to 'New Blog', new_blogpost_path %> </p>
+      <p> <%= link_to 'New Press', new_press_update_path %> </p>
     <% end %>
-  </tr>
-<% end %>
-</table>
-<div class="apple_pagination">
-  <%= will_paginate @news %>
+    <div class="apple_pagination">
+      <%= will_paginate @news %>
+    </div>
+    <% @news.each do |news| %>
+      <% if news.is_a? PressUpdate %>
+        <div class="blogpost">
+          <% if news.videolink != nil %>
+            <% if news.is_youtube && !news.is_embed %>
+              <iframe width="1000" height="500" src="//www.youtube.com/embed/<%= news.get_embed_link %>"></iframe>
+            <% else %>
+              <iframe width="1000" height="500" src="<%= news.videolink %>"></iframe>
+            <% end %>
+          <% end %>
+          <div class="post extra_margin">
+            <h2> <%= news.title %> </h2>
+            <h4> <%= news.created_at.strftime('%x') %> </h4>
+            <p> <%= news.blurb %> </p>
+            <p> <br><%= link_to "Read More", news.link, class: "read_more" %> </p>
+            <% if current_user %>
+              <span> <%= link_to 'Edit', edit_press_update_path(news) %> </span>
+              <span><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %><span>
+            <% end %>
+          </div>
+          <div class="border extra_margin"></div>
+        </div>
+      <% elsif news.is_a? Blogpost %>
+        <div class="blogpost">
+          <% news.images.each do |image| %>
+            <div class="post_picture"><%= image_tag image.photo.url %></div>
+          <% end %>
+          <div class="post extra_margin">
+            <h2> <%= news.title %> </h2>
+            <h4> <%= news.created_at.strftime('%x') %> </h4>
+            <p> <%= news.post %> </p>
+            <% if current_user %>
+              <span> <%= link_to 'Edit', edit_blogpost_path(news) %> </span>
+              <span><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %><span>
+            <% end %>
+          </div>
+          <div class="border extra_margin"></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="apple_pagination">
+    <%= will_paginate @news %>
+  </div>
 </div>
-
-<%= link_to "Blogposts", blogposts_path %><br>
-<%= link_to "Press Updates", "/press_updates" %>
+<div class="container">
+  <div class="content">
+    <h1> FOLLOW US </h1>
+    <a class="media tooltip" title="Facebook" id="facebook" href="https://www.facebook.com/pages/Rooms-That-Rock-4-Chemo/112153845548333"></a>
+    <a class="media tooltip" title="LinkedIn" id="linkedin" href="http://www.linkedin.com/profile/view?id=43149579&amp;trk=tab_pro"></a>
+    <a class="media tooltip" title="Twitter" id="twitter" href="https://twitter.com/RoomsThatRock"></a>
+    <div id="copyright_border"></div>
+    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
+  </div>
+</div>

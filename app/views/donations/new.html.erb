@@ -1,5 +1,6 @@
-<h1> New Donation </h1>
-
+<div class="container">
+<div class="content">
+<h1> ONLINE DONATION </h1>
 <%= form_for @donation do |f| %>  
   <% if @donation.errors.any? %>  
     <div class="error_messages">  
@@ -40,14 +41,37 @@
     <%= label_tag :card_number, "Credit Card Number " %>  
     <%= text_field_tag :card_number, "4242 4242 4242 4242", name: nil, :data => {:stripe => 'number'} %>  
   </div>  
-  <div class="field">  
-    <%= label_tag :card_code, "Security Code on Card (CVV)" %>  
-    <%= text_field_tag :card_code, "123", name: nil, :data => {:stripe => 'cvc'} %>  
-  </div>  
-  <div class="field">  
-    <%= label_tag :card_month, "Card Expiration" %>  
-    <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month", :data => {:stripe => 'exp-month'}} %>  
-    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :data => {:stripe => 'exp-year'}} %>  
-  </div>                 
-  <div class="actions"><%= f.submit "Donate" %></div>  
-<% end %>  
+  <div class="credit_card_fields">  
+    <div class="field">  
+      <%= label_tag :card_month, "Expiration Date" %>  
+      <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month", :data => {:stripe => 'exp-month'}} %>  
+      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :data => {:stripe => 'exp-year'}} %>  
+    </div>
+    <div class="field">  
+      <%= label_tag :card_code, "CVC" %>  
+      <%= text_field_tag :card_code, "123", name: nil, :data => {:stripe => 'cvc'} %>  
+    </div> 
+  </div>               
+  <div class="submit_spacer"></div>
+  <div class="actions"><%= f.submit "DONATE" %></div>  
+<% end %>
+</div>
+</div>
+<div class="container black_container">
+  <div class="content">
+    <h1 class="white"> ADDITIONAL INFORMATION </h1>
+    <div class="white_border"></div>
+    <p class="white"> RTR4C is a volunteer organization operating through contributions, in-kind donations, and proceeds from fund-raising events. They do not receive state or federal funding and are solely dependent on contributions from the community, individuals and corporations. RTR4C has no religious or political agendas or affiliations.
+    </p>
+  </div>
+</div>
+<div class="container">
+  <div class="content">
+    <h1> FOLLOW US </h1>
+    <a class="media tooltip" title="Facebook" id="facebook" href="https://www.facebook.com/pages/Rooms-That-Rock-4-Chemo/112153845548333"></a>
+    <a class="media tooltip" title="LinkedIn" id="linkedin" href="http://www.linkedin.com/profile/view?id=43149579&amp;trk=tab_pro"></a>
+    <a class="media tooltip" title="Twitter" id="twitter" href="https://twitter.com/RoomsThatRock"></a>
+    <div id="copyright_border"></div>
+    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
+  </div>
+</div>
