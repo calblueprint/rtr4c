@@ -20,15 +20,27 @@
 <div id="navbar_container">
   <div id="navbar">
     <a id="logo" href=".."></a>
-    <a class="tab" href=<%= contacts_path %>> CONTACT </a>
+    <a class="tab" href=<%= contacts_path %>>         CONTACT    </a>
     <a class="tab" href=<%= contribute_index_path %>> CONTRIBUTE </a>
-    <a class="tab" href=<%= news_index_path %>> NEWS </a>
-    <a class="tab" href=<%= products_path %>> STORE </a>
-    <a class="tab" href=<%= projects_path %>> PROJECTS </a>
-    <a class="tab" href=<%= team_members_path %>> ABOUT </a>
+    <a class="tab" href=<%= news_index_path %>>       NEWS       </a>
+    <a class="tab" href=<%= products_path %>>         STORE      </a>
+    <a class="tab" href=<%= projects_path %>>         PROJECTS   </a>
+    <a class="tab" href=<%= team_members_path %>>     ABOUT      </a>
   </div>
 </div>
+
 <%= yield %>
+
+<div class="container">
+  <div class="content footer">
+    <h1> FOLLOW US </h1>
+    <a class="media tooltip" title="Facebook" id="facebook" href="https://www.facebook.com/pages/Rooms-That-Rock-4-Chemo/112153845548333"></a>
+    <a class="media tooltip" title="LinkedIn" id="linkedin" href="http://www.linkedin.com/profile/view?id=43149579&amp;trk=tab_pro"></a>
+    <a class="media tooltip" title="Twitter" id="twitter" href="https://twitter.com/RoomsThatRock"></a>
+    <div id="copyright_border"></div>
+    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
+  </div>
+</div>
 
 </body>
 </html>

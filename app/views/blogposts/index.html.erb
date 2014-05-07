@@ -1,26 +1,30 @@
-<h1>Blogposts Index</h1>
+<div class="container">
+	<div class="content">
+		<h1>Blog</h1>
 
-<table>
-	<tr>
-		<td>Title</td>		
-		<td>Post</td>
-		<% if current_user %>
-			<td>Show</td>
-			<td>Edit</td>
-			<td>Destroy</td>
-		<%end%>
-	</tr>
-	<% @blogpost.each do |blogpost| %>
-	<tr>
-		<td><%= blogpost.title %></td>
-		<td><%= blogpost.post %></td>
-		<% if current_user %>
-		  <td><%= link_to "Show", blogpost %></td>
-		  <td><%= link_to "Edit", edit_blogpost_path(blogpost) %></td>
-		  <td><%= link_to "Destroy", blogpost, method: :delete, data: {confirm: "Are you sure?"} %></td>
-		<% end %>
-	</tr>
-	<% end %>
-</table>
+		<table>
+			<tr>
+				<td>Title</td>		
+				<td>Post</td>
+				<% if current_user %>
+					<td>Show</td>
+					<td>Edit</td>
+					<td>Destroy</td>
+				<%end%>
+			</tr>
+			<% @blogpost.each do |blogpost| %>
+			<tr>
+				<td><%= blogpost.title %></td>
+				<td><%= blogpost.post %></td>
+				<% if current_user %>
+				  <td><%= link_to "Show", blogpost %></td>
+				  <td><%= link_to "Edit", edit_blogpost_path(blogpost) %></td>
+				  <td><%= link_to "Destroy", blogpost, method: :delete, data: {confirm: "Are you sure?"} %></td>
+				<% end %>
+			</tr>
+			<% end %>
+		</table>
+		<%= link_to "New Blog Post", new_blogpost_path %>
+	</div>
+</div>
 
-<%= link_to "New Blog Post", new_blogpost_path %>
