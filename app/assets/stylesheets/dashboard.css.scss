@@ -1,3 +1,18 @@
 // Place all the styles related to the Dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+ul.resources_list li {
+  line-height: 2em;
+  font-size: 13px;
+  margin: 0px;
+  font-family: Merriweather, serif;
+  font-weight: normal;
+  list-style: none;
+}
+
+ul.resources_list li p {
+  /*text-align: left;*/
+}
