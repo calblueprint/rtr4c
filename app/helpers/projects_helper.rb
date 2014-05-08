@@ -1,9 +1,9 @@
 module ProjectsHelper
   def designer_url(designer)
     if designer.url.blank?
-      "#{designer.name}, "
+      "#{designer.name} "
     else
-      "#{link_to designer.name, designer.url}, "
+      "<a href=http://#{designer.url}>#{designer.name} </a>".html_safe + " "
     end
   end
 end
