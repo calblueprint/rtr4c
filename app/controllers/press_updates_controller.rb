@@ -43,7 +43,7 @@ class PressUpdatesController < ApplicationController
 
   def update
   	@press = PressUpdate.find(params[:id])
-  	if @press.update(params[:pressupdate].permit(:title, :link, :videolink))
+  	if @press.update(press_params)
   		redirect_to @press
   	else
   		render 'edit'
@@ -52,6 +52,6 @@ class PressUpdatesController < ApplicationController
 
   private
   	def press_params
-    	params.require(:pressupdate).permit(:title, :link, :videolink)
+    	params.require(:press_update).permit(:title, :link, :videolink, :blurb)
   	end
 end
