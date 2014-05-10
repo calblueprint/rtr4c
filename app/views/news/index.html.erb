@@ -33,7 +33,7 @@
       <% elsif news.is_a? Blogpost %>
         <div class="blogpost">
           <% news.images.each do |image| %>
-            <%= image_tag image.photo.url, {class: "post_picture"} %>
+          <%= image_tag image.photo.url, class: "post_picture"%>
           <% end %>
           <div class="post extra_margin">
             <h2> <%= news.title %> </h2>
