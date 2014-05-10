@@ -1,37 +1,43 @@
-<%= nested_form_for @product, html: {multipart: true } do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<div class="container">
+  <div class="content">
+    <%= nested_form_for @product, html: {multipart: true } do |f| %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </div>
+
+      <div class="field">
+        <%= f.label :price %>
+        <%= f.text_field :price %>
+      </div>
+
+      <h2> Optional Sizes </h2>  
+
+      <div class="field">
+        <p><%= label_tag :small %> <%= check_box_tag :small, 'Small' %></p>
+        <p><%= label_tag :medium %> <%= check_box_tag :medium, 'Medium' %></p>
+        <p><%= label_tag :large %> <%= check_box_tag :large, 'Large' %></p>
+      </div>
+
+      <%= f.fields_for :images do |image_form| %>
+        <fieldset>
+          <%= image_form.label      :name %>
+          <%= image_form.text_field :name %>
+          <%= image_form.label      :photo %>
+          <%= image_form.file_field :photo %>
+          <%= image_form.link_to_remove "Remove image" %>
+        </fieldset>
+      <% end %>
+      <%= f.link_to_add "Add photo", :images %>
+      <div class="submit_spacer"></div>
+      <%= f.submit %>
+    <% end %>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-  </div>
-
-  <h2> Optional Sizes </h2>  
-
-  <div class="field">
-    <p><%= label_tag :small %> <%= check_box_tag :small, 'Small' %></p>
-    <p><%= label_tag :medium %> <%= check_box_tag :medium, 'Medium' %></p>
-    <p><%= label_tag :large %> <%= check_box_tag :large, 'Large' %></p>
-  </div>
-
-  <%= f.fields_for :images do |image_form| %>
-    <fieldset>
-      <%= image_form.label      :name %>
-      <%= image_form.text_field :name %>
-      <%= image_form.label      :photo %>
-      <%= image_form.file_field :photo %>
-      <%= image_form.link_to_remove "Remove image" %>
-    </fieldset>
-  <% end %>
-  <%= f.link_to_add "Add photo", :images %>
-  <div class="submit_spacer"></div>
-  <%= f.submit %>
-<% end %>
+    

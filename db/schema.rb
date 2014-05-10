@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429112919) do
+ActiveRecord::Schema.define(version: 20140507095449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,15 +25,25 @@ ActiveRecord::Schema.define(version: 20140429112919) do
 
   create_table "cart_items", force: true do |t|
     t.integer  "quantity"
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "product_id"
     t.integer  "cart_id"
     t.integer  "purchase_id"
     t.string   "selected_size"
   end
 
   create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contact_emails", force: true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,6 +56,14 @@ ActiveRecord::Schema.define(version: 20140429112919) do
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "designers", force: true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "project_id"
   end
 
   create_table "donations", force: true do |t|
@@ -108,6 +126,8 @@ ActiveRecord::Schema.define(version: 20140429112919) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.text     "volunteers"
+    t.integer  "designer_id"
   end
 
   create_table "purchases", force: true do |t|

@@ -1,34 +1,23 @@
-<h1>Listing products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <div class="content">
+  <h1> STORE </h1>
+  <a id="view_cart" href="cart"> View Cart </a>
     <% @products.each do |product| %>
-      <tr>
-        <td><%= image_tag first_image product %></td>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td>$<%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
+      <div class="product">
+      <a href="<%= product_path(product) %>"><%= image_tag first_image product %></a>
+      <p><%= product.name %></p>
+      <p><%= number_to_currency(product.price) %></p>
         <% if current_user %>
-          <td><%= link_to 'Edit', edit_product_path(product) %></td>
-          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <p><%= link_to 'Edit', edit_product_path(product) %></p>
+          <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <% end %>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  <br>
 
-<br>
-
-<% if current_user %>
-  <%= link_to 'New Product', new_product_path %>
-<% end %>
+  <% if current_user %>
+    <%= link_to 'New Product', new_product_path %>
+  <% end %>
+</div>
+</div>

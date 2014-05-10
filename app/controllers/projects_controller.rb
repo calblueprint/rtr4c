@@ -1,12 +1,20 @@
+
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:index, :show]
-
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
+    @project_array = @projects.sort_by! {|a| a.created_at}
+    @featured_array = @project_array[0..2]
+    @featured_one = @featured_array[0]
+    @featured_two = @featured_array[1]
+    @featured_three = @featured_array[2]
+    @rest_array = @project_array[3..@project_array.length]
+    @paginated_projects = @rest_array.paginate(:page => params[:page], :per_page => 6)
   end
+
 
   # GET /projects/1
   # GET /projects/1.json
@@ -58,6 +66,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :date, :description, :location, images_attributes: [:id, :name, :photo, :_destroy])
+      params.require(:project).permit(:title, :date, :description, :location, :volunteers, designers_attributes: [:id, :name, :url, :_destroy], images_attributes: [:id, :name, :photo, :_destroy])
     end
 end

@@ -1,29 +1,62 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @project.date %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @project.location %>
-</p>
-
-<% @project.images.each do |image| %>
-  <p><%= image.name %></p>
-  <%= image_tag image.photo.url %>
+<% if current_user %>
+<%= link_to 'Edit', edit_project_path(@project) %>
+<%= link_to 'Back', projects_path %>
 <% end %>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div class="container">
+  <div class="ind_project_content">
+    <div id="ind_project_main_title"><h1><%= @project.title %></h1>
+    <div class="before_after">
+      <div id="before">Before</div>
+      <div id="after">After</div>
+    </div>
+    <div class="header_pict">
+      <div class="main_before_pict"><%= image_tag(@project.images[1].photo.url) %></div>
+      <div class="divider"></div>
+      <div class="main_after_pict"><%= image_tag(@project.images[0].photo.url) %></div>
+      <div class="before_picts">
+        <div id="b_1"><%= image_tag(@project.images[4].photo.url) %></div>
+        <div id="b_2"><%= image_tag(@project.images[5].photo.url) %></div>
+        <div id="b_3"></div>
+        <div id="b_4"></div>
+      </div>
+      <div class="after_picts">
+        <div id="a_1"><%= image_tag(@project.images[1].photo.url) %></div>
+        <div id="a_2"><%= image_tag(@project.images[2].photo.url) %></div>
+        <div id="a_3"></div>
+        <div id="a_4"></div>
+      </div>
+  </div>
+</div>
+
+
+<div class = "container black_container">
+  <div class="content">
+    <div class="ind_project_about">
+      <div id = "ind_about_title">
+        <p id="ind_about">About This Project</p>
+      </div>
+      <div id="ind_project_line_about"></div>
+      <div>
+        <p class="ind_about_text">
+          <b>Designers:</b>
+          <% @project.designers.each do |designer| %>
+            <%= designer_url designer %>
+          <% end %>
+          <br>
+          <br>
+          <%= @project.description %>
+        </p>
+      </div>
+    </div>
+    <div class="ind_project_volunteers">
+      <div id = "volunteer_title">
+        <p id ="volunteers_about">Volunteers That Made This Happen</p>
+      </div>
+      <div id="ind_project_line_volunteer"></div>
+      <div>
+        <p id="ind_volunteer_text"><%= @project.volunteers %></p>
+      </div>
+    </div>
+  </div>
+</div>

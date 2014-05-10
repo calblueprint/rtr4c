@@ -1,20 +1,9 @@
-<div id="navbar_container">
-  <div id="navbar">
-    <a id="logo" href=".."></a>
-    <a class="tab" href="contact"> CONTACT </a>
-    <a class="tab" href="contribute"> CONTRIBUTE </a>
-    <a class="tab" href="news"> NEWS </a>
-    <a class="tab" href="store"> STORE </a>
-    <a class="tab" href="projects"> PROJECTS </a>
-    <a class="tab" href="about"> ABOUT </a>
-  </div>
-</div>
 <div class="container">
   <div class="content">
     <h1> NEWS </h1>
     <% if current_user %>
-      <p> <%= link_to 'New Blog', new_blogpost_path %> </p>
-      <p> <%= link_to 'New Press', new_press_update_path %> </p>
+      <p> <%= link_to 'New Blogpost', new_blogpost_path %> </p>
+      <p> <%= link_to 'New Press Update', new_press_update_path %> </p>
     <% end %>
     <div class="apple_pagination">
       <%= will_paginate @news %>
@@ -44,7 +33,7 @@
       <% elsif news.is_a? Blogpost %>
         <div class="blogpost">
           <% news.images.each do |image| %>
-            <%= image_tag image.photo.url, class: "post_picture"%>
+          <%= image_tag image.photo.url, class: "post_picture"%>
           <% end %>
           <div class="post extra_margin">
             <h2> <%= news.title %> </h2>
@@ -62,15 +51,5 @@
   </div>
   <div class="apple_pagination">
     <%= will_paginate @news %>
-  </div>
-</div>
-<div class="container">
-  <div class="content">
-    <h1> FOLLOW US </h1>
-    <a class="media tooltip" title="Facebook" id="facebook" href="https://www.facebook.com/pages/Rooms-That-Rock-4-Chemo/112153845548333"></a>
-    <a class="media tooltip" title="LinkedIn" id="linkedin" href="http://www.linkedin.com/profile/view?id=43149579&amp;trk=tab_pro"></a>
-    <a class="media tooltip" title="Twitter" id="twitter" href="https://twitter.com/RoomsThatRock"></a>
-    <div id="copyright_border"></div>
-    <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
   </div>
 </div>

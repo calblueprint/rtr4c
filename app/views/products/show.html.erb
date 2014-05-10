@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p><%= @product.name %></p>
-<p><%= @product.description %></p>
-<p><%= @product.price %></p>
+<div class="container">
+<div class="content">
+<div class="product_specific">
+  <h1><%= @product.name %></h1>
+  <%= link_to 'Back', products_path, id: "back_product" %>
+  <a id="view_cart" href="../cart"> View Cart </a>
 <% @product.images.each do |image| %>
   <%= image.name %><br>
   <%= image_tag image.photo.url %><br>
 <% end %>
-
+<p id="notice"><%= notice %></p>
+<br>
+<p><%= @product.description %></p>
+<br>
+<p><%= number_to_currency(@product.price) %></p>
+<br>
 <%= form_tag add_to_cart_path(:product_id => @product), :method => :post do %>
   <% if @product.size_variants.any? %>
     <p><%= label_tag "Select a Size" %></p>
     <p><%= select_tag :selected_size, options_for_select(@product.size_variants.first.sizes, params[:selected_size]) %></p>
   <% end %>
-  <%= submit_tag 'Add to Cart' %>
+  <p><%= submit_tag 'Add to Cart' %></p>
 <% end %>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+</div>
+</div>
+</div>

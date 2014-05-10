@@ -1,5 +1,6 @@
-<h1>Listing cart</h1>
-
+<div class="container">
+<div class="content">
+  <h1>CART</h1>
 <table>
   <thead>
     <tr>
@@ -9,7 +10,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="cart_table">
     <% if @current_cart.cart_items.empty? %>
       <h2> No products in cart! </h2>
     <% else %>
@@ -22,15 +23,14 @@
         <% else %>
           <td><%= citem.selected_size %></td>
         <% end %>
-        <td>$<%= citem.product.price %></td> 
+        <td><%= number_to_currency(citem.product.price) %></td> 
         <%= form_for(citem, url: update_cart_path, method: :post) do |f| %>
-          <td><%= f.number_field :quantity, value: citem.quantity %></td>
+          <td><%= f.number_field :quantity, value: citem.quantity, style: "width: 50px; margin-top: 25px;" %></td>
           <td><%= f.hidden_field :product_id, value: citem.product_id %></td>
           <td><%= f.hidden_field :selected_size, value: citem.selected_size %></td>
           <td><%= f.submit "Update" %></td>
         <% end %>
-        <td><%= link_to 'Show', citem.product %></td>
-        <td><%= link_to "Delete", delete_from_cart_path(:product_id => citem.product, :selected_size => citem.selected_size), :method => :post %></td>
+        <td><%= link_to "Remove", delete_from_cart_path(:product_id => citem.product, :selected_size => citem.selected_size), :method => :post, class: "remove" %></td>
       </tr>
     <% end %>
     <% end %>

@@ -1,5 +1,6 @@
 <h1> Confirm Your Purchase! </h1>
-
+<div class="container">
+<div class="content">
 <table>
   <thead>
     <tr>
@@ -9,7 +10,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="cart_table">
     <% @cart.cart_items.each do |citem| %>
       <tr>
         <td><%= image_tag first_image citem.product %></td>
@@ -19,7 +20,7 @@
         <% else %>
           <td><%= citem.selected_size %></td>
         <% end %>
-        <td>$<%= citem.product.price %></td> 
+        <td><%= number_to_currency(citem.product.price) %></td> 
         <td><%= citem.quantity %></td>
         <td><%= link_to 'Show', citem.product %></td>
       </tr>
@@ -32,3 +33,5 @@
 <p> Tax Total: <%= number_to_currency(@tax_amount) %></p>
 <p> Total: <%= number_to_currency(@grand_total) %></p>
 <p><%= button_to 'Confirm Checkout', {:controller => :checkouts, :action => :confirm}, {:method => :get} %></p>
+</div>
+</div>
