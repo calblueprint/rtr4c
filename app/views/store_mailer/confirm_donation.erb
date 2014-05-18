@@ -1,0 +1,14 @@
+<h1>Thanks for your donation!</h1> <br/>
+
+Your donation will support our cause and we appreciate you lending a helping hand. <br/><br/>
+
+Below is your donation details: <br/><br/>
+
+<div>
+  <p><%= @donor.name %></p>
+  <p><%= number_to_currency(@donation.amount) %></p>
+  <% if @donation.message.present? %>
+    <p><%= @donation.message %></p>
+  <% end %>
+</div>
+<br/>
