@@ -5,6 +5,7 @@
 <h2> Contact Info </h2>
 
 <%= form_tag(checkouts_path, :id => "new_checkout") do %>
+  <p><noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript></p>
   <div class="field">
     <%= label :checkout, "First Name" %>
     <%= text_field :checkout, :firstname %>
@@ -94,6 +95,7 @@
   </div>
 
   <h2> Credit Card </h2>
+  <p id="payment_error"></p>
   <div class="field">
     <%= label_tag :card_number, "Card #" %>  
     <%= text_field_tag :card_number, "4242 4242 4242 4242", name: nil, :data => {:stripe => 'number'} %>  

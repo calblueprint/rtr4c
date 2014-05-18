@@ -16,37 +16,48 @@ class DonationsController < ApplicationController
       flash[:error] = "Name, email, and amount are required fields"
       redirect_to contribute_online_path
     else
-      @donation = Donation.new(:amount => params[:donation][:amount], :message => params[:donation][:message]) 
+      success = true
       token = params[:stripeToken]
-      charge = (@donation[:amount].to_f * 100).to_i
-      if @donation.save
-        begin
-          charge = Stripe::Charge.create(
-            :amount => charge,
-            :currency => "usd",
-            :card => token,
-            :description => "Donation from " + params[:email]
-          )
-        rescue Stripe::InvalidRequestError => e
-          flash[:error] = "Invalid donation amount, #{e.message}"
-          redirect_to contribute_online_path
-        end
-        @donor = Donor.find_by(email: params[:email])
-        if @donor.nil?
-          @donor = Donor.new(:amount => params[:donation][:amount], :email => params[:email], :name => params[:name], :title => params[:title], :profile => params[:profile])
-          @donor.donations << @donation
-          @donor.save
-        else
-          new_amt = @donor.amount.to_f + params[:donation][:amount].to_f
-          @donor.update_attributes(:amount => new_amt)
-          @donor.donations << @donation
-          @donor.save
-        end
-      else
-        flash[:error] = "Name, email, and amount are required fields"
+      charge = (params[:donation][:amount].to_f * 100).to_i
+      begin
+        charge = Stripe::Charge.create(
+          :amount => charge,
+          :currency => "usd",
+          :card => token,
+          :description => "Donation from " + params[:email]
+        )
+      rescue Stripe::InvalidRequestError => e
+        success = false
+        flash[:error] = "Invalid donation amount: #{e.message}"
         redirect_to contribute_online_path
       end
+      if success
+        @donation = Donation.new(:amount => params[:donation][:amount], :message => params[:donation][:message]) 
+        if @donation.save
+          @donor = Donor.find_by(email: params[:email])
+          if @donor.nil?
+            @donor = Donor.new(:amount => params[:donation][:amount], :email => params[:email], :name => params[:name], :title => params[:title], :profile => params[:profile])
+            @donor.donations << @donation
+            @donor.save
+          else
+            new_amt = @donor.amount.to_f + params[:donation][:amount].to_f
+            @donor.update_attributes(:amount => new_amt)
+            @donor.donations << @donation
+            @donor.save
+          end
+          # deliver donation email
+          mail_info = {:mail => params[:email], :donor => @donor, :donation => @donation}
+          StoreMailer.confirm_donation(mail_info).deliver
+          redirect_to confirm_donations_path
+        else
+          flash[:error] = "Name, email, and amount are required fields"
+          redirect_to contribute_online_path
+        end
+      end
     end
+  end
+
+  def confirm
   end
 
   def index

@@ -29,25 +29,35 @@ class CheckoutsController < ApplicationController
 
   def confirm
     if @@cart.cart_items.present?
+      success = true
       charge = (@@grand_total.to_f * 100).to_i
-      @purchase = Purchase.new(:name => @@name, :address => @@address, :email => @@email, :subtotal => @@cart.total_price, :total => @@grand_total)
-      if @purchase.save
+      begin
         charge = Stripe::Charge.create(
           :amount => charge,
           :currency => "usd",
           :card => @@token,
           :description => "Purchase from " + @@email
         )
-        @@cart.cart_items.each do |citem|
-          @purchase.cart_items << citem
+      rescue Stripe::CardError => e
+        flash[:error] = "#{e.message}"
+        success = false
+        redirect_to new_checkout_path
+      rescue => e
+        success = false
+        flash[:error] = "#{e.message}"
+      end
+      if success
+        @purchase = Purchase.new(:name => @@name, :address => @@address, :email => @@email, :subtotal => @@cart.total_price, :total => @@grand_total)
+        if @purchase.save
+          @@cart.cart_items.each do |citem|
+            @purchase.cart_items << citem
+          end
+          # deliver email
+          mail_info = {:mail => @@email, :purchase => @purchase}
+          StoreMailer.confirm_email(mail_info).deliver
+          @@cart.destroy
+          @@cart.save
         end
-        # deliver email
-        mail_info = {:mail => @@email, :purchase => @purchase}
-        StoreMailer.confirm_email(mail_info).deliver
-        @@cart.destroy
-        @@cart.save
-      else
-        render action: 'new'
       end
     else
       render_404

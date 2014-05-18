@@ -33,7 +33,11 @@ Rtr4c::Application.routes.draw do
   resources :products, :path => "store"
   resources :charges
   resources :donors
-  resources :donations
+  resources :donations do 
+    collection do
+      get 'confirm'
+    end
+  end
   resources :cart
   resources :team_members, :path => "about"
   resources :checkouts do 

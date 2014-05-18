@@ -15,7 +15,7 @@ jQuery(function($){
       $form.get(0).submit();
     }
     else {
-      $form.find('.payment-errors').text(response.error.message);
+      $form.find('#payment_error').text(response.error.message);
       $('input[type=submit]').attr('disabled', false);
     }
   }

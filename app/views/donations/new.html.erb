@@ -1,18 +1,10 @@
 <div class="container">
 <div class="content">
 <h1> ONLINE DONATION </h1>
-<%= form_for @donation do |f| %>  
-  <% if @donation.errors.any? %>  
-    <div class="error_messages">  
-      <h2><%= pluralize(@donation.errors.count, "error") %> prohibited this donation from being saved:</h2>  
-      <ul>  
-      <% @donation.errors.full_messages.each do |msg| %>  
-        <li><%= msg %></li>  
-      <% end %>  
-      </ul>
-    </div>  
-  <% end %>
-  <span class="payment-errors"></span>    
+
+<h2> Contact Info </h2>   
+<%= form_for @donation do |f| %>
+  <p><noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript></p>
   <div class="field">  
     <%= label_tag :name %>  
     <%= text_field_tag :name %>  
@@ -36,7 +28,10 @@
   <div class="field">  
     <%= f.label :message %>  
     <%= f.text_area :message %>  
-  </div> 
+  </div>
+
+  <h2> Credit Card </h2>
+  <p id="payment_error"></p> 
   <div class="field">  
     <%= label_tag :card_number, "Credit Card Number " %>  
     <%= text_field_tag :card_number, "4242 4242 4242 4242", name: nil, :data => {:stripe => 'number'} %>  
