@@ -1,18 +1,24 @@
-<h1> Press Update was successfully updated </h1>
+<div class="container">
+	<div class="content">
+		<h1> Press Update was successfully updated </h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @press.title %>
-</p>
+		<p>
+		  <strong>Title:</strong>
+		  <%= @press.title %>
+		</p>
 
-<p>
-  <strong>Link:</strong>
-  <%=h auto_link(@press.link) %>
-</p>
+		<p>
+		  <strong>Link:</strong>
+		  <%=h auto_link(@press.link) %>
+		</p>
 
-<p>
-  <strong>VideoLink:</strong>
-  <%= @video_frame.html_safe %>
-</p>
+		<p>
+		  <strong>VideoLink:</strong>
+		  <%= @video_frame.html_safe %>
+		</p>
 
-<%= link_to 'All Press Updates', press_updates_path %>
+		<div class="admin_buttons">
+      <%= link_to 'Back', team_members_path %>
+    </div>
+	</div>
+</div>

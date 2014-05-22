@@ -19,7 +19,9 @@
         <%= image_form.link_to_remove "Remove image" %>
       </fieldset>
     <% end %>
-    <%= f.link_to_add "Add photo", :images %>
+    <div class="admin_buttons">
+      <%= f.link_to_add "Add photo", :images %>
+    </div>
     <div class="submit_spacer"></div>
     <p><%= f.submit %></p>
   <% end %>

@@ -1,141 +1,8 @@
-body {
-  margin: 0px;
-  background: url(<%= image_path "texture.png"%>);
-}
-
-p {
-  text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
-  line-height: 2em;
-  font-size: 13px;
-  margin: 0px;
-  font-family: Merriweather, serif;
-  font-weight: normal;
-}
-
-p#payment_error {
-  text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
-  line-height: 2em;
-  font-size: 13px;
-  font-weight: bold;
-  color: #E35842;
-  margin: 0px;
-  font-family: Merriweather, serif;
-}
-
-h1 {
-  text-transform: uppercase;
-  width: 100%;
-  text-align: center;
-  font-family: Oswald, sans-serif;
-  font-size: 64px;
-  color: #333333;
-  font-weight: normal;
-}
-
-h2 {
-  width: 100%;
-  text-align: center;
-  font-family: 'Special Elite', cursive;
-  font-size: 32px;
-  color: #333333;
-  font-weight: normal;
-}
-
-#top {
-  position: fixed;
-  top: 0px;
-  left: 50px;
-  width: 100px;
-  height: 100px;
-  background-image: url(<%= image_path "ribbon.png"%>);
-  background-size: cover;
-}
-
-#top:hover {
-  cursor: pointer;
-}
-
-.border {
-  margin: auto;
-  width: 150px;
-  border-bottom: 1px solid #CCCCCC;
-  margin-bottom: 25px;
-}
-
-.white_border {
-  margin: auto;
-  width: 150px;
-  border-bottom: 1px solid #FFFFFF;
-  margin-bottom: 25px;
-}
-
-.container {
-  float: left;
-  padding-bottom: 50px;
-  width: 100%;
-}
-
-.content {
-  margin: auto;
-  width: 1000px;
-}
-
 .third {
+  margin-top: 15px;
   width: 333px;
   height: 375px;
   float: left;
-}
-
-#navbar_container {
-  float: left;
-  width: 100%;
-  height: 150px;
-}
-
-#navbar {
-  margin: auto;
-  width: 1000px;
-  height: 150px;
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-}
-
-#logo {
-  float: left;
-  margin-top: 25px;
-  width: 125px;
-  height: 110px;
-  background-image: url(<%= image_path "logo.png"%>);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#logo:hover {
-  cursor: pointer;
-}
-
-.tab {
-  float: right;
-  font-family: 'Special Elite', cursive;
-  border-top: 1px solid #CCCCCC;
-  text-decoration: none;
-  color: #333333;
-  font-size: 16px;
-  width: 90px;
-  margin: 25px;
-  padding-top: 15px;
-  margin-top: 75px;
-}
-
-.tab:hover {
-  border-top: 1px solid #b77ed2;
-  box-shadow: 0 -1px 0 #b77ed2;
 }
 
 #banner {
@@ -166,19 +33,7 @@ h2 {
   color: #ffffff;
 }
 
-#what {
-  margin-bottom: 50px;
-}
-
-.black_container {
-  background: url(<%= image_path "tweed.png"%>);
-}
-
-.white {
-  color: #ffffff;
-}
-
-.project {
+.update {
   float: left;
   margin: 50px;
   width: 380px;
@@ -187,106 +42,17 @@ h2 {
   border: 10px solid #333333;
 }
 
-.project:hover {
+.update:hover {
   cursor: pointer;
   border: 10px solid #b77ed2;
 }
 
-#project1 {
+#news1 {
   background: url(<%= image_path "Projects/Oakland_Hospital/room_four.jpg"%>);
   background-size: cover;
 }
 
-#project2 {
+#project1 {
   background: url(<%= image_path "Projects/Mammoth/pict_two.jpg"%>);
   background-size: cover;
-}
-
-.media {
-  float: left;
-  width: 120px;
-  height: 120px;
-  margin-left: 15px;
-  margin-right: 15px;
-  border-radius: 65px;
-  border: 5px solid #333333;
-}
-
-.media:hover {
-  cursor: pointer;
-  border: 5px solid #b77ed2;
-}
-
-#facebook {
-  background: url(<%= image_path "facebook.png"%>);
-  background-size: cover;
-  margin-left: 280px;
-}
-
-#facebook:hover {
-  background: url(<%= image_path "facebook_alt.png"%>);
-  background-size: cover;
-}
-
-#linkedin {
-  background: url(<%= image_path "linkedin.png"%>);
-  background-size: cover;
-}
-
-#linkedin:hover {
-  background: url(<%= image_path "linkedin_alt.png"%>);
-  background-size: cover;
-}
-
-#twitter {
-  background: url(<%= image_path "twitter.png"%>);
-  background-size: cover;
-}
-
-#twitter:hover {
-  background: url(<%= image_path "twitter_alt.png"%>);
-  background-size: cover;
-}
-
-#copyright_border {
-  margin: auto;
-  margin-top: 220px;
-  width: 150px;
-  border-bottom: 1px solid #CCCCCC;
-  margin-bottom: 25px;
-}
-
-#copyright {
-  margin-top: 50px;
-}
-
-.tooltip{
-  text-align: center;
-  font-family: 'Special Elite', cursive;
-  font-size: 16px;
-  display: inline;
-  position: relative;
-}
-
-.tooltip:hover:before{
-  border: solid;
-  border-color: #333 transparent;
-  border-width: 10px 10px 0 10px;
-  top: 15px;
-  content: "";
-  right: 80px;
-  position: absolute;
-  z-index: 99;
-}
-
-.tooltip:hover:after{
-  background: #333;
-  border-radius: 5px;
-  top: -25px;
-  color: #fff;
-  content: attr(title);
-  right: 20px;
-  padding: 15px 15px 10px;
-  position: absolute;
-  z-index: 98;
 }

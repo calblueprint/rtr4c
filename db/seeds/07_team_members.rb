@@ -19,7 +19,7 @@ t.save
 t = TeamMember.new(
   name: 'Dr. Kevin Knopf',
   title: 'VICE PRESIDENT',
-  blurb: 'Dr. Knopf is a Hematologist/Oncologist practicing in San Francisco. A native of Long Beach, California he attended college at the Massachusetts Institute of Technology, medical school at University of California, San Francisco and did training in internal medicine and oncology at Northwestern Medical School, Johns Hopkins Medical School, Sloan-Kettering Cancer Center and the National Cancer Institute. He has practiced in San Francisco since 2006 - out of California Pacific Medical Center and St Lukes, where he is Director of Hematology/Oncology. He also has a smaller practice in Internal Medicine. Dr Knopf is thrilled to be part of Rooms that Rock 4 Chemo.',
+  blurb: 'Dr. Knopf is a Hematologist/Oncologist practicing in San Francisco. He attended  medical school at University of California, San Francisco and did additional training at Northwestern, Johns Hopkins, Sloan-Kettering and the National Cancer Institute. He has practiced in San Francisco since 2006 - out of California Pacific Medical Center and St Lukes, where he is Director of Hematology/Oncology. He also has a smaller practice in Internal Medicine. Dr Knopf is thrilled to be part of Rooms that Rock 4 Chemo.',
   role: 0,
 )
 t.images.new().photo_from_url("http://www.roomsthatrock4chemo.us/images/dr-knopf.jpg")
