@@ -6,7 +6,8 @@
 
 .featured {
 	margin: auto;
-	margin-top: 30px;
+  margin-top: 25px;
+	margin-bottom: 25px;
 	width: 800px;
 	height: 300px;
 	border-style: solid;
@@ -16,7 +17,7 @@
 
 .featured:hover {
 	cursor: pointer;
-  	border: 8px solid #b77ed2;
+  border: 8px solid #b77ed2;
 }
 
 #pict_one img {
@@ -47,8 +48,9 @@
 
 .featured_text {
 	background-color: white;
-	width: 275px;
-	height: 300px;
+	width: 225px;
+	padding: 25px;
+	height: 250px;
 	float: left;
 	text-align: center;
 }
@@ -68,15 +70,7 @@
 	color: black;
 	padding-left: 0px;
 	padding-right: 0px;
-
-}
-
-
-#tweed {
-	background-image: url(<%= image_path "tweed.png"%>);
-	height: 900px;
-	width: 1360px;
-	margin-top: 80px;
+	line-height: 1.5em;
 }
 
 #all_p {
@@ -85,28 +79,27 @@
 	margin-top: 80px;
 }
 
+/*
+.pagination a {
+  color: #333;
+  text-decoration: none;
+  font-size: 24px;
+}*/
+
 .projects_pagination {
 	width:800px;
 	height:30px;
 	margin: auto;
 	text-align: center;
-	font-family: 'Special Elite';
 	font-size: 24px;
 	text-decoration: none;
 	color: white;
 }
-.projects_all {
-	width: 800px;
-	height: 600px;
-	margin: auto;
-}
 
 .project_block {
 	width: 250px;
-	height: 200px;
+	height: 250px;
 	float: left;
-	margin-bottom: 140px;
-	margin-top: 20px;
 }
 
 .project_text a, .project_text p {
@@ -120,8 +113,8 @@
 }
 
 .project_thumb img{
-	height:200px;
-	width: 200px;
+	height: 190px;
+	width: 190px;
 	border-radius: 100px;
 	border-style: solid;
 	border-width: 5px;
@@ -132,9 +125,8 @@
 
 .project_thumb img:hover {
 	cursor: pointer;
-  	border: 5px solid #b77ed2;
+  border: 5px solid #b77ed2;
 }
-
 
 .proj_link {
 	margin-left: 900px;
@@ -150,9 +142,9 @@
 
 /* Show Project View */
 
-.ind_projec_content {
+.ind_project_content {
+  margin: auto;
 	width:1200px;
-	height:5000px;
 }
 .before_after {
 	width: 1000px;
@@ -162,7 +154,6 @@
 }
 #before {
 	float:left;
-	margin-left:200px;
 	font-size: 32px;
 
 }
@@ -202,7 +193,6 @@
 	float: left;
 }
 
-
 .before_picts {
 	height: 150px;
 	width: 550px;
@@ -223,7 +213,7 @@
 	width: 70px;
 	float: left;
 	margin-top:30px;
-	margin-left: 40px;
+	margin-right: 30px;
 	border-style: solid;
 	border-width: 5px;
 	border-color:#333333;
@@ -231,15 +221,16 @@
 
 .ind_project_about {
 	width:1000px;
-	height:200px;
 }
 
 
 #ind_about {
+  height: 100%;
 	float:left;
 	color: white;
 	font-family: 'Special Elite';
 	font-size: 32px;
+  padding-top: 25px;
 	padding-left: 0px;
 	padding-right:0px;
 }
@@ -251,7 +242,7 @@
 }
 
 #ind_project_line_volunteer {
-	height:5px;
+	height:1px;
 	width:700px;
 	background-color: white;
 	float:right;
@@ -259,7 +250,7 @@
 }
 
 #ind_project_line_about {
-	height:5px;
+	height:1px;
 	width:800px;
 	background-color: white;
 	float:left;
@@ -276,9 +267,11 @@
 }
 
 .ind_project_volunteers {
+  float: left;
+  height: 100%;
 	width:1000px;
-	height:400px;
-	margin-top:100px;
+	padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 #volunteer_title {
@@ -301,18 +294,3 @@
 	float: right;
 	padding: 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

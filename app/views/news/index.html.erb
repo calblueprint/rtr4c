@@ -2,8 +2,8 @@
   <div class="content">
     <h1> NEWS </h1>
     <% if current_user %>
-      <p> <%= link_to 'New Blogpost', new_blogpost_path %> </p>
-      <p> <%= link_to 'New Press Update', new_press_update_path %> </p>
+      <p> <%= link_to 'New Blogpost', new_blogpost_path, {class: "new_button"} %> </p>
+      <p> <%= link_to 'New Press Update', new_press_update_path, {class: "new_button"} %> </p>
     <% end %>
     <div class="apple_pagination">
       <%= will_paginate @news %>
@@ -24,8 +24,10 @@
             <p> <%= news.blurb %> </p>
             <p> <br><%= link_to "Read More", news.link, class: "read_more" %> </p>
             <% if current_user %>
-              <span> <%= link_to 'Edit', edit_press_update_path(news) %> </span>
-              <span><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %><span>
+              <div class="admin_buttons">
+                <span> <%= link_to 'Edit', edit_press_update_path(news) %> </span>
+                <span><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+              </div>
             <% end %>
           </div>
           <div class="border extra_margin"></div>
@@ -40,8 +42,10 @@
             <h4> <%= news.created_at.strftime('%x') %> </h4>
             <p> <%= news.post %> </p>
             <% if current_user %>
-              <span> <%= link_to 'Edit', edit_blogpost_path(news) %> </span>
-              <span><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %><span>
+              <div class="admin_buttons">
+                <span> <%= link_to 'Edit', edit_blogpost_path(news) %> </span>
+                <span><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+              </div>
             <% end %>
           </div>
           <div class="border extra_margin"></div>

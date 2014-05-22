@@ -1,11 +1,6 @@
-<% if current_user %>
-<%= link_to 'Edit', edit_project_path(@project) %>
-<%= link_to 'Back', projects_path %>
-<% end %>
-
 <div class="container">
-  <div class="ind_project_content">
-    <div id="ind_project_main_title"><h1><%= @project.title %></h1>
+  <div class="ind_project_content">,
+    <div id="ind_project_main_title"><h1><%= @project.title %></h1></div>
     <div class="before_after">
       <div id="before">Before</div>
       <div id="after">After</div>
@@ -26,6 +21,13 @@
         <div id="a_3"></div>
         <div id="a_4"></div>
       </div>
+    </div>
+    <% if current_user %>
+      <div class="admin_buttons">
+        <%= link_to 'Edit', edit_project_path(@project) %>
+        <%= link_to 'Back', projects_path %>
+      </div>
+    <% end %>
   </div>
 </div>
 
@@ -36,13 +38,15 @@
       <div id = "ind_about_title">
         <p id="ind_about">About This Project</p>
       </div>
-      <div id="ind_project_line_about"></div>
+      <!--<div id="ind_project_line_about"></div>-->
       <div>
         <p class="ind_about_text">
+          <br>
           <b>Designers:</b>
           <% @project.designers.each do |designer| %>
-            <%= designer_url designer %>
+            <%= designer_url designer %>,
           <% end %>
+          and others!
           <br>
           <br>
           <%= @project.description %>
@@ -53,7 +57,7 @@
       <div id = "volunteer_title">
         <p id ="volunteers_about">Volunteers That Made This Happen</p>
       </div>
-      <div id="ind_project_line_volunteer"></div>
+      <!--<div id="ind_project_line_volunteer"></div>-->
       <div>
         <p id="ind_volunteer_text"><%= @project.volunteers %></p>
       </div>

@@ -6,17 +6,15 @@
   <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "https://js.stripe.com/v2/"%> 
-
   <%= tag :meta, :name => "stripe-key", :content => ENV['PUBLISHABLE_KEY'] %>
   <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Merriweather:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-<% flash.each do |name, msg| %>
+<!--<% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
+<% end %>-->
 <div id="navbar_container">
   <div id="navbar">
     <a id="logo" href=".."></a>
@@ -28,9 +26,7 @@
     <a class="tab" href=<%= team_members_path %>>     ABOUT      </a>
   </div>
 </div>
-
 <%= yield %>
-
 <div class="container">
   <div class="content footer">
     <h1> FOLLOW US </h1>
@@ -41,6 +37,5 @@
     <p id="copyright"> Copyright 2013. Rooms That Rock 4 Chemo </p>
   </div>
 </div>
-
 </body>
 </html>

@@ -1,20 +1,18 @@
-<div class="banner">
+<div id="about_banner">
 </div>
 <div class="container">
   <div class="content">
     <h3 id="about_title"> ABOUT </h3>
-    <p class="" id="about">
+    <p id="about">
       We work with interior designers and hospitals/clinics that provide chemotherapy, Our custom-designed rooms host over 713 ,000 patient visits per year in ten facilities and 99 rooms in the USA and San Salvador in El Salvador
       <br><br>
       We began with a simple philanthropic gesture, Nancy Linebarger Ballard offered to donate her botanical paintings to the dreary chemotherapy rooms in Dr. Hufford’s San Francisco medical office. Dr. Hufford was overjoyed with the artistic gifts of generosity, yet she saw a much bigger future for the project.
       <br><br>
       In an effort to revamp the chemotherapy rooms in their entirety, Nancy reached out to twenty local interior designers for their professional aid. Within three days, six designers had reacted enthusiastically, volunteering their time and creative efforts for the first RTR4C Project. Since then, talented teams of room revamping designers have been transforming bland spaces into vibrant, warm and colorful environments that evoke positive vibes into the dreary circumstances often experienced in these treatment rooms. These rooms have been completed and are highlighted on our website.
     </p>
-    
-    <a id="team_members" href=""></a>
     <div class="border"></div>
     <% if current_user %>
-      <%= link_to 'Add Team member', new_team_member_path, {class: "new_team_member"} %>
+      <%= link_to 'Add Team member', new_team_member_path, {class: "new_button"} %>
     <% end %>
     <% @head_honchos.each do |head_honcho| %>
       <div class="profile_container">
@@ -40,11 +38,15 @@
   <div class="content">
     <h1 class="white"> ADVISORY BOARD </h1>
     <% @advisory_board.each do |advisory_board| %>
-      <%= image_tag(first_image(advisory_board), class: "picture") %>
-      <% if current_user %>
-      <p><%= link_to 'Edit', edit_team_member_path(advisory_board) %></p>
-      <p><%= link_to 'Destroy', advisory_board, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      <% end %>
+      <div class="advisory tooltip" title="<%= advisory_board.name %>">
+        <%= image_tag(first_image(advisory_board), class: "advisory_picture") %>
+        <div class="admin_buttons">
+          <% if current_user %>
+          <p><%= link_to 'Edit', edit_team_member_path(advisory_board) %></p>
+          <p><%= link_to 'Destroy', advisory_board, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
@@ -60,23 +62,28 @@
 
 <div class="container black_container">
   <div class="content">
-    <h1 class="white"> DESIGNERS & VOLUNTEERS </h1>
+    <h1 class="white"> LEAD VOLUNTEERS </h1>
     <% @designers.each do |designer| %>
-      <%= image_tag(first_image(designer), class: "mini_picture tooltip") %>
-      <% if current_user %>
-      <p><%= link_to 'Show', designer %></p>
-      <p><%= link_to 'Edit', edit_team_member_path(designer) %></p>
-      <p><%= link_to 'Destroy', designer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      <% end %>
+      <div class="mini tooltip" title="<%= designer.name %>">
+        <%= image_tag(first_image(designer), class: "mini_picture") %>
+        <% if current_user %>
+        <div class="admin_buttons">
+          <p><%= link_to 'Edit', edit_team_member_path(designer) %></p>
+          <p><%= link_to 'Destroy', designer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+        <% end %>
+      </div>
     <% end %>
-
     <% @volunteers.each do |volunteer| %>
-      <%= image_tag(first_image(volunteer), class: "mini_picture") %>
-      <% if current_user %>
-      <p><%= link_to 'Show', volunteer %></p>
-      <p><%= link_to 'Edit', edit_team_member_path(volunteer) %></p>
-      <p><%= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-      <% end %>
+      <div class="mini tooltip" title="<%= volunteer.name %>">
+        <%= image_tag(first_image(volunteer), class: "mini_picture") %>
+        <% if current_user %>
+        <div class="admin_buttons">
+          <p><%= link_to 'Edit', edit_team_member_path(volunteer) %></p>
+          <p><%= link_to 'Destroy', volunteer, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
