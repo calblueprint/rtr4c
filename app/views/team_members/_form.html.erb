@@ -38,8 +38,6 @@
       <div class="team_member_image">
         <%= f.fields_for :images do |image_form| %>
           <fieldset>
-            <%= image_form.label :name %>
-            <%= image_form.text_field :name %>
             <%= image_form.label :photo %>
             <%= image_form.file_field :photo %>
             <%= image_form.link_to_remove "Remove image", id: "remove_image_team_member" %>
