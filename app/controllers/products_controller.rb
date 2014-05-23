@@ -33,10 +33,10 @@ class ProductsController < ApplicationController
       end
       if params.has_key?(:medium)
         size.sizes << params[:medium]
-      end    
+      end
       if params.has_key?(:large)
         size.sizes << params[:large]
-      end    
+      end
 
       @product = Product.new(product_params)
       if @product.save

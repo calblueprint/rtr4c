@@ -1,23 +1,23 @@
 <div class="container">
-<div class="content">
-<h1>Blogpost Show</h1>
+	<div class="content">
+		<h1>Blogpost Show</h1>
 
-<p>
-	Title:
-	<%= @blogpost.title %>
-</p>
-<p>
-	Post:
-	<%= @blogpost.post %>
-</p>
+		<p>
+			<strong>Title:</strong>
+			<%= @blogpost.title %>
+		</p>
+		<p>
+			<strong>Post:</strong>
+			<%= @blogpost.post %>
+		</p>
 
 
-<% @blogpost.images.each do |image| %>
-  <%= image.name %><br>
-  <%= image_tag image.photo.url %><br>
-<% end %>
+		<% @blogpost.images.each do |image| %>
+		  <%= image_tag image.photo.url %><br>
+		<% end %>
 
-<%= link_to "All Posts", blogposts_path %>
-<%= link_to "Edit", edit_blogpost_path(@blogpost) %>
-</div>
+		<div class="admin_buttons">
+		  <%= link_to 'Back', team_members_path %>
+		</div>
+	</div>
 </div>

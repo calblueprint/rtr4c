@@ -35,20 +35,19 @@
           <%= designer_form.link_to_remove "Remove Designer" %>
         </fieldset>
       <% end %>
-      <div class="field">
+      <div class="admin_buttons">
           <%= f.link_to_add "Add Designer", :designers %>
       </div>
 
       <%= f.fields_for :images do |image_form| %>
         <fieldset>
-          <%= image_form.label :name %>
-          <%= image_form.text_field :name %>
+          <%= select_tag :phototype, options_for_select([["Before", "B"], ["After", "A"], ["Miscellaneous", "M"]]) %>
           <%= image_form.label :photo %>
           <%= image_form.file_field :photo %>
           <%= image_form.link_to_remove "Remove image" %>
         </fieldset>
       <% end %>
-      <div class="field">
+      <div class="admin_buttons">
           <%= f.link_to_add "Add photo", :images %>
       </div>
       <div class="submit_spacer"></div>
@@ -56,5 +55,3 @@
     <% end %>
   </div>
 </div>
-
-    

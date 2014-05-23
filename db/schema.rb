@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507095449) do
+ActiveRecord::Schema.define(version: 20140519172825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,16 +34,6 @@ ActiveRecord::Schema.define(version: 20140507095449) do
   end
 
   create_table "carts", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "contact_emails", force: true do |t|
-    t.string   "fname"
-    t.string   "lname"
-    t.string   "email"
-    t.string   "phone"
-    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -85,7 +75,7 @@ ActiveRecord::Schema.define(version: 20140507095449) do
   end
 
   create_table "images", force: true do |t|
-    t.string   "name"
+    t.string   "phototype"
     t.integer  "imageable_id"
     t.string   "imageable_type"
     t.datetime "created_at"
