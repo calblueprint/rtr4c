@@ -15,7 +15,7 @@
 <body>
 
 <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <%= content_tag :p, msg, :id => "payment_error" %>
 <% end %>
 <div id="navbar_container">
   <div id="navbar">

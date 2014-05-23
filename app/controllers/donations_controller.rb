@@ -26,9 +26,9 @@ class DonationsController < ApplicationController
           :card => token,
           :description => "Donation from " + params[:email]
         )
-      rescue Stripe::InvalidRequestError => e
+      rescue => e
         success = false
-        flash[:error] = "Invalid donation amount: #{e.message}"
+        flash[:error] = "#{e.message}"
         redirect_to contribute_online_path
       end
       if success
