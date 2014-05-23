@@ -16,7 +16,8 @@ Rtr4c::Application.routes.draw do
   get 'store',  to: 'products#index',   as: 'store'
   get 'contact',to: 'contacts#new',     as: 'contact'
   get 'donate/online', to: 'donations#new',     as: 'donate/online'
-  get 'donate', to: 'static#donate', as: 'donate'
+  post 'donate/online', to: 'donations#new',     as: 'donate_post'
+  get 'donate', to: 'contribute#index', as: 'donate'
 
   post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
   post '/delete_from_cart/:product_id' => 'cart#delete_from_cart', :as => 'delete_from_cart' 

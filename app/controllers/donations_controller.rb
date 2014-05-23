@@ -3,6 +3,7 @@ class DonationsController < ApplicationController
   before_action :authorize, except: [:new, :create]
 
   def new
+    @set_amount = params[:set_amount]
     @donation = Donation.new
   end
 

@@ -1,18 +1,108 @@
 <div class="container">
   <div class="content">
-    <h1> VOLUNTEER </h1>
-    <h2> Join Rooms That Rock 4 Chemo! </h2>
-    <div class="border"></div>
-    <p> Nancy G. Brinker, an activist against Breast Cancer, once said: “Somebody needs to make this place a little more up beat. It’s unbearably boring and sad, and that’s the last thing we need right now.” Suzy frowned at the framed dollar store art. “There should be classical music and something beautiful and stimulating on the walls. Something to remind us how wonderful the world is outside of all of this… It’s bad enough that we have to come here. Maybe if it were a little more inviting, it would make people feel positive and hopeful. When I get better, I’m going to make some changes around here. We’ll do it together.” We are currently looking for people with Administrative, Grant Writing, Fund Raising, Interior Design, and Technical skills to help us make more and make better rooms that rock! </p>
-    <a id="volunteer" href="contact"> GET INVOLVED </a>
+    <h1> DONATE </h1>
+    <a class="tier" href=<%= donate_post_path(:set_amount => 25) %>>
+      <div class="tier_picture">
+        <img src="https://d2isyty7gbnm74.cloudfront.net/kNztHGUvLDDTuiEZidez6qBWifI=/276x276/square-production.s3.amazonaws.com/files/e09fce5711d3f7eb6a856f1208311858d5f6e264/original.jpeg">
+      </div>
+      <div class="tier_text">
+        <h3> ROADIE </h3>
+        <h2> Pledge $25+ </h2>
+        <div class = "featured_line"></div>
+        <br>
+        <p> Recieve a RTR4C Apron! </p>
+      </div>
+    </a>
+    <a class="tier" href=<%= donate_post_path(:set_amount => 50) %>>
+      <div class="tier_picture">
+        <img src="https://d2isyty7gbnm74.cloudfront.net/krVderDjv6d6W64YBg8wp399DHg=/276x276/square-production.s3.amazonaws.com/files/07fadeb59b280866fa1c666f783a1eedba924594/original.jpeg">
+      </div>
+      <div class="tier_text">
+        <h3> SHINING STAR </h3>
+        <h2> Pledge $50+ </h2>
+        <div class = "featured_line"></div>
+        <br>
+        <p> Recieve a RTR4C T-shirt! </p>
+      </div>
+    </a>
+    <a class="tier" href=<%= donate_post_path(:set_amount => 75) %>>
+      <div class="tier_picture">
+        <img src="https://d2isyty7gbnm74.cloudfront.net/qLtofPFqjKBBa1IKMHslDu6Ymok=/276x276/square-production.s3.amazonaws.com/files/c5f2d996b36ece0fa9258d206ab41110f4da6e23/original.jpeg">
+      </div>
+      <div class="tier_text">
+        <h3> TWINKLE STAR </h3>
+        <h2> Pledge $75+ </h2>
+        <div class = "featured_line"></div>
+        <br>
+        <p> Recieve a RTR4C Hoodie! </p>
+      </div>
+    </a>
+    <a class="tier" href=<%= donate_post_path(:set_amount => 150) %>>
+      <div class="tier_picture">
+        <img src="https://d2isyty7gbnm74.cloudfront.net/qLtofPFqjKBBa1IKMHslDu6Ymok=/276x276/square-production.s3.amazonaws.com/files/c5f2d996b36ece0fa9258d206ab41110f4da6e23/original.jpeg">
+      </div>
+      <div class="tier_text">
+        <h3> SHOOTING STAR </h3>
+        <h2> Pledge $150+ </h2>
+        <div class = "featured_line"></div>
+        <br>
+        <p> Recieve all RTR4C apparel! </p>
+      </div>
+    </a>
+    <a class="tier" href=<%= donate_post_path(:set_amount => 250) %>>
+      <div class="tier_picture">
+        <img src="https://d2isyty7gbnm74.cloudfront.net/-KsJ2A6xxuRce1RtWIPjzL_DGa8=/276x276/square-production.s3.amazonaws.com/files/e6640ce8ff88d9a0bd58177008d45d2e/original.jpeg">
+      </div>
+      <div class="tier_text">
+        <h3> SILVER STAR </h3>
+        <h2> Pledge $250+ </h2>
+        <div class = "featured_line"></div>
+        <br>
+        <p> Recieve a RTR4C Mobius Bracelet! </p>
+      </div>
+    </a>
+    <a class="tier" href=<%= donate_post_path(:set_amount => 1000) %>>
+      <div class="tier_picture">
+        <img src="https://d2isyty7gbnm74.cloudfront.net/-KsJ2A6xxuRce1RtWIPjzL_DGa8=/276x276/square-production.s3.amazonaws.com/files/e6640ce8ff88d9a0bd58177008d45d2e/original.jpeg">
+      </div>
+      <div class="tier_text">
+        <h3> GOLD STAR </h3>
+        <h2> Pledge $1000+ </h2>
+        <div class = "featured_line"></div>
+        <br>
+        <p> Recieve a Tiffany Label Pin! </p>
+      </div>
+    </a>
+    <a class="tier" href=<%= donate_post_path(:set_amount => 5000) %>>
+      <div class="tier_picture">
+        <img src="https://d2isyty7gbnm74.cloudfront.net/-KsJ2A6xxuRce1RtWIPjzL_DGa8=/276x276/square-production.s3.amazonaws.com/files/e6640ce8ff88d9a0bd58177008d45d2e/original.jpeg">
+      </div>
+      <div class="tier_text">
+        <h3> ROCK STAR </h3>
+        <h2> Pledge $5000+ </h2>
+        <div class = "featured_line"></div>
+        <br>
+        <p> Recieve a Tiffany Charm Bracelet! </p>
+      </div>
+    </a>
+    <a class="tier" href=<%= donate_post_path(:set_amount => 10000) %>>
+      <div class="tier_picture">
+        <img src="https://d2isyty7gbnm74.cloudfront.net/-KsJ2A6xxuRce1RtWIPjzL_DGa8=/276x276/square-production.s3.amazonaws.com/files/e6640ce8ff88d9a0bd58177008d45d2e/original.jpeg">
+      </div>
+      <div class="tier_text">
+        <h3> AMAZING STAR </h3>
+        <h2> Pledge $10000+ </h2>
+        <div class = "featured_line"></div>
+        <br>
+        <p> Recieve a Tiffany Charm Bracelet with Charm! </p>
+      </div>
+    </a>
   </div>
 </div>
 <div class="container black_container">
   <div class="content">
-    <h1 class="white"> AMBASSADOR PROGRAM </h1>
-    <h2 class="white"> Apply to be a Young Ambassador! </h2>
+    <h1 class="white"> INFORMATION </h1>
     <div class="white_border"></div>
-    <p class="white"> Our Young Ambassadors are a group of young proffessionals that apply their skills to off Adobe Catalyst Support for our website, Project Manager Coordinator for our projects, act as Administrative Assistants, and more. In applicants for a Young Ambassador, we look for a person passionate and driven about our cause who has the skills neccesary to make change and difference in the hospitals, centers, and locations that they visit. The Young Ambassador Board is a selective and impactful group of youth, and if you would like to be apart of it please apply below! </p>
-    <a id="ambassador" href="https://docs.google.com/forms/d/1vnc3alOmkFDUemPeUxObUkaur9GLVNt0v9eCmDqgA5A/viewform"> APPLY NOW </a>
+    <p class="white"> Federal Tax ID46-2777062 RTR4C is a 501 (c)(3) nonprofit organization, and a member of Local Independent Charities of America. <br> RTR4C is a volunteer organization operating through contributions, in-kind donations, and proceeds from fund-raising events. They do not receive state or federal funding and are solely dependent on contributions from the community, individuals and corporations. RTR4C has no religious or political agendas or affiliations. </p>
   </div>
 </div>
