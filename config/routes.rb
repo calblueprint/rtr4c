@@ -15,7 +15,7 @@ Rtr4c::Application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'store',  to: 'products#index',   as: 'store'
   get 'contact',to: 'contacts#new',     as: 'contact'
-  get 'contribute/online', to: 'donations#new',     as: 'contribute/online'
+  get 'donate/online', to: 'donations#new',     as: 'donate/online'
   get 'donate', to: 'static#donate', as: 'donate'
 
   post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
