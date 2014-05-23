@@ -98,7 +98,7 @@
   <p id="payment_error"></p>
   <div class="field">
     <%= label_tag :card_number, "Card #" %>  
-    <%= text_field_tag :card_number, "4242 4242 4242 4242", name: nil, :data => {:stripe => 'number'} %>  
+    <%= text_field_tag :card_number, "", name: nil, :data => {:stripe => 'number'} %>  
   </div>  
   <div class="credit_card_fields">
     <div class="field">
@@ -108,7 +108,7 @@
     </div>
     <div class="field">
     <%= label_tag :card_code, "CVC" %>
-    <%= text_field_tag :card_code, "123", name: nil, :data => {:stripe => 'cvc'}, maxlength: 3, size: 3 %>  
+    <%= text_field_tag :card_code, "", name: nil, :data => {:stripe => 'cvc'}, maxlength: 3, size: 3 %>  
     </div>
   </div>
   <div class="submit_spacer"></div>

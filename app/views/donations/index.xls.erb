@@ -9,8 +9,8 @@
       <Row>
         <Cell><Data ss:Type="String">Donation Date</Data></Cell>
         <Cell><Data ss:Type="String">Donor Name</Data></Cell>
+        <Cell><Data ss:Type="String">Donor Address</Data></Cell>
         <Cell><Data ss:Type="String">Donor Email</Data></Cell>
-        <Cell><Data ss:Type="String">Donor Title</Data></Cell>
         <Cell><Data ss:Type="String">Amount</Data></Cell>
         <Cell><Data ss:Type="String">Message</Data></Cell>
       </Row>
@@ -19,8 +19,8 @@
         <Cell><Data ss:Type="String"><%= donation.created_at %></Data></Cell>
         <%if not donation.donor.nil? %>
           <Cell><Data ss:Type="String"><%= donation.donor.name  %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= donation.donor.address  %></Data></Cell>
           <Cell><Data ss:Type="String"><%= donation.donor.email %></Data></Cell>
-          <Cell><Data ss:Type="String"><%= donation.donor.title %></Data></Cell>
         <% else %>
           <Cell><Data ss:Type="String">N/A</Data></Cell>
           <Cell><Data ss:Type="String">N/A</Data></Cell>

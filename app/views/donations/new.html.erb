@@ -8,19 +8,31 @@
   <div class="field">  
     <%= label_tag :name %>  
     <%= text_field_tag :name %>  
+  </div>   
+  <div class="field">  
+    <%= label_tag :address1 %>  
+    <%= text_field_tag :address1 %>  
+  </div>     
+  <div class="field">  
+    <%= label_tag :address2 %>  
+    <%= text_field_tag :address2 %>  
+  </div>  
+  <div class="field">  
+    <%= label_tag :city %>  
+    <%= text_field_tag :city %>  
+  </div>  
+  <div class="field">  
+    <%= label_tag :state %>  
+    <%= text_field_tag :state %>  
+  </div>  
+  <div class="field">  
+    <%= label_tag :zip %>  
+    <%= text_field_tag :zip %>  
   </div>    
   <div class="field">  
     <%= label_tag :email %>  
     <%= text_field_tag :email %>  
   </div>    
-  <div class="field">  
-    <%= label_tag :title %>  
-    <%= text_field_tag :title %>  
-  </div>
-  <div class="field">  
-    <%= label_tag :profile %>  
-    <%= text_field_tag :profile %>  
-  </div>
   <div class="field">  
     <%= f.label :amount %>  
     <%= f.number_field :amount, :value => @set_amount, :step => 0.01 %>  
@@ -34,7 +46,7 @@
   <p id="payment_error"></p> 
   <div class="field">  
     <%= label_tag :card_number, "Credit Card Number " %>  
-    <%= text_field_tag :card_number, "4242 4242 4242 4242", name: nil, :data => {:stripe => 'number'} %>  
+    <%= text_field_tag :card_number, "", name: nil, :data => {:stripe => 'number'} %>  
   </div>  
   <div class="credit_card_fields">  
     <div class="field">  
@@ -44,7 +56,7 @@
     </div>
     <div class="field">  
       <%= label_tag :card_code, "CVC" %>  
-      <%= text_field_tag :card_code, "123", name: nil, :data => {:stripe => 'cvc'} %>  
+      <%= text_field_tag :card_code, "", name: nil, :data => {:stripe => 'cvc'} %>  
     </div> 
   </div>               
   <div class="submit_spacer"></div>
