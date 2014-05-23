@@ -13,9 +13,9 @@ class DonationsController < ApplicationController
 
   def create
     #no need to use permits if you are not passing in all params!
-    if !params[:email].present? || !params[:name].present?
-      flash[:error] = "Name, email, and amount are required fields"
-      redirect_to contribute_online_path
+    if !params[:email].present? || !params[:name].present? || !params[:address1].present? || !params[:city].present? || !params[:state].present? || !params[:zip].present?
+      flash[:error] = "Name, address, email, and amount fields are required!"
+      redirect_to donate_post_path(:set_amount => params[:donation][:amount])
     else
       success = true
       token = params[:stripeToken]
@@ -30,14 +30,19 @@ class DonationsController < ApplicationController
       rescue => e
         success = false
         flash[:error] = "#{e.message}"
-        redirect_to contribute_online_path
+        redirect_to donate_post_path(:set_amount => params[:donation][:amount])
       end
       if success
         @donation = Donation.new(:amount => params[:donation][:amount], :message => params[:donation][:message]) 
         if @donation.save
           @donor = Donor.find_by(email: params[:email])
           if @donor.nil?
-            @donor = Donor.new(:amount => params[:donation][:amount], :email => params[:email], :name => params[:name], :title => params[:title], :profile => params[:profile])
+            if (params[:address2].blank?)
+              address = params[:address1] + ", " + params[:city] + " " + params[:state] + " " + params[:zip]
+            else
+              address = params[:address1] + ", " + params[:address2] + ", " + params[:city] + " " + params[:state] + " " + params[:zip]
+            end
+            @donor = Donor.new(:amount => params[:donation][:amount], :address => address, :email => params[:email], :name => params[:name])
             @donor.donations << @donation
             @donor.save
           else
@@ -51,8 +56,8 @@ class DonationsController < ApplicationController
           StoreMailer.confirm_donation(mail_info).deliver
           redirect_to confirm_donations_path
         else
-          flash[:error] = "Name, email, and amount are required fields"
-          redirect_to contribute_online_path
+          flash[:error] = "Name, address, email, and amount fields are required!"
+          redirect_to donate_post_path(:set_amount => params[:donation][:amount])
         end
       end
     end

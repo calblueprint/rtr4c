@@ -2,9 +2,8 @@
 
 amt = 888.88
 donor = Donor.create(   email: "kindsir@kindness.com",
+                        address: "test",
                         name: "William Robinson",
-                        title: "CFO of GreatMoves",
-                        profile: "http://www.linkedin.com/",
                         amount: amt)
 
 Donation.create(amount: amt, 
@@ -16,8 +15,7 @@ Donation.create(amount: amt,
 amt = 444.44
 donor = Donor.create(   email: "kanye@kanyewest.edu",
                         name: "Kanye West",
-                        title: "Monster",
-                        profile: "http://www.kanyewest.com/",
+                        address: "test",
                         amount: amt)
 
 Donation.create(amount: amt, 
@@ -29,7 +27,7 @@ Donation.create(amount: amt,
 amt = 100.00
 donor = Donor.create(   email: "callmemc@gmail.com",
                         name: "Michelle Chow",
-                        title: "Software Engineer",
+                        address: "test",
                         amount: amt)
 
 Donation.create(amount: amt, 
@@ -40,7 +38,7 @@ Donation.create(amount: amt,
 amt = 14.00
 donor = Donor.create(   email: "growingman@growth.com",
                         name: "John Grow",
-                        title: "Aspiring All-Star",
+                        address: "test",
                         amount: amt)
 
 Donation.create(amount: amt, 
