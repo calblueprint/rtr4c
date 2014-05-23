@@ -5,7 +5,6 @@
   <%= link_to 'Back', products_path, id: "back_product" %>
   <a id="view_cart" href="../cart"> View Cart </a>
 <% @product.images.each do |image| %>
-  <%= image.name %><br>
   <%= image_tag image.photo.url %><br>
 <% end %>
 <p id="notice"><%= notice %></p>

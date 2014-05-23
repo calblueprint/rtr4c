@@ -45,6 +45,7 @@ class CheckoutsController < ApplicationController
       rescue => e
         success = false
         flash[:error] = "#{e.message}"
+        redirect_to new_checkout_path
       end
       if success
         @purchase = Purchase.new(:name => @@name, :address => @@address, :email => @@email, :subtotal => @@cart.total_price, :total => @@grand_total)
