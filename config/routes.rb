@@ -18,6 +18,7 @@ Rtr4c::Application.routes.draw do
   get 'donate/online', to: 'donations#new',     as: 'donate/online'
   post 'donate/online', to: 'donations#new',     as: 'donate_post'
   get 'donate', to: 'contribute#index', as: 'donate'
+  get 'volunteer', to: 'contribute#volunteer', as: 'volunteer'
 
   post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
   post '/delete_from_cart/:product_id' => 'cart#delete_from_cart', :as => 'delete_from_cart' 
@@ -48,7 +49,7 @@ Rtr4c::Application.routes.draw do
     end
   end
   resources :purchases
-  resources :contribute, :path => "volunteer"
+  resources :contribute
   resources :contacts, :path => "contact"
 
   # The priority is based upon order of creation: first created -> highest priority.
