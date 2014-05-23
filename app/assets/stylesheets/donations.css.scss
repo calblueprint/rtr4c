@@ -2,6 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.tier {
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 800px;
+  height: 300px;
+  border-style: solid;
+  border-width: 8px;
+  border-color: #333333;;
+}
+
+.tier:hover {
+  cursor: pointer;
+  border: 8px solid #b77ed2;
+}
+
+.tier img {
+  height: 300px;
+  width: 300px;
+  background-size: cover;
+  float: left;
+}
+
+.tier_picture:hover + .tier_text {
+  border-left: 8px solid #b77ed2;
+}
+
+.tier_text {
+  background-color: white;
+  width: 442px;
+  border-left: 8px solid #333333;
+  padding: 25px;
+  height: 250px;
+  float: left;
+  text-align: center;
+}
+
+.tier_text:hover {
+  border-left: 8px solid #b77ed2;
+}
+
 .field {
   float: left;
   width: 900px;
