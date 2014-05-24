@@ -103,10 +103,10 @@ Rtr4c::Application.configure do
   #   user_name: ENV['GMAIL_USER'], # this should be a real gmail id
   #   password: ENV['GMAIL_PASS'] # this should be real password of your gmail id
   # }
-  
+
   config.action_mailer.smtp_settings = {
     address: "smtpout.secureserver.net",
-    port: 587,
+    port: 80,
     domain: "example.com",
     authentication: "plain",
     enable_starttls_auto: true,
