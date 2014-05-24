@@ -1,5 +1,7 @@
 class CartController < ApplicationController
 
+  before_action :authorize
+
   def index
     @cart = current_cart
   end
