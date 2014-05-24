@@ -106,7 +106,7 @@ Rtr4c::Application.configure do
 
   config.action_mailer.smtp_settings = {
     address: "smtpout.secureserver.net",
-    port: 80,
+    port: 465,
     domain: "example.com",
     authentication: "plain",
     enable_starttls_auto: true,
