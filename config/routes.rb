@@ -14,7 +14,7 @@ Rtr4c::Application.routes.draw do
   get 'login',  to: 'sessions#new',     as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'store',  to: 'products#index',   as: 'store'
-  get 'contact',to: 'contacts#new',     as: 'contact'
+  get 'contact', to: 'contacts#new',     as: 'contact'
   get 'donate/online', to: 'donations#new',     as: 'donate/online'
   post 'donate/online', to: 'donations#new',     as: 'donate_post'
   get 'donate', to: 'contribute#index', as: 'donate'
