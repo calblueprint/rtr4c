@@ -3,9 +3,8 @@
 <% @golds.each do |donor| %>
 <div>
   <p><%= donor.name %></p>
+  <p><%= donor.address %></p>
   <p><%= donor.email %></p>
-  <p><%= donor.title %></p>
-  <p><%= donor.profile %></p>
   <p><%= donor.amount %></p>
   <p><%= link_to 'Show', donor %>  <%= link_to 'Edit', edit_donor_path(donor) %>  <%= link_to 'Destroy', donor, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 </div>
@@ -15,9 +14,8 @@
 <% @silvers.each do |donor| %>
 <div>
   <p><%= donor.name %></p>
+  <p><%= donor.address %></p>
   <p><%= donor.email %></p>
-  <p><%= donor.title %></p>
-  <p><%= donor.profile %></p>
   <p><%= donor.amount %></p>
   <p><%= link_to 'Show', donor %>  <%= link_to 'Edit', edit_donor_path(donor) %>  <%= link_to 'Destroy', donor, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 </div>
@@ -27,9 +25,8 @@
 <% @bronzes.each do |donor| %>
 <div>
   <p><%= donor.name %></p>
+  <p><%= donor.address %></p>
   <p><%= donor.email %></p>
-  <p><%= donor.title %></p>
-  <p><%= donor.profile %></p>
   <p><%= donor.amount %></p>
   <p><%= link_to 'Show', donor %>  <%= link_to 'Edit', edit_donor_path(donor) %>  <%= link_to 'Destroy', donor, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 </div>
@@ -39,9 +36,8 @@
 <% @nonmedals.each do |donor| %>
 <div>
   <p><%= donor.name %></p>
+  <p><%= donor.address %></p>
   <p><%= donor.email %></p>
-  <p><%= donor.title %></p>
-  <p><%= donor.profile %></p>
   <p><%= donor.amount %></p>
   <p><%= link_to 'Show', donor %>  <%= link_to 'Edit', edit_donor_path(donor) %>  <%= link_to 'Destroy', donor, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 </div>
