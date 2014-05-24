@@ -1,15 +1,15 @@
 <div class="container">
   <div class="ind_project_content">,
     <div id="ind_project_main_title"><h1><%= @project.title %></h1></div>
-    <div class="before_after">
+    <!--<div class="before_after">
       <div id="before">Before</div>
       <div id="after">After</div>
-    </div>
+    </div>-->
     <div class="header_pict">
-      <div class="main_before_pict"><%= image_tag(@project.images[0].photo.url) %></div>
+      <!--<div class="main_before_pict"><%= image_tag(@project.images[0].photo.url) %></div>
       <div class="divider"></div>
-      <div class="main_after_pict"><%= image_tag(@project.images.last.photo.url) %></div>
-      <!--<div class="before_picts">
+      <div class="main_after_pict">--><%= image_tag(@project.images.last.photo.url) %><!--</div>
+      <div class="before_picts">
         <div id="b_1"><%= image_tag(@project.images[0].photo.url) %></div>
         <div id="b_2"><%= image_tag(@project.images[0].photo.url) %></div>
         <div id="b_3"></div>
