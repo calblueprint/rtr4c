@@ -94,22 +94,24 @@ Rtr4c::Application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => "utf-8"
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "example.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV['GMAIL_USER'], # this should be a real gmail id
-    password: ENV['GMAIL_PASS'] # this should be real password of your gmail id
-  }
-
   # config.action_mailer.smtp_settings = {
-  #   address: "smtpout.secureserver.net",
-  #   port: 80,
+  #   address: "smtp.gmail.com",
+  #   port: 587,
   #   domain: "example.com",
   #   authentication: "plain",
+  #   enable_starttls_auto: true,
   #   user_name: ENV['GMAIL_USER'], # this should be a real gmail id
   #   password: ENV['GMAIL_PASS'] # this should be real password of your gmail id
   # }
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.smtp_settings = {  
+    :address              => "smtpout.secureserver.net",  
+    :domain               => "www.mydomain.com",  
+    :port                 => 80,  
+    :user_name => ENV['GMAIL_USER'],
+    :password => ENV['GMAIL_PASS'],  
+    :authentication       => :plain
+  }
 end
