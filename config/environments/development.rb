@@ -49,5 +49,5 @@ Rtr4c::Application.configure do
     enable_starttls_auto: true,
     user_name: ENV['GMAIL_USER'], # this should be a real gmail id
     password: ENV['GMAIL_PASS'] # this should be real password of your gmail id
-  }
+  }  
 end

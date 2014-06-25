@@ -1,11 +1,8 @@
 class ContactsController < ApplicationController
+  before_action :authorize, except: [:new, :create]
 
   def index
-    if current_user
-      @contacts = Contact.all
-    else
-      render_404
-    end
+    @contacts = Contact.all
   end
 
   def new

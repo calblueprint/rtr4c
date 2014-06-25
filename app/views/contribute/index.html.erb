@@ -1,6 +1,18 @@
 <div class="container">
   <div class="content">
     <h1> DONATE </h1>
+    <a class="tier" href="donate/online">
+      <div class="tier_picture">
+        <%= image_tag "logo.png" %>
+      </div>
+      <div class="tier_text">
+        <h3> FAN </h3>
+        <h2> Pledge $1+ </h2>
+        <div class = "featured_line"></div>
+        <br>
+        <p> Thank you for supporting us! </p>
+      </div>
+    </a>
     <a class="tier" href=<%= donate_post_path(:set_amount => 25) %>>
       <div class="tier_picture">
         <img src="https://d2isyty7gbnm74.cloudfront.net/kNztHGUvLDDTuiEZidez6qBWifI=/276x276/square-production.s3.amazonaws.com/files/e09fce5711d3f7eb6a856f1208311858d5f6e264/original.jpeg">
@@ -39,7 +51,7 @@
     </a>
     <a class="tier" href=<%= donate_post_path(:set_amount => 150) %>>
       <div class="tier_picture">
-        <img src="https://d2isyty7gbnm74.cloudfront.net/qLtofPFqjKBBa1IKMHslDu6Ymok=/276x276/square-production.s3.amazonaws.com/files/c5f2d996b36ece0fa9258d206ab41110f4da6e23/original.jpeg">
+        <%= image_tag "Store/Hooded_Sweater.png" %>
       </div>
       <div class="tier_text">
         <h3> SHOOTING STAR </h3>
@@ -63,7 +75,7 @@
     </a>
     <a class="tier" href=<%= donate_post_path(:set_amount => 1000) %>>
       <div class="tier_picture">
-        <img src="https://d2isyty7gbnm74.cloudfront.net/-KsJ2A6xxuRce1RtWIPjzL_DGa8=/276x276/square-production.s3.amazonaws.com/files/e6640ce8ff88d9a0bd58177008d45d2e/original.jpeg">
+        <%= image_tag "Store/IMG_9015.jpg" %>
       </div>
       <div class="tier_text">
         <h3> GOLD STAR </h3>
@@ -75,7 +87,7 @@
     </a>
     <a class="tier" href=<%= donate_post_path(:set_amount => 5000) %>>
       <div class="tier_picture">
-        <img src="https://d2isyty7gbnm74.cloudfront.net/-KsJ2A6xxuRce1RtWIPjzL_DGa8=/276x276/square-production.s3.amazonaws.com/files/e6640ce8ff88d9a0bd58177008d45d2e/original.jpeg">
+        <%= image_tag "Store/IMG_9014.jpg" %>
       </div>
       <div class="tier_text">
         <h3> ROCK STAR </h3>
@@ -87,7 +99,7 @@
     </a>
     <a class="tier" href=<%= donate_post_path(:set_amount => 10000) %>>
       <div class="tier_picture">
-        <img src="https://d2isyty7gbnm74.cloudfront.net/-KsJ2A6xxuRce1RtWIPjzL_DGa8=/276x276/square-production.s3.amazonaws.com/files/e6640ce8ff88d9a0bd58177008d45d2e/original.jpeg">
+        <%= image_tag "Store/IMG_9013.png" %>
       </div>
       <div class="tier_text">
         <h3> AMAZING STAR </h3>
@@ -101,8 +113,12 @@
 </div>
 <div class="container black_container">
   <div class="content">
-    <h1 class="white"> INFORMATION </h1>
+    <h1 class="white"> SPONSORSHIP </h1>
     <div class="white_border"></div>
+    <p class="white"> For corporate sponsorship information please contact... </p>
+    <h2 class="white"> support@roomsthatrock4chemo.org </h2>
+    <p class="white"> Or call... </p>
+    <h2 class="white"> 415-518-1716 </h2>
     <p class="white"> Federal Tax ID46-2777062 RTR4C is a 501 (c)(3) nonprofit organization, and a member of Local Independent Charities of America. <br> RTR4C is a volunteer organization operating through contributions, in-kind donations, and proceeds from fund-raising events. They do not receive state or federal funding and are solely dependent on contributions from the community, individuals and corporations. RTR4C has no religious or political agendas or affiliations. </p>
   </div>
 </div>

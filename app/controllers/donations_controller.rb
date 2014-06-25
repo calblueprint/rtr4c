@@ -1,6 +1,6 @@
 class DonationsController < ApplicationController
 
-  before_action :authorize, except: [:new, :create]
+  before_action :authorize, except: [:new, :create, :confirm]
 
   def new
     @set_amount = params[:set_amount]
@@ -98,9 +98,11 @@ class DonationsController < ApplicationController
 
   def destroy
     @donation = set_donation
-    @donor = @donation.donor
-    new_amt = @donor.amount.to_f - @donation.amount.to_f
-    @donor.update_attributes(:amount => new_amt)
+    if @donation.donor.present?
+      @donor = @donation.donor
+      new_amt = @donor.amount.to_f - @donation.amount.to_f
+      @donor.update_attributes(:amount => new_amt)
+    end
     @donation.destroy
     redirect_to donations_url
   end
