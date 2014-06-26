@@ -48,7 +48,9 @@
   
 	<% @projects.each do |project| %>
     <div class = "project_block tooltip-alt" title= "<%= project.title %>">
-      <div class = "project_thumb" id = "projects_one"><%= link_to(image_tag(project.images[0].photo.url), project_path(project.id))%></div>
+      <div class = "project_thumb" id = "projects_one">
+        <%= safe_image(project) %>
+      </div>
     </div>
   <% end %>
   </div>
