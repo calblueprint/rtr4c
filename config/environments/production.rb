@@ -103,15 +103,4 @@ Rtr4c::Application.configure do
     user_name: ENV['GMAIL_USER'], # this should be a real gmail id
     password: ENV['GMAIL_PASS'] # this should be real password of your gmail id
   }
-
-  # ActionMailer::Base.delivery_method = :smtp
-  # ActionMailer::Base.perform_deliveries = true
-  # ActionMailer::Base.smtp_settings = {  
-  #   :address              => "smtpout.secureserver.net",  
-  #   :domain               => "www.mydomain.com",  
-  #   :port                 => 80,  
-  #   :user_name => ENV['GMAIL_USER'],
-  #   :password => ENV['GMAIL_PASS'],  
-  #   :authentication       => :plain
-  # }
 end

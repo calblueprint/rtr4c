@@ -21,7 +21,7 @@
           <div class="post extra_margin">
             <h2> <%= news.title %> </h2>
             <h4> <%= news.created_at.strftime('%x') %> </h4>
-            <p> <%= news.blurb %> </p>
+            <p> <%= h(news.blurb).gsub(/\n/, '<br/>').html_safe %> </p>
             <% if news.link.present? %>
               <p> <br><%= link_to "Read More", news.link, class: "read_more" %> </p>
             <% end %>
@@ -42,7 +42,7 @@
           <div class="post extra_margin">
             <h2> <%= news.title %> </h2>
             <h4> <%= news.created_at.strftime('%x') %> </h4>
-            <p> <%= news.post %> </p>
+            <p> <%= h(news.post).gsub(/\n/, '<br/>').html_safe %> </p>
             <% if current_user %>
               <div class="admin_buttons">
                 <span> <%= link_to 'Edit', edit_blogpost_path(news) %> </span>
