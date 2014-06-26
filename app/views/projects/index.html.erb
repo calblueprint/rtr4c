@@ -4,6 +4,7 @@
     <% if current_user %>
     	<p> <%= link_to "Add A Project", new_project_path, {class: "new_button"} %> </p>
     <% end %>
+    <% unless @featured_one.nil? %>
     <div class = "featured">
       <div class = "featured_picture" id = "pict_one">
         <%= safe_image(@featured_one) %>
@@ -13,6 +14,9 @@
         <div class = "featured_line"></div>
       </div>
     </div>
+    <% end -%>
+
+    <% unless @featured_two.nil? %>
     <div class = "featured">
       <div class = "featured_picture" id = "pict_two">
         <%= safe_image(@featured_two) %>
@@ -22,6 +26,9 @@
         <div class = "featured_line"></div>
       </div>
     </div>
+    <% end -%>
+
+    <% unless @featured_three.nil? %>
     <div class = "featured">
       <div class = "featured_picture" id = "pict_three">
         <%= safe_image(@featured_three) %>
@@ -31,6 +38,7 @@
         <div class = "featured_line"></div>
       </div>
     </div>
+    <% end -%>
   </div>
 </div>
 

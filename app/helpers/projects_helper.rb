@@ -9,7 +9,7 @@ module ProjectsHelper
 
   def safe_image(instance)
   	if instance.nil?
-  		image_tag(Rails.root.join("missing.png"))
+  		image_tag("/missing.png")
   	else
   		link_to(image_tag(instance.images[0].photo.url), project_path(instance.id))
   	end
