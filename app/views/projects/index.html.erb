@@ -4,48 +4,51 @@
     <% if current_user %>
     	<p> <%= link_to "Add A Project", new_project_path, {class: "new_button"} %> </p>
     <% end %>
+    <% unless @featured_one.nil? %>
     <div class = "featured">
       <div class = "featured_picture" id = "pict_one">
-        <%= link_to(image_tag(@featured_one.images[0].photo.url), project_path(@featured_one.id))%>
+        <%= safe_image(@featured_one) %>
       </div>
       <div class = "featured_text">
-        <p> <%= @featured_one.title %> <br> <%= @featured_one.location %> </p>
+        <%= safe_text(@featured_one) %>
         <div class = "featured_line"></div>
       </div>
     </div>
+    <% end -%>
+
+    <% unless @featured_two.nil? %>
     <div class = "featured">
       <div class = "featured_picture" id = "pict_two">
-        <%= link_to(image_tag(@featured_two.images[0].photo.url), project_path(@featured_two.id))%>
+        <%= safe_image(@featured_two) %>
       </div>
       <div class = "featured_text" id = "mid">
-        <p><%= @featured_two.title %> <br> <%= @featured_two.location %> </p>
+        <%= safe_text(@featured_two) %>
         <div class = "featured_line"></div>
       </div>
     </div>
+    <% end -%>
+
+    <% unless @featured_three.nil? %>
     <div class = "featured">
       <div class = "featured_picture" id = "pict_three">
-        <%= link_to(image_tag(@featured_three.images[0].photo.url), project_path(@featured_three.id))%>
+        <%= safe_image(@featured_three) %>
       </div>
       <div class = "featured_text">
-        <p><%= @featured_three.title %> <br> <%= @featured_three.location %></p>
+        <%= safe_text(@featured_three) %>
         <div class = "featured_line"></div>
       </div>
     </div>
+    <% end -%>
   </div>
 </div>
 
 <div class = "container black_container">
 <div class="content">
   <h1 id = "all_p"> All Projects </h1>
-  <!--<div class = "projects_pagination">
-    <%= will_paginate @paginated_projects %>
-  </div>-->
+  
 	<% @projects.each do |project| %>
     <div class = "project_block tooltip-alt" title= "<%= project.title %>">
       <div class = "project_thumb" id = "projects_one"><%= link_to(image_tag(project.images[0].photo.url), project_path(project.id))%></div>
-      <!--<div class ="project_text">
-        <p><%= link_to(project.title, project_path(project.id)) %> </p>
-      </div>-->
     </div>
   <% end %>
   </div>

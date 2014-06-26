@@ -12,7 +12,11 @@ class ProjectsController < ApplicationController
     @featured_two = @featured_array[1]
     @featured_three = @featured_array[2]
     @rest_array = @project_array[3..@project_array.length]
-    @paginated_projects = @rest_array.paginate(:page => params[:page], :per_page => 6)
+    if @rest_array.nil?
+      @paginated_projects = []
+    else
+      @paginated_projects = @rest_array.paginate(:page => params[:page], :per_page => 6)
+    end
   end
 
 
