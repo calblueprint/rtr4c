@@ -19,7 +19,7 @@ module ProjectsHelper
   	if instance.nil?
   	  ""
   	else
-  	  "<p>#{instance.title } <br> #{ instance.location }%></p>".html_safe
+  	  "<p>#{instance.title } <br> #{ instance.location }</p>".html_safe
   	end	
   end
 end
