@@ -10,6 +10,8 @@ module ProjectsHelper
   def safe_image(instance)
   	if instance.nil?
   		image_tag("/missing.png")
+  	elsif instance.images[0].nil?
+  		link_to(image_tag("/missing.png"), project_path(instance.id))
   	else
   		link_to(image_tag(instance.images[0].photo.url), project_path(instance.id))
   	end
