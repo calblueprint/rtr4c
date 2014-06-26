@@ -6,28 +6,28 @@
     <% end %>
     <div class = "featured">
       <div class = "featured_picture" id = "pict_one">
-        <%= link_to(image_tag(@featured_one.images[0].photo.url), project_path(@featured_one.id))%>
+        <%= safe_image(@featured_one) %>
       </div>
       <div class = "featured_text">
-        <p> <%= @featured_one.title %> <br> <%= @featured_one.location %> </p>
+        <%= safe_text(@featured_one) %>
         <div class = "featured_line"></div>
       </div>
     </div>
     <div class = "featured">
       <div class = "featured_picture" id = "pict_two">
-        <%= link_to(image_tag(@featured_two.images[0].photo.url), project_path(@featured_two.id))%>
+        <%= safe_image(@featured_two) %>
       </div>
       <div class = "featured_text" id = "mid">
-        <p><%= @featured_two.title %> <br> <%= @featured_two.location %> </p>
+        <%= safe_text(@featured_two) %>
         <div class = "featured_line"></div>
       </div>
     </div>
     <div class = "featured">
       <div class = "featured_picture" id = "pict_three">
-        <%= link_to(image_tag(@featured_three.images[0].photo.url), project_path(@featured_three.id))%>
+        <%= safe_image(@featured_three) %>
       </div>
       <div class = "featured_text">
-        <p><%= @featured_three.title %> <br> <%= @featured_three.location %></p>
+        <%= safe_text(@featured_three) %>
         <div class = "featured_line"></div>
       </div>
     </div>
