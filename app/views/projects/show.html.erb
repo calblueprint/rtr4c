@@ -9,15 +9,21 @@
       <%= safe_image @project %>
     </div>
 
-    <% @before_pictures.each do |image| %>
-      <%= link_to image_tag(image.photo.url), image.photo.url,
-          class: 'fancybox', rel: "before_images", alt: 'Photo' %>
-    <% end %>
+    <h2>Before Images</h2>
+    <div id="project_image_block">
+      <% @before_pictures.each do |image| %>
+        <%= link_to image_tag(image.photo.url, :class => "fancybox_thumbnail"), image.photo.url,
+            class: 'fancybox', rel: "before_images", alt: 'Photo' %>
+      <% end %>
+    </div>
 
-    <% @after_pictures.each do |image| %>
-      <%= link_to image_tag(image.photo.url, {class: "fancybox_thumbnail"}), image.photo.url,
-          class: 'fancybox', rel: "after_images", alt: 'Photo' %>
-    <% end %>
+    <h2>After Images</h2>
+    <div id="project_image_block">
+      <% @after_pictures.each do |image| %>
+        <%= link_to image_tag(image.photo.url, :class => "fancybox_thumbnail"), image.photo.url,
+            class: 'fancybox', rel: "after_images", alt: 'Photo' %>
+      <% end %>
+    </div>
 
     <% if current_user %>
       <div class="admin_buttons">
