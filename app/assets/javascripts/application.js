@@ -13,8 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery_nested_form
-//= require lib/jquery.fancybox.pack
-//= require lib/jquery.fancybox-buttons
-//= require lib/jquery.fancybox-media
-//= require lib/jquery.fancybox-thumbs
 //= require_tree .
+
+jQuery(function($) { // as soon as DOM is ready
+$(".fancybox").fancybox({ // initialize fancybox on all pages where it is present
+        helpers: {
+            title: {type: 'inside'},
+            buttons: {}
+        }
+    });
+});

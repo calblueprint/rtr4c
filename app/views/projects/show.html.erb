@@ -8,6 +8,12 @@
     <div class="header_pict">
       <%= safe_image @project %>
     </div>
+
+    <% @project.images.each do |image| %>
+      <%= link_to image_tag(image.photo.url), image.photo.url,
+          class: 'fancybox', rel: image.phototype, alt: 'Photo' %>
+    <% end %>
+
     <% if current_user %>
       <div class="admin_buttons">
         <%= link_to 'Edit', edit_project_path(@project) %>
