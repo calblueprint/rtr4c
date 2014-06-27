@@ -9,9 +9,14 @@
       <%= safe_image @project %>
     </div>
 
-    <% @project.images.each do |image| %>
+    <% @before_pictures.each do |image| %>
       <%= link_to image_tag(image.photo.url), image.photo.url,
-          class: 'fancybox', rel: image.phototype, alt: 'Photo' %>
+          class: 'fancybox', rel: "before_images", alt: 'Photo' %>
+    <% end %>
+
+    <% @after_pictures.each do |image| %>
+      <%= link_to image_tag(image.photo.url, {class: "fancybox_thumbnail"}), image.photo.url,
+          class: 'fancybox', rel: "after_images", alt: 'Photo' %>
     <% end %>
 
     <% if current_user %>

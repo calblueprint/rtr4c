@@ -23,6 +23,8 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @before_pictures = @project.images.where("phototype = ?", "B")
+    @after_pictures  = @project.images.where("phototype = ?", "A") 
   end
 
   # GET /projects/new
