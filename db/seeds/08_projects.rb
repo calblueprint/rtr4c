@@ -5,13 +5,36 @@ project = Project.new(
   volunteers: 'Donations by Tracy Sistili, Founder The Beverly Fund,  ION Solutions, Rebecca C Knockemus, Dali Decals, Cutting Edget Stencils, Ann Marie Edwards, COO Alliance Cancer Specialists, Cora Sue Anthony (HGTV Designer), Andres Torres Fine Arts Photographer, Nate Wood, Video Producer: VisionLine Media, Amy Ocasio, Fine Artist/Founder Whimsical Spirits of Whim-en, Colorful Artwork by Amy O, Wes Coventry, Fine Work Carpenter, Home Depot, and all the wonderful local volunteers!',
   location: 'Mammoth, CA'
 )
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/b_1.jpg")
+image.phototype = "B"
+image.save
 
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/b_1.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/b_2.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/b_3.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_1.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_2.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_3.jpg")
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/b_2.jpg")
+image.phototype = "B"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/b_3.jpg")
+image.phototype = "B"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_1.jpg")
+image.phototype = "A"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_2.jpg")
+image.phototype = "A"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Mammoth/a_3.jpg")
+image.phototype = "A"
+image.save
+
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -23,12 +46,36 @@ project = Project.new(
   location: 'Philadelphia, PA'
 )
 
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/b_1.png")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/b_2.png")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/b_3.png")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/a_1.png")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/a_2.png")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/a_3.png")
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/b_1.png")
+image.phototype = "B"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/b_2.png")
+image.phototype = "B"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/b_3.png")
+image.phototype = "B"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/a_1.png")
+image.phototype = "A"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/a_2.png")
+image.phototype = "A"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Aria/a_3.png")
+image.phototype = "A"
+image.save
+
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -39,12 +86,36 @@ project = Project.new(
   volunteers: 'Designer Tamy Brady, Amy Ocasio, Project Manager, Kim Couch Executive Director Camden Clark Foundation, RTR4C Rock Star Sponsors: BB&T Lighthouse Project, The Virginia Neptune Foundation, The Oakland Foundation, The Family of Daniel O. Martin, Family and Friends of Joel Stout, Family and Friends of Tim Moore, Paradise Grille, The John Patrick Albright Foundation, in memory of Joe, Patricia, and John Patrick Albright, and The Allen C. Spurgeon Family. Jan Dils & Chuck Hughes, J. P. Henry’s Restaurant, Bre Hughes in memory of her grandmother Dorothy V. Smith, and Susan Hill Richardson in memory of her mother Lucy W. Hill , Barbara J. Martino, in memory of the family of Carlton C. Woo.',
   location: 'Parkersburg, WV'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/b_1.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/b_2.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/b_3.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_1.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_2.jpg")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_3.jpg")
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/b_1.jpg")
+image.phototype = "B"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/b_2.jpg")
+image.phototype = "B"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/b_3.jpg")
+image.phototype = "B"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_1.jpg")
+image.phototype = "A"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_2.jpg")
+image.phototype = "A"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Camden/a_3.jpg")
+image.phototype = "A"
+image.save
+
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -55,9 +126,21 @@ project = Project.new(
   volunteers: 'Designer: Marsha Heckman, beautifully painted by Decorative Artist David R. Campbell,David@RowanArt.com his wife Donnelle Campbell, volunteer Floyd Heckman. Art by Gary Kinson of Mill Valley gkinson@yahoo.com, high quality print donated by Skylard Images in Sebastopol, darren@skylarkimages.com the LOTUS decal donated by Walter Hawkins of Dali Decals marketing@dalidecals.com.',
   location: 'Greenbrae, CA'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Hospital/a_1.png")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Hospital/a_2.png")
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Hospital/a_3.png")
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Hospital/a_1.png")
+image.phototype = "A"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Hospital/a_2.png")
+image.phototype = "A"
+image.save
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Hospital/a_3.png")
+image.phototype = "A"
+image.save
+
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -68,7 +151,10 @@ project = Project.new(
   volunteers: 'Kimball Star, Designer, Project Manager, Taylor Watts, Mario Ballard, Regina Cabrero, Dr. Mauricio Maza, Basic Health Internationa Team consisting of  Lauren Ditzian, Mariam Cremer, Wendy Liberante, Elizabeth & Katerine Conlisk, David & Naomi Einhorn, Dra. Dalia Saravia, Dra. Karla Alfaro. Stencils by Cutting Edge Stencils.',
   location: 'San Salvador, El Salvador'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Maternity_Hospital/pict_two.png")
+
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Maternity_Hospital/pict_two.png")
+image.phototype = "A"
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -79,7 +165,10 @@ project = Project.new(
   volunteers: 'Nicole Facciuto, Desginer, Biaz Bazán fundador de la Liga Contra el cáncer de El Salvador. (Dr. Narciso Diaz Bazan founder Cancer League of El Salvador), Sol Mesa (Presidente Liga Contra el cáncer de EL Salvador) (President of the Board of Directors).Dr. Salvador Díaz Bazán (Head Doctor of The Institute and Liga Contra el cáncer de EL Salvador)  Sylvia Wilson de Sol,  Dr. Mauricio Maza, Sandra Sol, Mayu Monterrosa, Raquel Diaz Bazan, Alexandra Brugal, Beatriz Brugal, Alexandra Quintanilla, Alexandra Herrera, Marcela Gutierez, Sofia Bukele, Geraldina Cestoni, Ximena Cestoni, Rodrigo Escobar, Michael Levinson, Georgia Parker, Julie Taylor, Margaret Herron, Heidi Danos, MacMan, Marnie F. Aulabaugh, Emily Bunning, Christina Schierman,Dale Moon, Julie Maigret, Allaire Linebarger, Jon Levine, Sarah Logan, Courtney McGinnis, Nicole Mitchell. Stencils donated by Cutting Edge Stencils.',
   location: 'El Salvador'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Cancer_Institute/room_two.jpg")
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Cancer_Institute/room_two.jpg")
+image.phototype = "A"
+image.save
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -90,7 +179,10 @@ project = Project.new(
   volunteers: 'Designer Jamie L. Belew. Darby Anderson of Jiill\'s Legacy, Michael Belew Photographer, Taylor Gill, Taylor Watts. Stencils donated by Cutting Edge Stencils.',
   location: 'Redwood City, CA'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Sequoia_Hospital/pict_two.jpeg")
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Sequoia_Hospital/pict_two.jpeg")
+image.phototype = "A"
+image.save
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -101,7 +193,10 @@ project = Project.new(
   volunteers: 'Designer Corinne Fuller, Taylor Watts, Mario Ballard',
   location: 'Greenbrae, CA'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Corrine_Room/pict_one.jpg")
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Corrine_Room/pict_one.jpg")
+image.phototype = "A"
+image.save
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -112,7 +207,10 @@ project = Project.new(
   volunteers: 'Designer Kimball Starr, Brian Marshall, Mario Ballard ',
   location: 'Greenbrae, CA'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Sophias_Room/pict_one.jpg")
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Marin_Sophias_Room/pict_one.jpg")
+image.phototype = "A"
+image.save
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -123,7 +221,10 @@ project = Project.new(
   volunteers: 'NA',
   location: 'Oakland, CA'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Oakland_Hospital/pict_two.jpg")
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/Oakland_Hospital/pict_two.jpg")
+image.phototype = "A"
+image.save
 project.save
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -134,7 +235,10 @@ project = Project.new(
   volunteers: 'NA',
   location: 'Mountain View, CA'
 )
-project.images.new().photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/El_Camino/pict_one.jpg")
+image = project.images.new()
+image.photo_from_url("https://s3-us-west-1.amazonaws.com/rtr4c-dev/projects/Projects/El_Camino/pict_one.jpg")
+image.phototype = "A"
+image.save
 project.save
 
 
