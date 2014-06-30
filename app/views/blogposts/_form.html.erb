@@ -12,6 +12,9 @@
 
     <%= f.fields_for :images do |image_form| %>
       <fieldset>
+        <% if image_form.object.photo.exists? %>
+            <%= image_tag image_form.object.photo.url, class: "fancybox_thumbnail" %>
+          <% end %>
         <%= image_form.label :photo %>
         <%= image_form.file_field :photo %>
         <%= image_form.link_to_remove "Remove image" %>
