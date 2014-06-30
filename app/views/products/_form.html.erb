@@ -26,6 +26,9 @@
 
       <%= f.fields_for :images do |image_form| %>
         <fieldset>
+          <% if image_form.object.photo.exists? %>
+            <%= image_tag image_form.object.photo.url, class: "fancybox_thumbnail" %>
+          <% end %>
           <%= image_form.label      :name %>
           <%= image_form.text_field :name %>
           <%= image_form.label      :photo %>
