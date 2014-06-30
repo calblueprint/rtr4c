@@ -41,7 +41,7 @@
 
       <%= f.fields_for :images do |image_form| %>
         <fieldset>
-          <%= select_tag :phototype, options_for_select([["Before", "B"], ["After", "A"], ["Miscellaneous", "M"]]) %>
+          <%= image_form.select :phototype, options_for_select([["Before", "B"], ["After", "A"]], image_form.object.phototype) %>
           <%= image_form.label :photo %>
           <%= image_form.file_field :photo %>
           <%= image_form.link_to_remove "Remove image" %>
