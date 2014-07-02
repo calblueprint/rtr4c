@@ -4,40 +4,6 @@
     <div class="admin_buttons">
       <a href=<%= news_index_path %>>Back</a>
     </div>
-    <%= form_for :pressupdate, url: {action: "update"} do |f| %>
-
-    <p class="field">
-      <%= f.label "Old Title" %>
-      <%= @press.title %>
-    </p>
-
-    <p class="field">
-      <%= f.label "Old Link" %>
-      <%=h auto_link(@press.link) %>
-    </p>
-
-    <p class="field">
-      <%= f.label "Old Video Link" %>
-      <%=h auto_link(@press.videolink) %>
-    </p>
-
-    <p class="field">
-      <%= f.label "New Title" %>
-      <%= f.text_field :title %>
-    </p>
-
-    <p class="field">
-      <%= f.label "New Link" %>
-      <%= f.text_field :link %>
-    </p>
-
-    <p class="field">
-      <%= f.label "New Video Link" %>
-      <%= f.text_field :videolink %>
-    </p>
-
-    <%= f.submit %>
-
-    <% end %>
+    <%= render "form" %>
   </div>
 </div>
