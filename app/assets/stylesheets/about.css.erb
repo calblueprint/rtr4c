@@ -20,6 +20,11 @@
   text-align: left;
 }
 
+a {
+  text-decoration: none;
+  color: #3366BB;
+}
+
 .picture {
   float: left;
   border: 10px solid #333333;
@@ -64,32 +69,17 @@
 }
 
 #homedepot {
-  background: url(<%= image_path "homedepot.png"%>);
+  background: url(<%= image_path "homedepot_alt.png"%>);
   background-size: cover;
   margin-left: 150px;
 }
 
-#homedepot:hover {
-  background: url(<%= image_path "homedepot_alt.png"%>);
-  background-size: cover;
-}
-
 #chase {
-  background: url(<%= image_path "chase.png"%>);
-  background-size: cover;
-}
-
-#chase:hover {
   background: url(<%= image_path "chase_alt.png"%>);
   background-size: cover;
 }
 
 #giants {
-  background: url(<%= image_path "giants.png"%>);
-  background-size: cover;
-}
-
-#giants:hover {
   background: url(<%= image_path "giants_alt.png"%>);
   background-size: cover;
 }

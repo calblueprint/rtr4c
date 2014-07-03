@@ -44,7 +44,7 @@ class PressUpdatesController < ApplicationController
   def update
   	@press = PressUpdate.find(params[:id])
   	if @press.update(press_params)
-  		redirect_to @press
+  		redirect_to press_updates_path
   	else
   		render 'edit'
   	end
