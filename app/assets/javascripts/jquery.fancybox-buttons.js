@@ -13,9 +13,9 @@
  *     });
  *
  */
-(function (n) {
+(function ($) {
 	//Shortcut for fancyBox object
-	var F = n.fancybox;
+	var F = $.fancybox;
 
 	//Add helper object
 	F.helpers.buttons = {
