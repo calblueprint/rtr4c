@@ -10,25 +10,25 @@
     </div>-->
     <div class="half" id="left">
       <h2>BEFORE</h2>
-      <div id="project_image_block">
+      <ul id="project_image_block">
         <% @before_pictures.each do |image| %>
-          <div class="img-wrapper">
+          <li class="img-wrapper">
             <%= link_to image_tag(image.photo.url, :class => "fancybox_thumbnail"), image.photo.url,
                 class: 'fancybox', rel: "before_images", alt: 'Photo' %>
-          </div>
+          </li>
         <% end %>
-      </div>
+      </ul>
     </div>
     <div class="half" id="right">
       <h2>AFTER</h2>
-      <div id="project_image_block">
+      <ul id="project_image_block">
         <% @after_pictures.each do |image| %>
-          <div class="img-wrapper">
+          <li class="img-wrapper">
             <%= link_to image_tag(image.photo.url, :class => "fancybox_thumbnail"), image.photo.url,
               class: 'fancybox', rel: "after_images", alt: 'Photo' %>
-          </div>
+          </li>
         <% end %>
-      </div>
+      </ul>
     </div>
     <% if current_user %>
       <div class="admin_buttons">
