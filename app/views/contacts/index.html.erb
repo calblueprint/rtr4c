@@ -1,27 +1,31 @@
 <h1>Listing Emails</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Message</th>
-    </tr>
-  </thead>
+<div class="content">
+  <div id="emails">
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Message</th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @contacts.each do |contact| %>
-      <tr>
-        <td><%= contact.fname %></td>
-        <td><%= contact.lname %></td>        
-        <td><%= contact.email %></td>
-        <td><%= contact.phone %></td>
-        <td><%= contact.message %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @contacts.each do |contact| %>
+          <tr>
+            <td><%= contact.fname %></td>
+            <td><%= contact.lname %></td>        
+            <td><%= contact.email %></td>
+            <td><%= contact.phone %></td>
+            <td><%= contact.message %></td>
+            <td><%= link_to 'Show', contact %></td>
+            <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
