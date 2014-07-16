@@ -14,7 +14,9 @@ module ProjectsHelper
   		# link_to(image_tag("/missing.png"), project_path(instance.id))
   	else
       @after_pictures  = instance.images.where("phototype = ?", "A")
-  		link_to(image_tag(@after_pictures[0].photo.url), project_path(instance.id))
+      if @after_pictures.length > 0 
+  		  link_to(image_tag(@after_pictures[0].photo.url), project_path(instance.id))
+      end
   	end
   end
 
